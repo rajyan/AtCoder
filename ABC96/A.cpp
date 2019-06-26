@@ -22,6 +22,12 @@
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
+//	
+//	int a, b;
+//	cin >> a >> b;
+//	
+//	if (a <= b) cout << a << "\n";
+//	else cout << a - 1 << "\n";
 //
 //	return 0;
 //}
