@@ -19,15 +19,8 @@
 //typedef long long lint;
 //
 //struct prob {
-//	int idx, bonus, num;
-//	bool used = false;
+//	int bonus, num;
 // };
-//
-//int dfs(vector<prob> &in) {
-//
-//
-//
-//}
 //
 //int main() {
 //
@@ -37,13 +30,40 @@
 //	int D, G;
 //	cin >> D >> G;
 //
-//	vector<prob> problem(D);
+//	vector<prob> p(D);
 //	prob ptmp;
 //	for (int i = 0; i < D; i++) {
-//		ptmp.idx = i + 1;
 //		cin >> ptmp.num >> ptmp.bonus;
-//		ptmp.bonus += ptmp.idx * ptmp.num * 100;
-//		problem[i] = ptmp;
+//		ptmp.bonus += (i + 1) * ptmp.num * 100;
+//		p[i] = ptmp;
+//	}
+//
+//	int ans = INF, sum, cnt, tmp;
+//	for (int bit = 0b0; bit < (1 << D); bit++) {
+//		
+//		sum = 0, cnt = 0;
+//		for (int i = 0; i < D; i++) {
+//			if (bit & (1 << i)) {
+//				sum += p[i].bonus;
+//				cnt += p[i].num;
+//			}
+//		}
+//
+//		if (sum >= G) {
+//			ans = min(ans, cnt);
+//		}
+//		else {
+//			for (int i = D - 1; i >= 0; i--) {
+//				if (!(bit & (1 << i))) {
+//					tmp = (G - sum - 1) / ((i + 1) * 100) + 1;
+//					if (tmp < p[i].num) {
+//						ans = min(ans, cnt + tmp);
+//					}
+//					break;
+//				}
+//			}
+//		}
+//
 //	}
 //	
 //	cout << ans << "\n";
