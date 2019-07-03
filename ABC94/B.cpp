@@ -23,33 +23,15 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int A, B, C, X, Y;
-//	cin >> A >> B >> C >> X >> Y;
+//	int N, M, X;
+//	cin >> N >> M >> X;
+//	
+//	vector<int> a(M);
+//	for (int i = 0; i < M; i++) cin >> a[i];
 //
-//	lint ans = 0;
-//	if (A + B > 2 * C) {
-//		if (X > Y) { 
-//			ans += 2 * Y * C;
-//			X -= Y;
-//			Y = 0;
-//		}
-//		else {
-//			ans += 2 * X * C;
-//			Y -= X;
-//			X = 0;
-//		}
-//	}
+//	int bnd = lower_bound(a.begin(), a.end(), X) - a.begin();
 //
-//	if (X > 0) {
-//		if (A > 2 * C) ans += 2 * C * X;
-//		else ans += A * X;
-//	}
-//	if (Y > 0) {
-//		if (B > 2 * C) ans += 2 * C * Y;
-//		else ans += B * Y;
-//	}
-//
-//	cout << ans << "\n";
+//	cout << min(bnd, M - bnd) << "\n";
 //
 //	return 0;
 //}

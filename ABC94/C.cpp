@@ -23,33 +23,20 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int A, B, C, X, Y;
-//	cin >> A >> B >> C >> X >> Y;
+//	int N;
+//	cin >> N;
 //
-//	lint ans = 0;
-//	if (A + B > 2 * C) {
-//		if (X > Y) { 
-//			ans += 2 * Y * C;
-//			X -= Y;
-//			Y = 0;
-//		}
-//		else {
-//			ans += 2 * X * C;
-//			Y -= X;
-//			X = 0;
-//		}
-//	}
+//	vector<int> X(N), sX(N);
+//	for (int i = 0; i < N; i++) cin >> X[i];
 //
-//	if (X > 0) {
-//		if (A > 2 * C) ans += 2 * C * X;
-//		else ans += A * X;
-//	}
-//	if (Y > 0) {
-//		if (B > 2 * C) ans += 2 * C * Y;
-//		else ans += B * Y;
-//	}
+//	sX = X;
+//	sort(sX.begin(), sX.end());
+//	int med = sX[(N - 1) / 2];
 //
-//	cout << ans << "\n";
+//	for (int i = 0; i < N; i++) {
+//		if (X[i] <= med) cout << sX[(N + 1) / 2] << "\n";
+//		else cout << med << "\n";
+//	}
 //
 //	return 0;
 //}

@@ -23,5 +23,17 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	int N, X;
+//	cin >> N >> X;
+//
+//	int tmp, m = INF;
+//	for (int i = 0; i < N; i++) {
+//		cin >> tmp;
+//		X -= tmp;
+//		m = min(m, tmp);
+//	}
+//
+//	cout << N + X / m << "\n";
+//
 //	return 0;
 //}

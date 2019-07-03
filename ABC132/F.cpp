@@ -23,33 +23,5 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int A, B, C, X, Y;
-//	cin >> A >> B >> C >> X >> Y;
-//
-//	lint ans = 0;
-//	if (A + B > 2 * C) {
-//		if (X > Y) { 
-//			ans += 2 * Y * C;
-//			X -= Y;
-//			Y = 0;
-//		}
-//		else {
-//			ans += 2 * X * C;
-//			Y -= X;
-//			X = 0;
-//		}
-//	}
-//
-//	if (X > 0) {
-//		if (A > 2 * C) ans += 2 * C * X;
-//		else ans += A * X;
-//	}
-//	if (Y > 0) {
-//		if (B > 2 * C) ans += 2 * C * Y;
-//		else ans += B * Y;
-//	}
-//
-//	cout << ans << "\n";
-//
 //	return 0;
 //}
