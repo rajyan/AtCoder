@@ -37,7 +37,7 @@
 //		rcw[i] = sum - x[i];
 //	}
 //	for (int i = 1; i <= N; i++) {
-//		if (rcw[i] <= rcw[i - 1]) {
+//		if (rcw[i] < rcw[i - 1]) {
 //			rcw[i] = rcw[i - 1];
 //			Midx[i] = Midx[i - 1];
 //		}
@@ -55,7 +55,7 @@
 //
 //	lint ans = rcw[N];
 //	for (int i = 0; i < N; i++) {
-//		ans = max(ans, rcw[i] + ccw[i] - min(x[Midx[i]], (C - x[i + 1])));
+//		ans = max( ans, rcw[i] + ccw[i] - min(x[Midx[i]], (C - x[i + 1])));
 //	}
 //
 //	cout << ans << "\n";
