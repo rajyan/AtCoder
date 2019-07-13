@@ -14,7 +14,7 @@
 //#define DMP(x) ((void)0)
 //#endif
 //
-//const int MOD = 1000000007, INF = 1111111111;
+//const int MOD = 1000000007, INF = 1111111111; 
 //using namespace std;
 //using lint = long long;
 //
@@ -22,40 +22,32 @@
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
-//
+//	
 //	int N;
 //	lint C;
 //	cin >> N >> C;
 //
-//	vector<lint> x(N + 1), v(N + 1);
-//	for (int i = 1; i <= N; i++) cin >> x[i] >> v[i];
+//	vector<lint> x(N), v(N);
+//	for (int i = 0; i < N; i++) cin >> x[i] >> v[i];
 //
-//	vector<lint> rcw(N + 1), Midx(N + 1), ccw(N);
+//	vector<lint> R(N), L(N), cul_R(N + 1), cul_L(N + 1);
 //	lint sum = 0;
-//	for (int i = 1; i <= N; i++) {
-//		sum += v[i];
-//		rcw[i] = sum - x[i];
-//	}
-//	for (int i = 1; i <= N; i++) {
-//		if (rcw[i] < rcw[i - 1]) {
-//			rcw[i] = rcw[i - 1];
-//			Midx[i] = Midx[i - 1];
-//		}
-//		else {
-//			Midx[i] = i;
-//		}
-//	}
-//
-//	sum = 0;
-//
-//	for (int i = N - 1; i >= 0; i--) {
-//		sum += v[i + 1];
-//		ccw[i] = sum - (C - x[i + 1]);
-//	}
-//
-//	lint ans = rcw[N];
 //	for (int i = 0; i < N; i++) {
-//		ans = max( ans, rcw[i] + ccw[i] - min(x[Midx[i]], (C - x[i + 1])));
+//		sum += v[i];
+//		R[i] = sum - x[i];
+//		cul_R[i + 1] = max(R[i], cul_R[i]);
+//	}
+//	sum = 0;
+//	for (int i = N; i --> 0;) {
+//		sum += v[i];
+//		L[i] = sum - (C - x[i]);
+//		cul_L[i] = max(cul_L[i + 1], L[i]);
+//	}
+//
+//	lint ans = max(cul_R[N], cul_L[0]);
+//	for (int i = 0; i < N; i++) {
+//		ans = max(ans, cul_R[i] + L[i] - (C - x[i]));
+//		ans = max(ans, cul_L[i + 1] + R[i] - x[i]);
 //	}
 //
 //	cout << ans << "\n";
