@@ -1,4 +1,3 @@
-//#include <cassert>
 //#include <cstdio>
 //#include <cmath>
 //#include <iostream>
@@ -23,6 +22,14 @@
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
+//
+//	lint N, M;
+//	cin >> N >> M;
+//
+//	if (N > 2 && M > 2) cout << N * M - 2 * (M + N) + 4 << "\n";
+//	else if (N == 2 || M == 2) cout << 0 << "\n";
+//	else if (N == 1 && M == 1)cout << 1 << "\n";
+//	else cout << N * M - 2 << "\n";
 //
 //	return 0;
 //}

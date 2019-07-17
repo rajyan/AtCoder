@@ -1,4 +1,3 @@
-//#include <cassert>
 //#include <cstdio>
 //#include <cmath>
 //#include <iostream>
@@ -23,6 +22,17 @@
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
+//
+//	int A, B;
+//	cin >> A >> B;
+//
+//	int ans = 0;
+//	for (int i = A; i <= B; i++) {
+//
+//		if (i / 10000 == i % 10 && i % 10000 / 1000 == i % 100 / 10) ans++;
+//	}
+//
+//	cout << ans << "\n";
 //
 //	return 0;
 //}
