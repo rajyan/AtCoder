@@ -125,6 +125,8 @@
   <ItemGroup>
     <ClCompile Include="A.cpp" />
     <ClCompile Include="B.cpp" />
+    <ClCompile Include="B_ver2.cpp" />
+    <ClCompile Include="B_ver3.cpp" />
     <ClCompile Include="C.cpp" />
     <ClCompile Include="D.cpp" />
     <ClCompile Include="E.cpp" />
