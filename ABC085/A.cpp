@@ -1,4 +1,4 @@
-#include <cassert>
+//#include <cassert>
 //#include <cstdio>
 //#include <cmath>
 //#include <iostream>
@@ -13,7 +13,7 @@
 //using namespace std;
 //using lint = long long;
 //
-//template <class T>
+//template <typename T>
 //ostream &operator<<(ostream &os, const vector<T> &vec) {
 //	for (int i = 0; i < vec.size(); i++) {
 //		os << vec[i] << (i + 1 == vec.size() ? "" : " ");
@@ -31,13 +31,19 @@
 //}
 //#define DMP(...) dump(#__VA_ARGS__, __VA_ARGS__)
 //#else 
-//#define DMP(...) ((void)0)
+//#define DMP(x) ((void)0)
 //#endif
 //
 //int main() {
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
+//
+//	string S;
+//	cin >> S;
+//	
+//	S[3] = '8';
+//	cout << S << "\n";
 //
 //	return 0;
 //}

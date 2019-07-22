@@ -1,4 +1,4 @@
-//#include <cassert>
+#include <cassert>
 //#include <cstdio>
 //#include <cmath>
 //#include <iostream>
@@ -9,15 +9,30 @@
 //#include <queue>
 //#include <algorithm>
 //
-//#ifdef _DEBUG
-//#define DMP(x) cerr << #x << ": " << x << "\n"
-//#else
-//#define DMP(x) ((void)0)
-//#endif
-//
-//const int MOD = 1000000007, INF = 1111111111; 
+//const int MOD = 1000000007, INF = 1111111111;
 //using namespace std;
 //using lint = long long;
+//
+//template <class T>
+//ostream &operator<<(ostream &os, const vector<T> &vec) {
+//	for (int i = 0; i < vec.size(); i++) {
+//		os << vec[i] << (i + 1 == vec.size() ? "" : " ");
+//	}
+//	return os;
+//}
+//
+//#ifdef _DEBUG
+//template <class Head>
+//void dump(const char* str, Head &&h) { cerr << str << " = " << h << "\n"; };
+//template <class Head, class... Tail>
+//void dump(const char* str, Head &&h, Tail &&... t) {
+//	while (*str != ',') cerr << *str++; cerr << " = " << h << "\n";
+//	dump(str + 1, t...);
+//}
+//#define DMP(...) dump(#__VA_ARGS__, __VA_ARGS__)
+//#else 
+//#define DMP(...) ((void)0)
+//#endif
 //
 //int main() {
 //

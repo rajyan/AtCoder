@@ -1,3 +1,5 @@
+//#define _CRT_SECURE_NO_WARNINGS
+//
 //#include <cstdio>
 //#include <cmath>
 //#include <iostream>
@@ -24,7 +26,7 @@
 //int main() {
 //
 //	int N, M;
-//	scanf_s("%d%d", &N, &M);
+//	scanf("%d%d", &N, &M);
 //
 //	if (M % 2 == 1) {
 //		printf("-1\n");
@@ -36,7 +38,7 @@
 //	vector<vector<int>> edge(N);
 //	vector<int> out(N);
 //	for (int i = 0; i < M; i++) {
-//		scanf_s("%d%d", &u, &v);
+//		scanf("%d%d", &u, &v);
 //		u--, v--;
 //		edge[u].emplace_back(v);
 //		edge[v].emplace_back(u);
@@ -47,47 +49,60 @@
 //
 //	stack<int> que;
 //	vector<int> used(N);
-//	int idx = 2;
+//	int idx = 1;
 //	que.emplace(0);
-//	int fliping = 0;
 //	while (!que.empty()) {
 //		
 //		int now = que.top();
 //		que.pop();
+//
+//		int fliping = out[now];
 //		DMP(now);
 //		DMP(fliping);
+//		
+//		if (!used[now]) used[now] = idx++;
 //
-//		idx++;
-//		used[now] = idx;
-//		if (out[now]) fliping ^= 1;
-//
+//		bool all_used = true;
 //		for (const auto &e : edge[now]) {
-//			if (!used[e] && used[e] != used[now] - 1) {
+//			if (!used[e]) {
 //				dir[minmax(now, e)] ^= fliping;
 //				out[now] ^= fliping;
 //				out[e] ^= fliping;
 //				que.emplace(e);
+//				all_used = false;
+//				break;
 //			}
 //		}
 //
-//		//if (all_used && fliping) {
-//		//	for (const auto &e : edge[now]) {
-//		//		if (used[e] < used[now]) {
-//		//			dir[minmax(now, e)] ^= fliping;
-//		//			out[now] ^= fliping;
-//		//			out[e] ^= fliping;
-//		//			que.emplace(e);
-//		//			all_used = false;
-//		//		}
-//		//	}
-//		//}
+//		if (all_used) {
+//			int max = 0, next = -1;
+//			for (const auto &e : edge[now]) {
+//				if (used[e] < used[now]) {
+//					if (max < used[e]) {
+//						max = used[e];
+//						next = e;
+//					}
+//				}
+//			}
+//
+//			if (next==-1) break;
+//			dir[minmax(now, next)] ^= fliping;
+//			out[now] ^= fliping;
+//			out[next] ^= fliping;
+//			que.emplace(next);
+//
+//		}
+//		
 //	}
 //
 //
 //	for (int i = 0; i < N; i++) {
 //		DMP(out[i]);
+//	}
+//	for (int i = 0; i < N; i++){
 //		DMP(used[i]);
 //	}
+//
 //	for (auto &e : dir) {
 //		if (e.second == 1) printf("%d %d\n", e.first.first + 1, e.first.second + 1);
 //		else printf("%d %d\n", e.first.second + 1, e.first.first + 1);
