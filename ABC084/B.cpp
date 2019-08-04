@@ -23,5 +23,24 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	int A, B;
+//	cin >> A >> B;
+//
+//	string S;
+//	cin >> S;
+//
+//	bool flag = true;
+//	for (int i = 0; i < S.size(); i++) {
+//		if (i == A) {
+//			if (S[i] != '-') flag = false;
+//		}
+//		else {
+//			if (S[i] < '0' || '9' < S[i]) flag = false;
+//		}
+//	}
+//
+//	if (flag) cout << "Yes" << "\n";
+//	else cout << "No" << "\n";
+//
 //	return 0;
 //}
