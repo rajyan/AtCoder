@@ -72,18 +72,25 @@
 //
 //	vector<int> s(N), t(N), c(N);
 //	for (int i = 0; i < N; i++) cin >> s[i] >> t[i] >> c[i];
-//	
-//	vector<int> ans(100001);
+//
+//	vector<vector<int>> memo(30, vector<int>(100000));
 //
 //	for (int i = 0; i < N; i++) {
-//		DMP(N,s[i],t[i]);
-//		ans[s[i]-1] += 1;
-//		ans[t[i]] -= 1;
+//		for (int j = s[i]; j <= t[i]; j++) {
+//			memo[c[i] - 1][j - 1] = 1;
+//		}
 //	}
 //
-//	CuSum<int> ch(ans);
+//	int ans = 0;
+//	for (int j = 0; j < 100000; j++) {
+//		int tmp = 0;
+//		for (int i = 0; i < 30; i++) {
+//			tmp += memo[i][j];
+//		}
+//		ans = max(ans, tmp);
+//	}
 //
-//	cout << *max_element(ch.begin(), ch.end()) << "\n";
+//	cout << ans << "\n";
 //
 //	return 0;
 //}

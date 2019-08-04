@@ -9,7 +9,7 @@
 //#include <queue>
 //#include <algorithm>
 //
-//const int MOD = 1000000007, INF = 1111111111;
+//const int MOD = 1000000007, INF = (1LL<<62);
 //using namespace std;
 //using lint = long long;
 //
@@ -38,15 +38,14 @@
 //class CuSum {
 //private:
 //	vector<T> cusum;
-//	int len = 0;
 //public:
 //	// Constructors 
-//	CuSum(vector<T> const &vec) : len(vec.size()), cusum(vec.size() + 1) {
-//		for (int i = 0; i < len; i++) cusum[i + 1] = cusum[i] + vec[i];
+//	CuSum(vector<T> const &vec) : cusum(vec.size() + 1) {
+//		for (int i = 0; i < vec.size(); i++) cusum[i + 1] = cusum[i] + vec[i];
 //	}
-//	CuSum(int N) : len(N), cusum(N + 1) {}
+//	CuSum(int N) : cusum(N + 1) {}
 //	void add(int i, T x) { cusum[i + 1] += x; }
-//	void init() { for (int i = 0; i < len; i++) cusum[i + 1] += cusum[i]; }
+//	void init() { for (int i = 0; i < cusum.size() - 1; i++) cusum[i + 1] += cusum[i]; }
 //
 //	// partial sum of 0-indexed [l, r] 
 //	T operator()(int l, int r) {
@@ -58,8 +57,8 @@
 //	}
 //	// 0-indexed
 //	T operator[](int i) { return cusum[i + 1]; }
+//	T back() { return cusum.back(); }
 //	auto begin() { return cusum.begin(); }
-//	auto end() { return cusum.end(); }
 //};
 //
 //int main() {
@@ -67,23 +66,48 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int N, C;
-//	cin >> N >> C;
+//	int N;
+//	cin >> N;
 //
-//	vector<int> s(N), t(N), c(N);
-//	for (int i = 0; i < N; i++) cin >> s[i] >> t[i] >> c[i];
-//	
-//	vector<int> ans(100001);
+//	vector<lint> A(N);
+//	for (int i = 0; i < N; i++) cin >> A[i];
 //
-//	for (int i = 0; i < N; i++) {
-//		DMP(N,s[i],t[i]);
-//		ans[s[i]-1] += 1;
-//		ans[t[i]] -= 1;
+//	CuSum<lint> sufA(A);
+//
+//	auto judge = [&](int mid, int &key, int l, int r) {
+//
+//		bool flag = true;
+//		if (abs(sufA(l, mid) - sufA(mid+1, r)) < key) {
+//			key = abs(sufA(l, mid) - sufA(mid+1, r));
+//		}
+//		else flag = false;
+//
+//		return flag;
+//	};
+//
+//	auto biSearch = [&](auto f, int key, int l, int r) {
+//		int ng = -1;
+//		int ok = r - l + 1;
+//
+//		while (abs(ok - ng) > 1) {
+//			int mid = (ok + ng) / 2;
+//			DMP(mid, key, l, r);
+//			if (f(mid, key, l, r)) ok = mid;
+//			else ng = mid;
+//		}
+//
+//		return ok;
+//	};
+//
+//	lint ans = INF;
+//	for (int center = 1; center < N-1; center++) {
+//		auto cut1 = biSearch(judge, INF, 0, center);
+//		auto cut2 = biSearch(judge, INF, center + 1, N - 1);
+//		auto tmp = minmax({ sufA(0, cut1), sufA(cut1 + 1, center), sufA(center + 1, cut2), sufA(cut2 + 1, N - 1) });
+//		ans = min(ans, tmp.second - tmp.first);
 //	}
 //
-//	CuSum<int> ch(ans);
-//
-//	cout << *max_element(ch.begin(), ch.end()) << "\n";
+//	cout << ans << "\n";
 //
 //	return 0;
 //}
