@@ -21,6 +21,7 @@
 //	return os;
 //}
 //
+
 //#ifdef _DEBUG
 //template <class Head>
 //void dump(const char* str, Head &&h) { cerr << str << " = " << h << "\n"; };
@@ -33,11 +34,39 @@
 //#else 
 //#define DMP(...) ((void)0)
 //#endif
+
 //
 //int main() {
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
+//
+//	int N, K;
+//	cin >> N >> K;
+//	
+//	map<int, int> mp;
+//	int tmp;
+//	for (int i = 0; i < N; i++) {
+//		cin >> tmp;
+//		mp[tmp]++;
+//	}
+//
+//	if (mp.size() <= K) cout << 0 << "\n";
+//	else {
+//		
+//		vector<int> mem;
+//		mem.reserve(mp.size());
+//		for (const auto &e : mp) mem.emplace_back(e.second);
+//		sort(mem.begin(), mem.end());
+//
+//		int ans = 0;
+//		for (int i = 0; i < mp.size() -K; i++) {
+//			ans += mem[i];
+//		}
+//
+//		cout << ans << "\n";
+//	}
+//
 //
 //	return 0;
 //}

@@ -34,6 +34,17 @@
 //#define DMP(...) ((void)0)
 //#endif
 //
+//#ifdef _DEBUG
+//#define DMP(x) cerr << #x << ": " << x << "\n"
+//#else
+//#define DMP(x) ((void)0)
+//#endif
+//
+//const int MOD = 1000000007, INF = 1111111111; 
+//using namespace std;
+//typedef long long lint;
+//
+
 //int main() {
 //
 //	cin.tie(nullptr);

@@ -13,7 +13,7 @@
 //using namespace std;
 //using lint = long long;
 //
-//template <typename T>
+//template <class T>
 //ostream &operator<<(ostream &os, const vector<T> &vec) {
 //	for (int i = 0; i < vec.size(); i++) {
 //		os << vec[i] << (i + 1 == vec.size() ? "" : " ");
@@ -21,7 +21,6 @@
 //	return os;
 //}
 //
-
 //#ifdef _DEBUG
 //template <class Head>
 //void dump(const char* str, Head &&h) { cerr << str << " = " << h << "\n"; };
@@ -34,34 +33,23 @@
 //#else 
 //#define DMP(...) ((void)0)
 //#endif
-
 //
 //int main() {
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int N;
+//	lint N;
 //	cin >> N;
 //
-//	vector<int> a(N);
-//	for (int i = 0; i < N; i++) cin >> a[i];
-//	DMP(a);
-//
-//	int ans = INF;
-//	for (int i = 0; i < N; i++) {
-//
-//		int tmp = 0;
-//		while (a[i]) {
-//			DMP(a[i], !(ans & 1));
-//			if (!(a[i] & 1)) tmp++;
-//			else break;
-//			a[i] >>= 1;
-//		}
-//		ans = min(ans, tmp);
+//	lint sum = 0, tmp = N;
+//	while (tmp) {
+//		sum += tmp % 10;
+//		tmp /= 10;
 //	}
 //
-//	cout << ans << "\n";
+//	if (N%sum == 0) cout << "Yes" << "\n";
+//	else cout << "No" << "\n";
 //
 //	return 0;
 //}
