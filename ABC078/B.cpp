@@ -23,5 +23,10 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	int X, Y, Z;
+//	cin >> X >> Y >> Z;
+//
+//	cout << (X - Z) / (Y + Z) << "\n";
+//
 //	return 0;
 //}
