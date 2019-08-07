@@ -21,7 +21,7 @@
 //	return os;
 //}
 //
-//#ifdef _DEBUG
+//#ifdef _DEBUG2
 //template <class Head>
 //void dump(const char* str, Head &&h) { cerr << str << " = " << h << "\n"; };
 //template <class Head, class... Tail>
@@ -39,19 +39,24 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int N, Z, W;
-//	cin >> N >> Z >> W;
+//	lint N;
+//	cin >> N;
 //
-//	vector<int> a(N), culmax(N + 1), culmin(N + 1, INF);
-//	for (int i = 0; i < N; i++) cin >> a[i];
-//	for (int i = 0; i < N; i++) culmax[i + 1] = max(a[i], culmax[i]);
-//	for (int i = N - 1; i >= 0; i--) culmin[i] = min(a[i], culmin[i + 1]);
-//	culmax[0] = Z, culmin[N] = W;
+//	vector<int> A(N), B(N), C(N);
+//	for (int i = 0; i < N; i++) cin >> A[i];
+//	for (int i = 0; i < N; i++) cin >> B[i];
+//	for (int i = 0; i < N; i++) cin >> C[i];
 //
-//	DMP(culmax, culmin);
+//	sort(A.begin(), A.end());
+//	sort(B.begin(), B.end());
+//	sort(C.begin(), C.end());
 //
-//	int ans = 0;
-//	for (int i = 0; i <= N; i++) ans = max(ans, abs(culmax[i] - culmin[i]));
+//	vector<lint> memo(N + 1);
+//	for (int i = 0; i < N; i++) memo[i] = N - (upper_bound(C.begin(), C.end(), B[i]) - C.begin());
+//	for (int i = N - 1; i >= 1; i--) memo[i - 1] += memo[i];
+//
+//	lint ans = 0;
+//	for (int i = 0; i < N; i++) ans += memo[(upper_bound(B.begin(), B.end(), A[i]) - B.begin())];
 //
 //	cout << ans << "\n";
 //

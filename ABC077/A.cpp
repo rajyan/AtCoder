@@ -15,7 +15,7 @@
 //
 //template <class T>
 //ostream &operator<<(ostream &os, const vector<T> &vec) {
-//	for (int i = 0; i < (int)vec.size(); i++) {
+//	for (int i = 0; i < vec.size(); i++) {
 //		os << vec[i] << (i + 1 == vec.size() ? "" : " ");
 //	}
 //	return os;
@@ -39,21 +39,13 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int N, Z, W;
-//	cin >> N >> Z >> W;
+//	string s1, s2;
+//	cin >> s1 >> s2;
 //
-//	vector<int> a(N), culmax(N + 1), culmin(N + 1, INF);
-//	for (int i = 0; i < N; i++) cin >> a[i];
-//	for (int i = 0; i < N; i++) culmax[i + 1] = max(a[i], culmax[i]);
-//	for (int i = N - 1; i >= 0; i--) culmin[i] = min(a[i], culmin[i + 1]);
-//	culmax[0] = Z, culmin[N] = W;
+//	reverse(s2.begin(), s2.end());
 //
-//	DMP(culmax, culmin);
-//
-//	int ans = 0;
-//	for (int i = 0; i <= N; i++) ans = max(ans, abs(culmax[i] - culmin[i]));
-//
-//	cout << ans << "\n";
+//	if (s1 == s2) cout << "YES" << "\n";
+//	else cout << "NO" << "\n";
 //
 //	return 0;
 //}
