@@ -42,28 +42,14 @@
 //	int N;
 //	cin >> N;
 //
-//	vector<vector<int>> d(N, vector<int>(N));
-//	for (int i = 0; i < N; i++)
-//		for (int j = 0; j < N; j++) cin >> d[i][j];
-//
-//	bool flag = true;
 //	lint ans = 0;
+//	int l, r;
 //	for (int i = 0; i < N; i++) {
-//		for (int j = i + 1; j < N; j++) {
-//
-//			bool edge = true;
-//			for (int k = 0; k < N; k++) {
-//				if (i == k || j == k) continue;
-//				if (d[i][j] > d[i][k] + d[k][j]) flag = false;
-//				if (d[i][j] == d[i][k] + d[k][j]) edge = false;
-//			}
-//
-//			if (edge) ans += d[i][j];
-//		}
+//		cin >> l >> r;
+//		ans += r - l + 1;
 //	}
 //
-//	if (flag) cout << ans << "\n";
-//	else cout << -1 << "\n";
+//	cout << ans << "\n";
 //
 //	return 0;
 //}

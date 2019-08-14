@@ -39,31 +39,21 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int N;
-//	cin >> N;
+//	string S;
+//	cin >> S;
 //
-//	vector<vector<int>> d(N, vector<int>(N));
-//	for (int i = 0; i < N; i++)
-//		for (int j = 0; j < N; j++) cin >> d[i][j];
-//
-//	bool flag = true;
-//	lint ans = 0;
-//	for (int i = 0; i < N; i++) {
-//		for (int j = i + 1; j < N; j++) {
-//
-//			bool edge = true;
-//			for (int k = 0; k < N; k++) {
-//				if (i == k || j == k) continue;
-//				if (d[i][j] > d[i][k] + d[k][j]) flag = false;
-//				if (d[i][j] == d[i][k] + d[k][j]) edge = false;
-//			}
-//
-//			if (edge) ans += d[i][j];
+//	for (char c = 'a'; c <= 'z'; c++) {
+//		bool flag = true;
+//		for (int i = 0; i < S.size(); i++) {
+//			if (S[i] == c) flag = false;
+//		}
+//		if (flag) {
+//			cout << c << "\n";
+//			return 0;
 //		}
 //	}
 //
-//	if (flag) cout << ans << "\n";
-//	else cout << -1 << "\n";
-//
+//	cout << "None\n";
 //	return 0;
+//
 //}

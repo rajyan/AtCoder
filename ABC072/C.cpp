@@ -42,28 +42,16 @@
 //	int N;
 //	cin >> N;
 //
-//	vector<vector<int>> d(N, vector<int>(N));
-//	for (int i = 0; i < N; i++)
-//		for (int j = 0; j < N; j++) cin >> d[i][j];
-//
-//	bool flag = true;
-//	lint ans = 0;
+//	map<int, int> mp;
+//	int a;
 //	for (int i = 0; i < N; i++) {
-//		for (int j = i + 1; j < N; j++) {
-//
-//			bool edge = true;
-//			for (int k = 0; k < N; k++) {
-//				if (i == k || j == k) continue;
-//				if (d[i][j] > d[i][k] + d[k][j]) flag = false;
-//				if (d[i][j] == d[i][k] + d[k][j]) edge = false;
-//			}
-//
-//			if (edge) ans += d[i][j];
-//		}
+//		cin >> a;
+//		a++;
+//		mp[a - 1]++; mp[a]++, mp[a + 1]++;
 //	}
 //
-//	if (flag) cout << ans << "\n";
-//	else cout << -1 << "\n";
+//	cout << max_element(mp.begin(), mp.end(),
+//			[](auto r, auto l) {return r.second < l.second; }) -> second << "\n";
 //
 //	return 0;
 //}

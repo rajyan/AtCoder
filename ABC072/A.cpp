@@ -39,31 +39,10 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int N;
-//	cin >> N;
+//	int x, t;
+//	cin >> x >> t;
 //
-//	vector<vector<int>> d(N, vector<int>(N));
-//	for (int i = 0; i < N; i++)
-//		for (int j = 0; j < N; j++) cin >> d[i][j];
-//
-//	bool flag = true;
-//	lint ans = 0;
-//	for (int i = 0; i < N; i++) {
-//		for (int j = i + 1; j < N; j++) {
-//
-//			bool edge = true;
-//			for (int k = 0; k < N; k++) {
-//				if (i == k || j == k) continue;
-//				if (d[i][j] > d[i][k] + d[k][j]) flag = false;
-//				if (d[i][j] == d[i][k] + d[k][j]) edge = false;
-//			}
-//
-//			if (edge) ans += d[i][j];
-//		}
-//	}
-//
-//	if (flag) cout << ans << "\n";
-//	else cout << -1 << "\n";
+//	cout << max(x - t, 0) << "\n";
 //
 //	return 0;
 //}

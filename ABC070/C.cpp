@@ -34,6 +34,8 @@
 //#define DMP(...) ((void)0)
 //#endif
 //
+//lint gcd(lint a, lint b) { return b ? gcd(b, a%b) : a; }
+//
 //int main() {
 //
 //	cin.tie(nullptr);
@@ -42,28 +44,15 @@
 //	int N;
 //	cin >> N;
 //
-//	vector<vector<int>> d(N, vector<int>(N));
-//	for (int i = 0; i < N; i++)
-//		for (int j = 0; j < N; j++) cin >> d[i][j];
+//	vector<lint> T(N);
+//	for (int i = 0; i < N; i++) cin >> T[i];
 //
-//	bool flag = true;
-//	lint ans = 0;
+//	lint mul = 1;
 //	for (int i = 0; i < N; i++) {
-//		for (int j = i + 1; j < N; j++) {
-//
-//			bool edge = true;
-//			for (int k = 0; k < N; k++) {
-//				if (i == k || j == k) continue;
-//				if (d[i][j] > d[i][k] + d[k][j]) flag = false;
-//				if (d[i][j] == d[i][k] + d[k][j]) edge = false;
-//			}
-//
-//			if (edge) ans += d[i][j];
-//		}
+//		mul = mul / gcd(mul, T[i]) * T[i];
 //	}
 //
-//	if (flag) cout << ans << "\n";
-//	else cout << -1 << "\n";
+//	cout << mul << "\n";
 //
 //	return 0;
 //}

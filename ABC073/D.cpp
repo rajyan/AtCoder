@@ -9,7 +9,8 @@
 //#include <queue>
 //#include <algorithm>
 //
-//const int MOD = 1000000007, INF = 1111111111;
+//const int MOD = 1000000007;
+//const int INF = 1111111111;
 //using namespace std;
 //using lint = long long;
 //
@@ -18,6 +19,7 @@
 //	for (int i = 0; i < (int)vec.size(); i++) {
 //		os << vec[i] << (i + 1 == vec.size() ? "" : " ");
 //	}
+//	os << "\n";
 //	return os;
 //}
 //
@@ -39,31 +41,47 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int N;
-//	cin >> N;
+//	int N, M, R;
+//	cin >> N >> M >> R;
 //
-//	vector<vector<int>> d(N, vector<int>(N));
-//	for (int i = 0; i < N; i++)
-//		for (int j = 0; j < N; j++) cin >> d[i][j];
+//	vector<int> r(R);
+//	for (int i = 0; i < R; i++) {
+//		cin >> r[i];
+//		r[i]--;
+//	}
 //
-//	bool flag = true;
-//	lint ans = 0;
-//	for (int i = 0; i < N; i++) {
-//		for (int j = i + 1; j < N; j++) {
+//	vector<vector<int>> d(N, vector<int>(N, INF));
+//	for (int i = 0; i < N; i++) d[i][i] = 0;
+//	
+//	for (int i = 0; i < M; i++) {
+//		int a, b, c;
+//		cin >> a >> b >> c;
+//		a--, b--;
+//		d[a][b] = c;
+//		d[b][a] = c;
+//	}
 //
-//			bool edge = true;
-//			for (int k = 0; k < N; k++) {
-//				if (i == k || j == k) continue;
-//				if (d[i][j] > d[i][k] + d[k][j]) flag = false;
-//				if (d[i][j] == d[i][k] + d[k][j]) edge = false;
+//	for (int k = 0; k < N; k++) {
+//		for (int i = 0; i < N; i++) {
+//			for (int j = 0; j < N; j++) {
+//				if (d[i][k] != INF && d[k][j] != INF) {
+//					d[i][j] = min(d[i][j], d[i][k] + d[k][j]);
+//				}
 //			}
-//
-//			if (edge) ans += d[i][j];
 //		}
 //	}
 //
-//	if (flag) cout << ans << "\n";
-//	else cout << -1 << "\n";
+//	sort(r.begin(), r.end());
+//	int ans = INF;
+//	do {
+//
+//		int tmp = 0;
+//		for (int i = 0; i < R - 1; i++) tmp += d[r[i]][r[i + 1]];
+//		ans = min(ans, tmp);
+//
+//	} while (next_permutation(r.begin(), r.end()));
+//
+//	cout << ans << "\n";
 //
 //	return 0;
 //}

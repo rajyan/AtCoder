@@ -41,29 +41,24 @@
 //
 //	int N;
 //	cin >> N;
+//	
+//	vector<int> p(N);
+//	for (int i = 0; i < N; i++) cin >> p[i];
 //
-//	vector<vector<int>> d(N, vector<int>(N));
-//	for (int i = 0; i < N; i++)
-//		for (int j = 0; j < N; j++) cin >> d[i][j];
+//	vector<int> flag(N);
+//	for (int i = 0; i < N; i++) flag[i] = (p[i] == i + 1);
 //
-//	bool flag = true;
-//	lint ans = 0;
-//	for (int i = 0; i < N; i++) {
-//		for (int j = i + 1; j < N; j++) {
-//
-//			bool edge = true;
-//			for (int k = 0; k < N; k++) {
-//				if (i == k || j == k) continue;
-//				if (d[i][j] > d[i][k] + d[k][j]) flag = false;
-//				if (d[i][j] == d[i][k] + d[k][j]) edge = false;
-//			}
-//
-//			if (edge) ans += d[i][j];
+//	flag.emplace_back(0); //”Ô•º
+//	int ans = 0, cnt = 0;
+//	for (int i = 0; i <= N; i++) {
+//		if (flag[i]) cnt++;
+//		else {
+//			if (cnt) ans += max(1, (cnt + 1) / 2);
+//			cnt = 0;
 //		}
 //	}
 //
-//	if (flag) cout << ans << "\n";
-//	else cout << -1 << "\n";
+//	cout << ans << "\n";
 //
 //	return 0;
 //}
