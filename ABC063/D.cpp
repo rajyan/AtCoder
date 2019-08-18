@@ -32,8 +32,8 @@
 //}
 //
 //#ifdef _DEBUG
-//template <class T>
-//void dump(const char* str, T &&h) { cerr << str << " = " << h << "\n"; };
+//template <class Head>
+//void dump(const char* str, Head &&h) { cerr << str << " = " << h << "\n"; };
 //template <class Head, class... Tail>
 //void dump(const char* str, Head &&h, Tail &&... t) {
 //	while (*str != ',') cerr << *str++; cerr << " = " << h << "\n";
@@ -48,6 +48,42 @@
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
+//
+//	lint N, A, B;
+//	cin >> N >> A >> B;
+//
+//	vector<lint> h(N);
+//	for (int i = 0; i < N; i++) cin >> h[i];
+//	sort(h.begin(), h.end());
+//
+//	auto biSearch = [&](auto f) {
+//		lint ng = -1;
+//		lint ok = h.back();
+//
+//		while (abs(ok - ng) > 1) {
+//			lint mid = (ok + ng) / 2;
+//
+//			if (f(mid)) ok = mid;
+//			else ng = mid;
+//		}
+//
+//		return ok;
+//	};
+//
+//	auto judge = [&](int idx) {
+//
+//		lint ex = 0;
+//		for (int i = 0; i < N; i++) {
+//			if (h[i] - B * idx > 0) ex += (h[i] - B * idx - 1) / (A - B) + 1;
+//			DMP(ex);
+//		}
+//
+//		DMP(idx, ex);
+//		return ex <= idx;
+//
+//	};
+//
+//	cout << biSearch(judge) << "\n";
 //
 //	return 0;
 //}

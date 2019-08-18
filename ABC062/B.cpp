@@ -49,5 +49,22 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	int H, W;
+//	cin >> H >> W;
+//
+//	vector<string> grid(H);
+//	for (int i = 0; i < H; i++) cin >> grid[i];
+//
+//	cout << string(W + 2, '#') << "\n"; 
+//	for (int i = 0; i < H; i++) {
+//
+//		cout << '#';
+//		for (int j = 0; j < W; j++) cout << grid[i][j];
+//		cout << "#\n";
+//
+//	}
+//	cout << string(W + 2, '#') << "\n";
+//
+//
 //	return 0;
 //}

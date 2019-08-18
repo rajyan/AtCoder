@@ -49,5 +49,12 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	vector<int> ord{ -1, 1, 3, 1, 2, 1, 2, 1, 1, 2, 1, 2, 1 };
+//	int x, y;
+//	cin >> x >> y;
+//
+//	if (ord[x] == ord[y]) cout << "Yes" << "\n";
+//	else cout << "No" << "\n";
+//
 //	return 0;
 //}

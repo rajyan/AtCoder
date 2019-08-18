@@ -11,7 +11,8 @@
 //
 //using namespace std;
 //using lint = long long;
-//constexpr int MOD = 1000000007, INF = 1111111111;
+//constexpr int MOD = 1000000007;
+//constexpr lint LINF = 1111111111;
 //
 //template <class T>
 //ostream &operator<<(ostream &os, const vector<T> &vec) {
@@ -44,10 +45,35 @@
 //#define DMP(...) ((void)0)
 //#endif
 //
+//template<class T>
+//inline bool chmin(T &a, T b) { return a > b && (a = b, true); }
+//
 //int main() {
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
+//
+//	lint H, W;
+//	cin >> H >> W;
+//
+//	lint ans = LINF;
+//	if (H % 3 == 0 || W % 3 == 0) ans = 0;
+//	else {
+//		
+//		for (int i = 1; i < H; i++) {
+//			auto mM = minmax({ W * i, ((W + 1) / 2) * (H - i), (W / 2) * (H - i) });
+//			chmin(ans, mM.second - mM.first);
+//		}
+//		for (int i = 1; i < W; i++) {
+//			auto mM = minmax({ H * i, ((H + 1) / 2) * (W - i), (H / 2) * (W - i) });
+//			chmin(ans, mM.second - mM.first);
+//		}
+//
+//		chmin(ans, min(H, W));
+//
+//	}
+//
+//	cout << ans << "\n";
 //
 //	return 0;
 //}
