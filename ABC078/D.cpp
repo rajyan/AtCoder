@@ -41,19 +41,11 @@
 //
 //	int N, Z, W;
 //	cin >> N >> Z >> W;
-//
-//	vector<int> a(N), culmax(N + 1), culmin(N + 1, INF);
+//	
+//	vector<lint> a(N);
 //	for (int i = 0; i < N; i++) cin >> a[i];
-//	for (int i = 0; i < N; i++) culmax[i + 1] = max(a[i], culmax[i]);
-//	for (int i = N - 1; i >= 0; i--) culmin[i] = min(a[i], culmin[i + 1]);
-//	culmax[0] = Z, culmin[N] = W;
 //
-//	DMP(culmax, culmin);
-//
-//	int ans = 0;
-//	for (int i = 0; i <= N; i++) ans = max(ans, abs(culmax[i] - culmin[i]));
-//
-//	cout << ans << "\n";
+//	cout << max(abs(W - a[N - 1]), N > 1 ? abs(a[N - 1] - a[N - 2]): 0) << "\n";
 //
 //	return 0;
 //}

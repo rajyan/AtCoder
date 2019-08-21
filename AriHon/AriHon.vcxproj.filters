@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Section1">
+      <UniqueIdentifier>{49bc62c8-661a-419a-9f51-c024f5e20ade}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Section2">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="B.cpp">
+      <Filter>Section2</Filter>
+    </ClCompile>
+    <ClCompile Include="C.cpp">
+      <Filter>Section2</Filter>
+    </ClCompile>
+    <ClCompile Include="D.cpp">
+      <Filter>Section2</Filter>
+    </ClCompile>
+    <ClCompile Include="E.cpp">
+      <Filter>Section2</Filter>
+    </ClCompile>
+    <ClCompile Include="F.cpp">
+      <Filter>Section2</Filter>
+    </ClCompile>
+    <ClCompile Include="JOI2007_C.cpp">
+      <Filter>Section1</Filter>
+    </ClCompile>
+    <ClCompile Include="dfs_example.cpp">
+      <Filter>Section2</Filter>
+    </ClCompile>
+    <ClCompile Include="ARC004-A.cpp">
+      <Filter>Section1</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

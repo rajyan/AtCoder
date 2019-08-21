@@ -9,10 +9,9 @@
 //#include <queue>
 //#include <algorithm>
 //
-//
-//const int MOD = 1000000007, INF = 1111111111;
 //using namespace std;
-//typedef long long lint;
+//using lint = long long;
+//constexpr int MOD = 1000000007, INF = 1111111111;
 //
 //template <class T>
 //ostream &operator<<(ostream &os, const vector<T> &vec) {
@@ -50,31 +49,36 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int N;
-//	cin >> N;
+//	int N, M;
+//	cin >> N >> M;
 //
-//	vector<pair<int, int>> a(N);
-//	for (int i = 0; i < N; i++) {
-//		cin >> a[i].first;
-//		a[i].second = i;
+//	vector<lint> P(N + 1);
+//	for (int i = 1; i <= N; i++) cin >> P[i];
+//
+//	// 0, 1, 2‰ñ“Š‚°‚½‚Æ‚«‚Éæ‚è‚¤‚é“_”
+//	vector<lint> PP;
+//	PP.reserve((N + 1) * (N + 1));
+//	for (int i = 0; i <= N; i++) {
+//		for (int j = 0; j <= N; j++) {
+//			PP.emplace_back(P[i] + P[j]);
+//		}
 //	}
-//	
-//	auto b = a;
-//	sort(b.begin(), b.end());
-//	DMP(a, b);
+//	sort(PP.begin(), PP.end());
+//	PP.erase(unique(PP.begin(), PP.end()), PP.end());
+//	DMP(PP);
 //
-//	vector<int> idx(N);
-//	for (int i = 0; i < N; i++) idx[b[i].second] = i;
-//
-//	vector<pair<int, int>> ans;
-//	for (int i = 0; i < N; i++) {
-//		if (idx[a[i].second] != i) ans.emplace_back(i, idx[a[i].second]);
-//		swap(a[i], a[idx[a[i].second]]);
+//	lint ans = 0;
+//	// 0-4‰ñ“Š‚°‚½‚Éæ‚è‚¤‚é“_”
+//	for (const auto &e : PP) {
+//		auto bound = lower_bound(PP.begin(), PP.end(), M - e);
+//		if (bound != PP.begin() && bound != PP.end()) {
+//			ans = max(ans, e + *(--bound));
+//			DMP(e, *bound);
+//			assert(ans <= M);
+//		}
 //	}
-//	assert(a == b);
 //
-//	cout << ans.size() << "\n";
-//	for (const auto &e : ans) cout << e.first + 1 << " " << e.second + 1 << "\n";
+//	cout << ans << "\n";
 //
 //	return 0;
 //}

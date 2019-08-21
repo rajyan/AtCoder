@@ -1,3 +1,4 @@
+//#include <cassert>
 //#include <cstdio>
 //#include <cmath>
 //#include <iostream>
@@ -8,19 +9,40 @@
 //#include <queue>
 //#include <algorithm>
 //
-//#include <random>
-//#include <chrono>
-//
-//#ifdef _DEBUG
-//#define DMP(x) cerr << #x << ": " << x << "\n"
-//#else
-//#define DMP(x) ((void)0)
-//#endif
-//
-//const int MOD = 1000000007, INF = 1111111111;
 //using namespace std;
 //using lint = long long;
+//constexpr int MOD = 1000000007, INF = 1111111111;
 //
+//template <class T>
+//ostream &operator<<(ostream &os, const vector<T> &vec) {
+//	for (const auto &e : vec) os << e << (&e == &vec.back() ? "" : " ");
+//	return os;
+//}
+//
+//template <class T1, class T2>
+//ostream &operator<<(ostream &os, const pair<T1, T2> &p) {
+//	os << p.first << " " << p.second;
+//	return os;
+//}
+//
+//template <class T1, class T2>
+//ostream &operator<<(ostream &os, const map<T1, T2> &mp) {
+//	for (const auto &e : mp) os << "[" << e << "] ";
+//	return os;
+//}
+//
+//#ifdef _DEBUG
+//template <class T>
+//void dump(const char* str, T &&h) { cerr << str << " = " << h << "\n"; };
+//template <class Head, class... Tail>
+//void dump(const char* str, Head &&h, Tail &&... t) {
+//	while (*str != ',') cerr << *str++; cerr << " = " << h << "\n";
+//	dump(str + (*(str + 1) == ' ' ? 2 : 1), t...);
+//}
+//#define DMP(...) dump(#__VA_ARGS__, __VA_ARGS__)
+//#else 
+//#define DMP(...) ((void)0)
+//#endif
 //
 //template<int Modulo = MOD> struct Mint {
 //	lint val;
@@ -85,60 +107,23 @@
 //
 //using mint = Mint<>;
 //
-//lint powmod(lint a, lint n, lint mod) {
-//	lint res = 1;
-//	while (n > 0) {
-//		if (n & 1) res = res * a % mod;
-//		a = a * a % mod;
-//		n >>= 1;
-//	}
-//	return res;
-//}
-//
-//struct RandNum {
-//
-//	mt19937 mt;
-//	RandNum() : mt(chrono::steady_clock::now().time_since_epoch().count()) {}
-//
-//	lint operator()(lint a, lint b) {
-//		uniform_int_distribution<lint> dist(a, b);
-//		return dist(mt);
-//	}	
-//	lint operator()(lint b) { return (*this)(0LL, b); }
-//
-//	template<class Ite>
-//	void shuf(Ite first, Ite last) { shuffle(first, last, mt); }
-//
-//};
-//
 //int main() {
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
-//	vector<mint> Yah(3,1000000008);
-//	cout << Yah[0];
-//	mint q;
-//	cin >> q;
-//	cout << q << "\n";
-//	cout << modpow(mint(2), 10) << "\n";
-//	lint W, H, x, y;
-//	cin >> W >> H >> x >> y;
 //
-//	RandNum ran;
-//	cout << ran(-1,10000000000) << "\n";
-//	cout << ran(-1.0,10000000000.0) << "\n";
-//	
-//	vector<int> a(5);
-//	for (int i = 0; i < 5; i++) {
-//		a[i] = ran(10);
-//		cout << a[i] << " ";
-//	}
-//	cout << "\n";
+//	lint L, R;
+//	cin >> L >> R;
 //
-//	ran.shuf(a.begin(), a.end());
-//	for (int i = 0; i < 5; i++) {
-//		cout << a[i] << " ";
-//	}
+//	//for (int i = 1; i <= R; i++) {
+//	//	for (int j = 1; j <= R; j++) {
+//	//		if ((i^j) == i % j) cout << 1 << " ";
+//	//		else cout << 0 << " ";
+//	//	}
+//	//	cout << "\n";
+//	//}
+//
+//	vector<int>
 //
 //	return 0;
 //}

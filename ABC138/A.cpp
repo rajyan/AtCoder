@@ -9,10 +9,9 @@
 //#include <queue>
 //#include <algorithm>
 //
-//
-//const int MOD = 1000000007, INF = 1111111111;
 //using namespace std;
-//typedef long long lint;
+//using lint = long long;
+//constexpr int MOD = 1000000007, INF = 1111111111;
 //
 //template <class T>
 //ostream &operator<<(ostream &os, const vector<T> &vec) {
@@ -50,31 +49,13 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int N;
-//	cin >> N;
+//	int a;
+//	cin >> a;
+//	string s;
+//	cin >> s;
 //
-//	vector<pair<int, int>> a(N);
-//	for (int i = 0; i < N; i++) {
-//		cin >> a[i].first;
-//		a[i].second = i;
-//	}
-//	
-//	auto b = a;
-//	sort(b.begin(), b.end());
-//	DMP(a, b);
-//
-//	vector<int> idx(N);
-//	for (int i = 0; i < N; i++) idx[b[i].second] = i;
-//
-//	vector<pair<int, int>> ans;
-//	for (int i = 0; i < N; i++) {
-//		if (idx[a[i].second] != i) ans.emplace_back(i, idx[a[i].second]);
-//		swap(a[i], a[idx[a[i].second]]);
-//	}
-//	assert(a == b);
-//
-//	cout << ans.size() << "\n";
-//	for (const auto &e : ans) cout << e.first + 1 << " " << e.second + 1 << "\n";
+//	if (a < 3200) cout << "red" << "\n";
+//	else cout << s << "\n";
 //
 //	return 0;
 //}

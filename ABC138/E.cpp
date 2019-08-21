@@ -9,10 +9,9 @@
 //#include <queue>
 //#include <algorithm>
 //
-//
-//const int MOD = 1000000007, INF = 1111111111;
 //using namespace std;
-//typedef long long lint;
+//using lint = long long;
+//constexpr int MOD = 1000000007, INF = 1111111111;
 //
 //template <class T>
 //ostream &operator<<(ostream &os, const vector<T> &vec) {
@@ -50,31 +49,39 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int N;
-//	cin >> N;
+//	vector<vector<int>> alpha(26);
+//	string s, t;
+//	cin >> s >> t;
 //
-//	vector<pair<int, int>> a(N);
-//	for (int i = 0; i < N; i++) {
-//		cin >> a[i].first;
-//		a[i].second = i;
+//	for (int i = 0; i < s.size(); i++) {
+//		alpha[s[i] - 'a'].emplace_back(i + 1);
 //	}
-//	
-//	auto b = a;
-//	sort(b.begin(), b.end());
-//	DMP(a, b);
 //
-//	vector<int> idx(N);
-//	for (int i = 0; i < N; i++) idx[b[i].second] = i;
+//	DMP(alpha);
+//	int pre = 0;
+//	lint ans = 0;
+//	for (int i = 0; i < t.size(); i++) {
 //
-//	vector<pair<int, int>> ans;
-//	for (int i = 0; i < N; i++) {
-//		if (idx[a[i].second] != i) ans.emplace_back(i, idx[a[i].second]);
-//		swap(a[i], a[idx[a[i].second]]);
+//		int idx = t[i] - 'a';
+//		auto tmp = upper_bound(alpha[idx].begin(), alpha[idx].end(), pre);
+//		if (alpha[idx].empty()) {
+//			cout << -1 << "\n";
+//			return 0;
+//		}
+//		else if (tmp == alpha[idx].end()) {
+//			
+//			ans += s.size() - pre;
+//			pre = alpha[idx][0];
+//			ans += pre;
+//
+//		}
+//		else {
+//			ans += *tmp - pre;
+//			pre = *tmp;
+//		}
 //	}
-//	assert(a == b);
 //
-//	cout << ans.size() << "\n";
-//	for (const auto &e : ans) cout << e.first + 1 << " " << e.second + 1 << "\n";
+//	cout << ans << "\n";
 //
 //	return 0;
 //}

@@ -2,33 +2,21 @@
 //#include <cstdio>
 //#include <cmath>
 //#include <iostream>
+//#include <iomanip>
 //#include <sstream>
-//#include <string>
 //#include <vector>
 //#include <map>
 //#include <queue>
 //#include <algorithm>
 //
-//
-//const int MOD = 1000000007, INF = 1111111111;
 //using namespace std;
-//typedef long long lint;
+//using lint = long long;
+//constexpr int MOD = 1000000007, INF = 1111111111;
+//constexpr lint LINF = 1LL << 60;
 //
 //template <class T>
 //ostream &operator<<(ostream &os, const vector<T> &vec) {
 //	for (const auto &e : vec) os << e << (&e == &vec.back() ? "" : " ");
-//	return os;
-//}
-//
-//template <class T1, class T2>
-//ostream &operator<<(ostream &os, const pair<T1, T2> &p) {
-//	os << p.first << " " << p.second;
-//	return os;
-//}
-//
-//template <class T1, class T2>
-//ostream &operator<<(ostream &os, const map<T1, T2> &mp) {
-//	for (const auto &e : mp) os << "[" << e << "] ";
 //	return os;
 //}
 //
@@ -53,28 +41,18 @@
 //	int N;
 //	cin >> N;
 //
-//	vector<pair<int, int>> a(N);
+//	vector<pair<int, int>> xy(N);
+//	for (int i = 0; i < N; i++) cin >> xy[i].first >> xy[i].second;
+//
+//	double ans = .0;
 //	for (int i = 0; i < N; i++) {
-//		cin >> a[i].first;
-//		a[i].second = i;
+//		for (int j = i + 1; j < N; j++) {
+//			ans = max(ans, sqrt(pow(xy[i].first - xy[j].first, 2) + pow(xy[i].second - xy[j].second, 2)));
+//		}
 //	}
-//	
-//	auto b = a;
-//	sort(b.begin(), b.end());
-//	DMP(a, b);
 //
-//	vector<int> idx(N);
-//	for (int i = 0; i < N; i++) idx[b[i].second] = i;
-//
-//	vector<pair<int, int>> ans;
-//	for (int i = 0; i < N; i++) {
-//		if (idx[a[i].second] != i) ans.emplace_back(i, idx[a[i].second]);
-//		swap(a[i], a[idx[a[i].second]]);
-//	}
-//	assert(a == b);
-//
-//	cout << ans.size() << "\n";
-//	for (const auto &e : ans) cout << e.first + 1 << " " << e.second + 1 << "\n";
+//	cout << fixed << setprecision(10);
+//	cout << ans << "\n";
 //
 //	return 0;
 //}
