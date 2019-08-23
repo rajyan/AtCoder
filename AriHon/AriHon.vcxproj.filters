@@ -1,38 +1,53 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Section1">
+    <Filter Include="Section1-6">
       <UniqueIdentifier>{49bc62c8-661a-419a-9f51-c024f5e20ade}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Section2">
+    <Filter Include="Section2-1">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="Section2-1\DFS">
+      <UniqueIdentifier>{16e8655b-9711-43c1-b00e-14114518d79f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Section2-1\BFS">
+      <UniqueIdentifier>{800e27e6-a6ea-4942-b4d7-de6537377d02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Section2-1\bit">
+      <UniqueIdentifier>{9df23c63-1ff1-45cd-9533-a855a4c1490e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="B.cpp">
-      <Filter>Section2</Filter>
-    </ClCompile>
-    <ClCompile Include="C.cpp">
-      <Filter>Section2</Filter>
-    </ClCompile>
-    <ClCompile Include="D.cpp">
-      <Filter>Section2</Filter>
-    </ClCompile>
-    <ClCompile Include="E.cpp">
-      <Filter>Section2</Filter>
-    </ClCompile>
-    <ClCompile Include="F.cpp">
-      <Filter>Section2</Filter>
-    </ClCompile>
-    <ClCompile Include="JOI2007_C.cpp">
-      <Filter>Section1</Filter>
+    <ClCompile Include="ARC004-A.cpp">
+      <Filter>Section1-6</Filter>
     </ClCompile>
     <ClCompile Include="dfs_example.cpp">
-      <Filter>Section2</Filter>
+      <Filter>Section1-6</Filter>
     </ClCompile>
-    <ClCompile Include="ARC004-A.cpp">
-      <Filter>Section1</Filter>
+    <ClCompile Include="JOI2007_C.cpp">
+      <Filter>Section1-6</Filter>
+    </ClCompile>
+    <ClCompile Include="ARC031-B.cpp">
+      <Filter>Section2-1\DFS</Filter>
+    </ClCompile>
+    <ClCompile Include="ARC037-B.cpp">
+      <Filter>Section2-1\DFS</Filter>
+    </ClCompile>
+    <ClCompile Include="ATC001-A.cpp">
+      <Filter>Section2-1\DFS</Filter>
+    </ClCompile>
+    <ClCompile Include="ARC029-A.cpp">
+      <Filter>Section2-1\bit</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC002-D.cpp">
+      <Filter>Section2-1\bit</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC007-C.cpp">
+      <Filter>Section2-1\BFS</Filter>
+    </ClCompile>
+    <ClCompile Include="AGC033-A.cpp">
+      <Filter>Section2-1\BFS</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -76,6 +76,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp14</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -125,14 +126,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ABC002-D.cpp" />
+    <ClCompile Include="AGC033-A.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="ARC004-A.cpp" />
+    <ClCompile Include="ARC029-A.cpp" />
+    <ClCompile Include="ARC031-B.cpp" />
+    <ClCompile Include="ARC037-B.cpp" />
+    <ClCompile Include="ATC001-A.cpp" />
     <ClCompile Include="dfs_example.cpp" />
-    <ClCompile Include="B.cpp" />
-    <ClCompile Include="C.cpp" />
-    <ClCompile Include="D.cpp" />
-    <ClCompile Include="E.cpp" />
-    <ClCompile Include="F.cpp" />
     <ClCompile Include="JOI2007_C.cpp" />
+    <ClCompile Include="ABC007-C.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

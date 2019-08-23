@@ -49,5 +49,44 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	int H, W;
+//	cin >> H >> W;
+//
+//	vector<vector<char>> grid(H, vector<char>(W)), visited(H, vector<char>(W));
+//	for (int i = 0; i < H; i++) for (int j = 0; j < W; j++) cin >> grid[i][j];
+//
+//	queue<pair<pair<int,int>, int>> que;
+//	for (int i = 0; i < H; i++) {
+//		for (int j = 0; j < W; j++) {
+//			if (grid[i][j] == '#') {
+//				que.emplace(make_pair(i, j), 0);
+//			}
+//		}
+//	}
+//
+//	auto inGrid = [&](int row, int col) {
+//		return 0 <= row && row < H && 0 <= col && col < W;
+//	};
+//
+//	int ans = 0;
+//	while (!que.empty()) {
+//
+//		auto now = que.front(); que.pop();
+//
+//		vector<int> dr{ -1,1,0,0 }, dc{ 0,0,-1,1 };
+//		for (int i = 0; i < 4; i++) {
+//			int r = now.first.first + dr[i];
+//			int c = now.first.second + dc[i];
+//
+//			if (inGrid(r, c) && grid[r][c] == '.') {
+//				grid[r][c] = '#';
+//				que.emplace(make_pair(r, c), now.second + 1);
+//				ans = max(ans, now.second + 1);
+//			}
+//		}
+//	}
+//
+//	cout << ans << "\n";
+//
 //	return 0;
 //}

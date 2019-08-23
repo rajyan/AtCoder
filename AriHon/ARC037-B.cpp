@@ -49,5 +49,41 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	int N, M;
+//	cin >> N >> M;
+//
+//	vector<vector<int>> edge(N);
+//	for (int i = 0; i < M; i++) {
+//		int a, b;
+//		cin >> a >> b;
+//		a--, b--;
+//		edge[a].emplace_back(b);
+//		edge[b].emplace_back(a);
+//	}
+//
+//	vector<int> visited(N);
+//	auto dfs = [&](auto &&f, int now, int par) -> bool {
+//		DMP(now);
+//		visited[now] = 1;
+//		bool tree = true;
+//		for (const auto &e : edge[now]) {
+//
+//			if (e == par) continue;
+//			if (visited[e]) tree = false;
+//			else tree &= f(f, e, now);
+//
+//		}
+//
+//		return tree;
+//	};
+//
+//	int ans = 0;
+//	for (int i = 0; i < N; i++) {
+//		DMP(visited);
+//		if (!visited[i]) ans += dfs(dfs, i, -1);
+//	}
+//
+//	cout << ans << "\n";
+//
 //	return 0;
 //}

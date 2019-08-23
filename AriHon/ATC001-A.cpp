@@ -44,10 +44,66 @@
 //#define DMP(...) ((void)0)
 //#endif
 //
+//struct pnt { 
+//	int x, y; 
+//	pnt(int x = 0, int y = 0) :x(x), y(y) {};
+//	bool operator==(const pnt &rhs) { return (x == rhs.x && y == rhs.y); }
+//	const pnt operator+(const pnt &rhs) { return pnt(x + rhs.x, y + rhs.y); }
+//};
+//
 //int main() {
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
+//
+//	int H, W;
+//	cin >> H >> W;
+//
+//	vector<string> grid(H);
+//	for (int i = 0; i < H; i++) cin >> grid[i];
+//	DMP(grid);
+//
+//	pnt start, goal;
+//	for (int y = 0; y < H; y++) {
+//		for (int x = 0; x < W; x++) {
+//			if (grid[y][x] == 's') start = pnt(x, y);
+//			if (grid[y][x] == 'g') goal = pnt(x, y);
+//		}
+//	}
+//
+//	auto inGrid = [&](pnt p) {
+//		return 0 <= p.x && p.x < W && 0 <= p.y && p.y < H;
+//	};
+//
+//	bool able = false;
+//	vector<vector<int>> visited(H, vector<int>(W));
+//	vector<pnt> dxdy{ {-1,0}, {1,0}, {0,-1}, {0,1} };
+//
+//	queue<pnt> que;
+//	visited[start.y][start.x] = 1;
+//	que.push(start);
+//	while (!que.empty()) {
+//
+//		pnt now = que.front(); que.pop();
+//
+//		if (now == goal) {
+//			able = true;
+//			break;
+//		}
+//
+//		for (const auto &dp : dxdy) {
+//			pnt next = now + dp;
+//
+//			if (inGrid(next) && !visited[next.y][next.x] && grid[next.y][next.x] != '#') {
+//				visited[next.y][next.x] = 1;
+//				que.emplace(next);
+//			}
+//		}
+//
+//	}
+//
+//	if (able) cout << "Yes" << "\n";
+//	else cout << "No" << "\n";
 //
 //	return 0;
 //}
