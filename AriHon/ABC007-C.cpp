@@ -56,7 +56,7 @@
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
-//
+//	
 //	int H, W;
 //	cin >> H >> W;
 //
@@ -70,7 +70,7 @@
 //	auto inGrid = [&](pnt p) {
 //		return 0 <= p.x && p.x < W && 0 <= p.y && p.y < H;
 //	};
-//
+//	
 //	vector<vector<int>> visited(H, vector<int>(W));
 //	vector<pnt> dxdy{ {-1,0}, {1,0}, {0,-1}, {0,1} };
 //	queue<pair<pnt,int>> que;
