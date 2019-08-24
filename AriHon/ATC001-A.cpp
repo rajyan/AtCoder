@@ -45,10 +45,10 @@
 //#endif
 //
 //struct pnt { 
-//	int x, y; 
-//	pnt(int x = 0, int y = 0) :x(x), y(y) {};
-//	bool operator==(const pnt &rhs) { return (x == rhs.x && y == rhs.y); }
-//	const pnt operator+(const pnt &rhs) { return pnt(x + rhs.x, y + rhs.y); }
+//	int r, c; 
+//	pnt(int r = 0, int c = 0) :r(r), c(c) {};
+//	bool operator==(const pnt &rhs) { return (r == rhs.r && c == rhs.c); }
+//	const pnt operator+(const pnt &rhs) { return pnt(r + rhs.r, c + rhs.c); }
 //};
 //
 //int main() {
@@ -64,15 +64,15 @@
 //	DMP(grid);
 //
 //	pnt start, goal;
-//	for (int y = 0; y < H; y++) {
-//		for (int x = 0; x < W; x++) {
-//			if (grid[y][x] == 's') start = pnt(x, y);
-//			if (grid[y][x] == 'g') goal = pnt(x, y);
+//	for (int c = 0; c < H; c++) {
+//		for (int r = 0; r < W; r++) {
+//			if (grid[c][r] == 's') start = pnt(r, c);
+//			if (grid[c][r] == 'g') goal = pnt(r, c);
 //		}
 //	}
 //
 //	auto inGrid = [&](pnt p) {
-//		return 0 <= p.x && p.x < W && 0 <= p.y && p.y < H;
+//		return 0 <= p.r && p.r < W && 0 <= p.c && p.c < H;
 //	};
 //
 //	bool able = false;
@@ -80,7 +80,7 @@
 //	vector<pnt> dxdy{ {-1,0}, {1,0}, {0,-1}, {0,1} };
 //
 //	queue<pnt> que;
-//	visited[start.y][start.x] = 1;
+//	visited[start.c][start.r] = 1;
 //	que.push(start);
 //	while (!que.empty()) {
 //
@@ -94,8 +94,8 @@
 //		for (const auto &dp : dxdy) {
 //			pnt next = now + dp;
 //
-//			if (inGrid(next) && !visited[next.y][next.x] && grid[next.y][next.x] != '#') {
-//				visited[next.y][next.x] = 1;
+//			if (inGrid(next) && !visited[next.c][next.r] && grid[next.c][next.r] != '#') {
+//				visited[next.c][next.r] = 1;
 //				que.emplace(next);
 //			}
 //		}

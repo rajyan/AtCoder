@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Section1-6">
-      <UniqueIdentifier>{49bc62c8-661a-419a-9f51-c024f5e20ade}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Section2-1">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
@@ -17,16 +14,16 @@
     <Filter Include="Section2-1\bit">
       <UniqueIdentifier>{9df23c63-1ff1-45cd-9533-a855a4c1490e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Section1">
+      <UniqueIdentifier>{49bc62c8-661a-419a-9f51-c024f5e20ade}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Section2-1\permutation">
+      <UniqueIdentifier>{b9ddec6b-9977-43ad-a7c4-d9ee5b93bcbd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ARC004-A.cpp">
-      <Filter>Section1-6</Filter>
-    </ClCompile>
-    <ClCompile Include="dfs_example.cpp">
-      <Filter>Section1-6</Filter>
-    </ClCompile>
-    <ClCompile Include="JOI2007_C.cpp">
-      <Filter>Section1-6</Filter>
+      <Filter>Section1</Filter>
     </ClCompile>
     <ClCompile Include="ARC031-B.cpp">
       <Filter>Section2-1\DFS</Filter>
@@ -47,6 +44,33 @@
       <Filter>Section2-1\BFS</Filter>
     </ClCompile>
     <ClCompile Include="AGC033-A.cpp">
+      <Filter>Section2-1\BFS</Filter>
+    </ClCompile>
+    <ClCompile Include="ARC005-C.cpp">
+      <Filter>Section2-1\BFS</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC088-D.cpp">
+      <Filter>Section2-1\BFS</Filter>
+    </ClCompile>
+    <ClCompile Include="JOPI2011yo-E.cpp">
+      <Filter>Section2-1\BFS</Filter>
+    </ClCompile>
+    <ClCompile Include="JOI2008ho_C.cpp">
+      <Filter>Section1</Filter>
+    </ClCompile>
+    <ClCompile Include="ShortestPath.cpp">
+      <Filter>Section2-1\BFS</Filter>
+    </ClCompile>
+    <ClCompile Include="dfs_example.cpp">
+      <Filter>Section2-1\DFS</Filter>
+    </ClCompile>
+    <ClCompile Include="ARC061-C.cpp">
+      <Filter>Section1</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC054-C.cpp">
+      <Filter>Section2-1\permutation</Filter>
+    </ClCompile>
+    <ClCompile Include="JOI2006yo-D.cpp">
       <Filter>Section2-1\BFS</Filter>
     </ClCompile>
   </ItemGroup>

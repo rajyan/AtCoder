@@ -73,7 +73,7 @@
 //		}
 //		cout << "です！\nこのルートで全ての頂点をたどること";
 //
-//		if (any_of(visited.begin(), visited.end(), [](int x) {return x == 0; })) cout << "はできませんでした" << "\n\n";
+//		if (any_of(visited.begin(), visited.end(), [](int r) {return r == 0; })) cout << "はできませんでした" << "\n\n";
 //		else cout << "ができました！" << "\n\n";
 //	}
 //

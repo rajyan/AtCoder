@@ -7,6 +7,7 @@
 //#include <vector>
 //#include <map>
 //#include <queue>
+//#include <numeric>
 //#include <algorithm>
 //
 //using namespace std;
@@ -33,26 +34,6 @@
 //#define DMP(...) ((void)0)
 //#endif
 //
-//class UnionFind {
-//private:
-//	vector<int> data;
-//	int root(int r) { return data[r] < 0 ? r : data[r] = root(data[r]); }
-//
-//public:
-//	UnionFind(int size) : data(size, -1) { }
-//	bool is_same(int r, int c) { return root(r) == root(c); }
-//	int size(int r) { return -data[root(r)]; }
-//
-//	void unify(int r, int c) {
-//		r = root(r); c = root(c);
-//		if (r != c) {
-//			if (data[c] < data[r]) swap(r, c);
-//			data[r] += data[c]; data[c] = r;
-//		}
-//	}
-//};
-//
-//
 //int main() {
 //
 //	cin.tie(nullptr);
@@ -61,38 +42,32 @@
 //	int N, M;
 //	cin >> N >> M;
 //
-//	vector<vector<int>> d(N, vector<int>(N, INF));
-//	for (int i = 0; i < N; i++) d[i][i] = 0;
-//
+//	vector<vector<int>> edge(N, vector<int>(N));
+//	int u, v;
 //	for (int i = 0; i < M; i++) {
-//		int a, b;
-//		cin >> a >> b;
-//		a--, b--;
-//		d[a][b] = 1;
+//		cin >> u >> v;
+//		u--, v--;
+//		edge[u][v] = 1;
+//		edge[v][u] = 1;
 //	}
 //
+//	vector<int> per(N);
+//	iota(per.begin(), per.end(), 0);
 //	int ans = 0;
-//	for (int bit = 0b0; bit < (1 << N); bit++) {
+//	do {
 //
-//		bool able = true;
-//		for (int a = 0; a < N; a++) {
-//			for (int b = a; b < N; b++) {
-//				if ((bit & (1 << a)) && (bit & (1 << b))) {
-//					if (d[a][b] == INF) able = false;
-//				}
+//		bool flag = true;
+//		for (int i = 0; i < N - 1; i++) {
+//			if (!edge[per[i]][per[i + 1]]) {
+//				flag = false;
+//				break;
 //			}
 //		}
-//		
-//		if (able) {
-//			int member = 0;
-//			for (int i = 0; i < N; i++) member += !!(bit & (1 << i));
-//			ans = max(ans, member);
-//		}
-//
-//	}
+//		ans += flag;
+//		if (flag) DMP(per);
+//	} while (next_permutation(per.begin() + 1, per.end()));
 //
 //	cout << ans << "\n";
-//
 //
 //	return 0;
 //}
