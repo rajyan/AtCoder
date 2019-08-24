@@ -82,5 +82,20 @@
     <ClCompile Include="JOI2007yo-A.cpp">
       <Filter>Section2-2</Filter>
     </ClCompile>
+    <ClCompile Include="KUPC2015-A.cpp">
+      <Filter>Section2-2</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC103-D.cpp">
+      <Filter>Section2-2</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC104-C.cpp">
+      <Filter>Section2-1\bit</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC038-D.cpp">
+      <Filter>Section2-2</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC038-D_ver2.cpp">
+      <Filter>Section2-2</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
