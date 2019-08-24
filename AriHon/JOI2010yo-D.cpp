@@ -39,5 +39,35 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	int n, k;
+//	cin >> n >> k;
+//
+//	vector<string> card(n);
+//	for (int i = 0; i < n; i++) cin >> card[i];
+//	DMP(card);
+//
+//	vector<string> ans; ans.reserve(210);
+//	vector<int> use(n);
+//	fill(use.end() - k, use.end(), 1);
+//	do {
+//
+//		vector<string> memo; memo.reserve(k);
+//		for (int i = 0; i < n; i++) if (use[i]) memo.emplace_back(card[i]);
+//
+//		vector<int> ord(k);
+//		iota(ord.begin(), ord.end(), 0);
+//		do {
+//			string s;
+//			for (int i = 0; i < k; i++) s += memo[ord[i]];
+//			ans.emplace_back(s);
+//		}
+//		while (next_permutation(ord.begin(), ord.end()));
+//
+//	} while (next_permutation(use.begin(), use.end()));
+//
+//	sort(ans.begin(), ans.end());
+//	ans.erase(unique(ans.begin(), ans.end()), ans.end());
+//	cout << ans.size() << "\n";
+//
 //	return 0;
 //}

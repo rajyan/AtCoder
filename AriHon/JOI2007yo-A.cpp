@@ -39,5 +39,20 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	int n;
+//	cin >> n;
+//	n = 1000 - n;
+//
+//	vector<int> coin{ 500,100,50,10,5,1 };
+//	int ans = 0, idx = 0;
+//	while (n) {
+//		ans += n / coin[idx];
+//		n %= coin[idx];
+//		idx++;	
+//		DMP(n);
+//	}
+//
+//	cout << ans << "\n";
+//
 //	return 0;
 //}

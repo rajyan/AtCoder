@@ -20,6 +20,9 @@
     <Filter Include="Section2-1\permutation">
       <UniqueIdentifier>{b9ddec6b-9977-43ad-a7c4-d9ee5b93bcbd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Section2-2">
+      <UniqueIdentifier>{7f52b0b7-6372-4540-a5c8-ae41d1e5e59e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ARC004-A.cpp">
@@ -72,6 +75,12 @@
     </ClCompile>
     <ClCompile Include="JOI2006yo-D.cpp">
       <Filter>Section2-1\BFS</Filter>
+    </ClCompile>
+    <ClCompile Include="JOI2010yo-D.cpp">
+      <Filter>Section2-1\permutation</Filter>
+    </ClCompile>
+    <ClCompile Include="JOI2007yo-A.cpp">
+      <Filter>Section2-2</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

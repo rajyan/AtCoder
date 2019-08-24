@@ -20,9 +20,10 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{5973213f-a003-4ecd-8a74-5d2c0fae91f2}</ProjectGuid>
-    <RootNamespace>AriHon</RootNamespace>
+    <ProjectGuid>{f2b5c8ea-5dcd-407b-9a8e-e81aa3378075}</ProjectGuid>
+    <RootNamespace>jsc2019_qual</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <ProjectName>jsc2019-qual</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -126,55 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ABC002-D.cpp" />
-    <ClCompile Include="ABC054-C.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="ARC061-C.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="ABC088-D.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="AGC033-A.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="ARC004-A.cpp" />
-    <ClCompile Include="ARC005-C.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="ARC029-A.cpp" />
-    <ClCompile Include="ARC031-B.cpp" />
-    <ClCompile Include="ARC037-B.cpp" />
-    <ClCompile Include="ATC001-A.cpp" />
-    <ClCompile Include="dfs_example.cpp" />
-    <ClCompile Include="JOI2006yo-D.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="JOI2007yo-A.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="JOI2008ho_C.cpp" />
-    <ClCompile Include="ABC007-C.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="JOI2010yo-D.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="JOPI2011yo-E.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="ShortestPath.cpp" />
+    <ClCompile Include="A.cpp" />
+    <ClCompile Include="B.cpp" />
+    <ClCompile Include="C.cpp" />
+    <ClCompile Include="D.cpp" />
+    <ClCompile Include="E.cpp" />
+    <ClCompile Include="F.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

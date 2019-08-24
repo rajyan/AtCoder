@@ -39,5 +39,30 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	int N;
+//	cin >> N;
+//
+//	int a = 0;
+//	for (int i = 0; i <= 10; i++) {
+//		if ((1 << i) < N && N <= (1 << (i + 1))) a = i + 1;
+//	}
+//	DMP(a);
+//
+//	vector<vector<int>> grid(N, vector<int>(N));
+//	for (int two = 1; two <= a; two++) {
+//		for (int i = 0; i < N; i++) {
+//			for (int j = i + 1; j < N; j++) {
+//				if (!grid[i][j] && (i % (1 << two) != j % (1 << two))) grid[i][j] = two;
+//			}
+//		}
+//	}
+//
+//	for (int i = 0; i < N; i++) {
+//		for (int j = i + 1; j < N; j++) {
+//			cout << grid[i][j] << " ";
+//		}
+//		cout << "\n";
+//	}
+//
 //	return 0;
 //}

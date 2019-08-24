@@ -39,5 +39,25 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	int A, B;
+//	cin >> A >> B;
+//
+//	int ans = INF;
+//	for (int i = 0; i <= 40; i++) {
+//		for (int j = 0; j <= 8; j++) {
+//			for (int k = 0; k <= 4; k++) {
+//				for (int l = 0; l <= 8; l++) {
+//					for (int m = 0; m <= 4; m++) {
+//						if (abs(i + (j - l) * 5 + (k - m) * 10) == abs(A - B)) {
+//							ans = min(i + j + k + l + m, ans);
+//						}
+//					}
+//				}
+//			}
+//		}
+//	}
+//
+//	cout << ans << "\n";
+//
 //	return 0;
 //}

@@ -39,5 +39,18 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	int M, D;
+//	cin >> M >> D;
+//
+//	int ans = 0;
+//	for (int i = 1; i <= M; i++) {
+//		for (int j = 10; j <= D; j++) {
+//			if (j / 10 < 2 || j % 10 < 2) continue;
+//			if (i == (j / 10) * (j % 10)) ans++;
+//		}
+//	}
+//
+//	cout << ans << "\n";
+//
 //	return 0;
 //}
