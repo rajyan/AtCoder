@@ -34,17 +34,34 @@ void dump(const char* str, Head &&h, Tail &&... t) {
 #define DMP(...) ((void)0)
 #endif
 
-template<class T>
-vector<T> make_vec(size_t s, T val) { return vector<T>(s, val); }
-template<class T,class... Size> 
-auto make_vec(T s, Size... tail) {
-	return vector<decltype(make_vec(tail...))>(s, make_vec(tail...));
-}
-
 int main() {
 
 	cin.tie(nullptr);
 	ios::sync_with_stdio(false);
+
+	int N, K;
+	cin >> N >> K;
+	string now;
+	cin >> now;
+	string start = now;
+
+	int diff = 0;
+	for (int i = 0; i < N - 1; i++) {
+
+		string tmp = now.substr(i);
+		sort(tmp.begin(), tmp.end());
+
+		int cnt = 0;
+		for (int j = 0; j < tmp.size(); j++) {
+			for (int k = i; k < N; k++) {
+
+			}
+		}
+
+
+	}
+
+	cout << now << "\n";
 
 	return 0;
 }

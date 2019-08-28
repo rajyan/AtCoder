@@ -39,5 +39,28 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	string s, t;
+//	cin >> s >> t;
+//
+//	for (int i = s.size() - t.size(); i >= 0; i--) {
+//		DMP(i);
+//		if (equal(s.begin() + i, s.begin() + i + t.size(), t.begin(), 
+//			[](auto s, auto t) { return s == '?' || s == t; })) {
+//
+//			for (int j = 0; j < i; j++) {
+//				if (s[j] == '?') cout << 'a';
+//				else cout << s[j];
+//			}
+//			cout << t;
+//			for (int j = i + t.size(); j < s.size(); j++) {
+//				if (s[j] == '?') cout << 'a';
+//				else cout << s[j];
+//			}
+//
+//			return 0;
+//		}
+//	}
+//
+//	cout << "UNRESTORABLE" << "\n";
 //	return 0;
 //}

@@ -127,6 +127,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ABC002-D.cpp" />
+    <ClCompile Include="ABC005-C.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="ABC007-B.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="ABC009-C.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="ABC038-D.cpp">
       <SubType>
       </SubType>
@@ -139,11 +151,27 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="ABC076-C.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="ABC091-C.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="ABC103-D.cpp">
       <SubType>
       </SubType>
     </ClCompile>
     <ClCompile Include="ABC104-C.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="ABC114-C.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="ARC006-C.cpp">
       <SubType>
       </SubType>
     </ClCompile>
@@ -195,6 +223,14 @@
       </SubType>
     </ClCompile>
     <ClCompile Include="ShortestPath.cpp" />
+    <ClCompile Include="TDPC-A.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="TDPC-D.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

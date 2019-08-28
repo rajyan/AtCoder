@@ -5,33 +5,31 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="ヘッダー ファイル">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="リソース ファイル">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="ソース ファイル\solved">
+      <UniqueIdentifier>{6bd1ea9f-fb99-48d4-a810-97fc2ffc6cdd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="D.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="E.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="F.cpp">
+    <ClCompile Include="ARC006-D.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="ARC001-B.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\solved</Filter>
     </ClCompile>
     <ClCompile Include="ABC026-C.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\solved</Filter>
     </ClCompile>
-    <ClCompile Include="ARC006-D.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="ABC060-C.cpp">
+      <Filter>ソース ファイル\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC062-C.cpp">
+      <Filter>ソース ファイル\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC008-D.cpp">
+      <Filter>ソース ファイル\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC-112-C.cpp">
+      <Filter>ソース ファイル\solved</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

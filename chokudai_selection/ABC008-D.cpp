@@ -34,12 +34,6 @@
 //#define DMP(...) ((void)0)
 //#endif
 //
-//template<class T>
-//inline bool chmax(T &a, T b) { return a < b && (a = b, true); }
-//
-//template<class T>
-//inline bool chmin(T &a, T b) { return a > b && (a = b, true); }
-//
 //int main() {
 //
 //	cin.tie(nullptr);
@@ -47,36 +41,16 @@
 //
 //	int N;
 //	cin >> N;
-//	
-//	vector<vector<int>> emp(N);
-//	for (int i = 0; i < N - 1; i++) {
-//		int b;
-//		cin >> b; b--;
-//		emp[b].emplace_back(i + 1);
+//
+//	vector<int> c(N);
+//	for (int i = 0; i < N; i++) cin >> c[i];
+//
+//	vector<int> ans(N, INF);
+//	for (int i = 0; i < N; i++) {
+//		*lower_bound(ans.begin(), ans.end(), c[i]) = c[i];
 //	}
-//	DMP(emp[0]);
 //
-//	vector<int> sal(N);
-//	auto dfs = [&](auto &&f, int id) -> int {
-//		
-//		int res = 0;
-//		if (emp[id].empty()) res = 1;
-//		else {
-//			int minsal = INF, maxsal = 0;
-//			for (const auto &e : emp[id]) {
-//				if (!sal[e]) sal[e] = f(f, e);
-//				chmin(minsal, sal[e]);
-//				chmax(maxsal, sal[e]);
-//			}
-//			res = minsal + maxsal + 1;
-//		}
-//
-//		return res;
-//
-//	};
-//
-//	cout << dfs(dfs, 0) << "\n";
-//	DMP(sal);
+//	cout << N - (lower_bound(ans.begin(), ans.end(),INF) - ans.begin()) << "\n";
 //
 //	return 0;
 //}

@@ -23,6 +23,18 @@
     <Filter Include="Section2-2">
       <UniqueIdentifier>{7f52b0b7-6372-4540-a5c8-ae41d1e5e59e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Section2-2\Scheduling">
+      <UniqueIdentifier>{f5f32b72-0c15-4da7-a3d7-5aa1eae266ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Section2-2\BestCowLine">
+      <UniqueIdentifier>{0c3d7788-1528-4632-a0e6-704287fbabf7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Section2-2\SarumansArmy">
+      <UniqueIdentifier>{615bad88-fbbb-472b-9ea1-14e5d5f5098a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Section2-3">
+      <UniqueIdentifier>{4e521c64-77db-450a-9cd8-7d0ee4141b82}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ARC004-A.cpp">
@@ -82,20 +94,47 @@
     <ClCompile Include="JOI2007yo-A.cpp">
       <Filter>Section2-2</Filter>
     </ClCompile>
-    <ClCompile Include="KUPC2015-A.cpp">
-      <Filter>Section2-2</Filter>
-    </ClCompile>
-    <ClCompile Include="ABC103-D.cpp">
-      <Filter>Section2-2</Filter>
-    </ClCompile>
     <ClCompile Include="ABC104-C.cpp">
       <Filter>Section2-1\bit</Filter>
     </ClCompile>
-    <ClCompile Include="ABC038-D.cpp">
-      <Filter>Section2-2</Filter>
+    <ClCompile Include="KUPC2015-A.cpp">
+      <Filter>Section2-2\Scheduling</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC103-D.cpp">
+      <Filter>Section2-2\Scheduling</Filter>
     </ClCompile>
     <ClCompile Include="ABC038-D_ver2.cpp">
-      <Filter>Section2-2</Filter>
+      <Filter>Section2-2\Scheduling</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC038-D.cpp">
+      <Filter>Section2-2\Scheduling</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC076-C.cpp">
+      <Filter>Section2-2\BestCowLine</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC007-B.cpp">
+      <Filter>Section2-2\BestCowLine</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC009-C.cpp">
+      <Filter>Section2-2\BestCowLine</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC114-C.cpp">
+      <Filter>Section2-1\DFS</Filter>
+    </ClCompile>
+    <ClCompile Include="ARC006-C.cpp">
+      <Filter>Section2-2\SarumansArmy</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC005-C.cpp">
+      <Filter>Section2-2\SarumansArmy</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC091-C.cpp">
+      <Filter>Section2-2\SarumansArmy</Filter>
+    </ClCompile>
+    <ClCompile Include="TDPC-A.cpp">
+      <Filter>Section2-3</Filter>
+    </ClCompile>
+    <ClCompile Include="TDPC-D.cpp">
+      <Filter>Section2-3</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

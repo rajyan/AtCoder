@@ -35,9 +35,6 @@
 //#endif
 //
 //template<class T>
-//inline bool chmax(T &a, T b) { return a < b && (a = b, true); }
-//
-//template<class T>
 //inline bool chmin(T &a, T b) { return a > b && (a = b, true); }
 //
 //int main() {
@@ -47,36 +44,29 @@
 //
 //	int N;
 //	cin >> N;
-//	
-//	vector<vector<int>> emp(N);
-//	for (int i = 0; i < N - 1; i++) {
-//		int b;
-//		cin >> b; b--;
-//		emp[b].emplace_back(i + 1);
-//	}
-//	DMP(emp[0]);
 //
-//	vector<int> sal(N);
-//	auto dfs = [&](auto &&f, int id) -> int {
-//		
-//		int res = 0;
-//		if (emp[id].empty()) res = 1;
-//		else {
-//			int minsal = INF, maxsal = 0;
-//			for (const auto &e : emp[id]) {
-//				if (!sal[e]) sal[e] = f(f, e);
-//				chmin(minsal, sal[e]);
-//				chmax(maxsal, sal[e]);
+//	vector<pair<int, int>> ab(N), cd(N);
+//	for (int i = 0; i < N; i++) cin >> ab[i].first >> ab[i].second;
+//	for (int i = 0; i < N; i++) cin >> cd[i].first >> cd[i].second;
+//	sort(ab.begin(), ab.end(), greater<>());
+//
+//	vector<int> used(N);
+//	int ans = 0;
+//	for (int i = 0; i < N; i++) {
+//		int idx = -1;
+//		for (int j = 0; j < N; j++) {
+//			if (used[j]) continue;
+//			if (ab[i].first < cd[j].first && ab[i].second < cd[j].second) {
+//				if (idx == -1 || cd[idx].second > cd[j].second) idx = j;
 //			}
-//			res = minsal + maxsal + 1;
 //		}
+//		if (idx != -1) {
+//			used[idx] = 1;
+//			ans++;
+//		}
+//	}
 //
-//		return res;
-//
-//	};
-//
-//	cout << dfs(dfs, 0) << "\n";
-//	DMP(sal);
+//	cout << ans << "\n";
 //
 //	return 0;
 //}

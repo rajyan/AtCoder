@@ -39,5 +39,15 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	string s;
+//	cin >> s;
+//
+//	if (s == "a") cout << -1 << "\n";
+//	else if (s[0] != 'a') {
+//		s[0] = 'a';
+//		cout << s << "\n";
+//	}
+//	else cout << s.substr(0, s.size() - 1) << "\n";
+//
 //	return 0;
 //}

@@ -35,9 +35,6 @@
 //#endif
 //
 //template<class T>
-//inline bool chmax(T &a, T b) { return a < b && (a = b, true); }
-//
-//template<class T>
 //inline bool chmin(T &a, T b) { return a > b && (a = b, true); }
 //
 //int main() {
@@ -47,36 +44,29 @@
 //
 //	int N;
 //	cin >> N;
-//	
-//	vector<vector<int>> emp(N);
-//	for (int i = 0; i < N - 1; i++) {
-//		int b;
-//		cin >> b; b--;
-//		emp[b].emplace_back(i + 1);
-//	}
-//	DMP(emp[0]);
 //
-//	vector<int> sal(N);
-//	auto dfs = [&](auto &&f, int id) -> int {
-//		
-//		int res = 0;
-//		if (emp[id].empty()) res = 1;
-//		else {
-//			int minsal = INF, maxsal = 0;
-//			for (const auto &e : emp[id]) {
-//				if (!sal[e]) sal[e] = f(f, e);
-//				chmin(minsal, sal[e]);
-//				chmax(maxsal, sal[e]);
+//	struct data { lint x, y, h; };
+//	vector<data> d(N);
+//	for (int i = 0; i < N; i++) cin >> d[i].x >> d[i].y >> d[i].h;
+//
+//	for (int x = 0; x <= 100; x++) {
+//		for (int y = 0; y <= 100; y++) {
+//			
+//			data md = *min_element(d.begin(), d.end(),
+//				[&](data &l, data &r) {
+//				return l.h + abs(l.x - x) + abs(l.y - y) < r.h + abs(r.x - x) + abs(r.y - y);
+//			});
+//			lint ref = md.h + abs(md.x - x) + abs(md.y - y);
+//
+//			if (all_of(d.begin(), d.end(), 
+//				[&](data &d) { return max(ref - abs(d.x - x) - abs(d.y - y), 0LL) == d.h; })) {
+//
+//				cout << x << " " << y << " " << ref << "\n";
+//				return 0;
 //			}
-//			res = minsal + maxsal + 1;
+//
 //		}
+//	}
 //
-//		return res;
-//
-//	};
-//
-//	cout << dfs(dfs, 0) << "\n";
-//	DMP(sal);
-//
-//	return 0;
+//	return -1;
 //}

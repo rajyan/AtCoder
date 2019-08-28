@@ -34,49 +34,28 @@
 //#define DMP(...) ((void)0)
 //#endif
 //
-//template<class T>
-//inline bool chmax(T &a, T b) { return a < b && (a = b, true); }
-//
-//template<class T>
-//inline bool chmin(T &a, T b) { return a > b && (a = b, true); }
-//
 //int main() {
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int N;
+//	lint N;
 //	cin >> N;
-//	
-//	vector<vector<int>> emp(N);
-//	for (int i = 0; i < N - 1; i++) {
-//		int b;
-//		cin >> b; b--;
-//		emp[b].emplace_back(i + 1);
-//	}
-//	DMP(emp[0]);
 //
-//	vector<int> sal(N);
-//	auto dfs = [&](auto &&f, int id) -> int {
-//		
-//		int res = 0;
-//		if (emp[id].empty()) res = 1;
-//		else {
-//			int minsal = INF, maxsal = 0;
-//			for (const auto &e : emp[id]) {
-//				if (!sal[e]) sal[e] = f(f, e);
-//				chmin(minsal, sal[e]);
-//				chmax(maxsal, sal[e]);
-//			}
-//			res = minsal + maxsal + 1;
+//	map<int,int> tobit{ {3,1},{5,2},{7,4} };
+//	auto dfs = [&](auto &&f, lint n, int bit) -> int {
+//
+//		int res = (bit == 7);
+//		for (const auto &e : vector<int>{ 3,5,7 }) {
+//			lint tmp = n * 10 + e;
+//			if (tmp <= N) res += f(f, tmp, bit | tobit[e]);
 //		}
-//
 //		return res;
-//
 //	};
 //
-//	cout << dfs(dfs, 0) << "\n";
-//	DMP(sal);
+//	int ans = 0;
+//	for (const auto &e : vector<int>{ 3,5,7 }) ans += dfs(dfs, e, tobit[e]);
+//	cout << ans << "\n";
 //
 //	return 0;
 //}

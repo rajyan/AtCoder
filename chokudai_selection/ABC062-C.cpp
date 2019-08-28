@@ -34,49 +34,25 @@
 //#define DMP(...) ((void)0)
 //#endif
 //
-//template<class T>
-//inline bool chmax(T &a, T b) { return a < b && (a = b, true); }
-//
-//template<class T>
-//inline bool chmin(T &a, T b) { return a > b && (a = b, true); }
-//
 //int main() {
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int N;
-//	cin >> N;
+//	int N, T;
+//	cin >> N >> T;
+//
+//	vector<lint> t(N);
+//	for (int i = 0; i < N; i++) cin >> t[i];
+//	t.emplace_back(LINF); // ”Ô•º
 //	
-//	vector<vector<int>> emp(N);
-//	for (int i = 0; i < N - 1; i++) {
-//		int b;
-//		cin >> b; b--;
-//		emp[b].emplace_back(i + 1);
+//	lint ans = 0;
+//	for (int i = 0; i < N; i++) {
+//		if (t[i + 1] - t[i] > T) ans += T;
+//		else ans += t[i + 1] - t[i];
 //	}
-//	DMP(emp[0]);
 //
-//	vector<int> sal(N);
-//	auto dfs = [&](auto &&f, int id) -> int {
-//		
-//		int res = 0;
-//		if (emp[id].empty()) res = 1;
-//		else {
-//			int minsal = INF, maxsal = 0;
-//			for (const auto &e : emp[id]) {
-//				if (!sal[e]) sal[e] = f(f, e);
-//				chmin(minsal, sal[e]);
-//				chmax(maxsal, sal[e]);
-//			}
-//			res = minsal + maxsal + 1;
-//		}
-//
-//		return res;
-//
-//	};
-//
-//	cout << dfs(dfs, 0) << "\n";
-//	DMP(sal);
+//	cout << ans << "\n";
 //
 //	return 0;
 //}
