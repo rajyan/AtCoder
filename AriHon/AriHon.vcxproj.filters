@@ -35,6 +35,12 @@
     <Filter Include="Section2-3">
       <UniqueIdentifier>{4e521c64-77db-450a-9cd8-7d0ee4141b82}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Section2-3\Knapsack">
+      <UniqueIdentifier>{32665b2b-3eca-4a03-91db-19bca86a96fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Section2-3\LCS">
+      <UniqueIdentifier>{13f4eb87-cc74-4b2c-9214-86412a890053}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ARC004-A.cpp">
@@ -130,11 +136,26 @@
     <ClCompile Include="ABC091-C.cpp">
       <Filter>Section2-2\SarumansArmy</Filter>
     </ClCompile>
+    <ClCompile Include="ABC007-D.cpp">
+      <Filter>Section2-3\Knapsack</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC015-D.cpp">
+      <Filter>Section2-3\Knapsack</Filter>
+    </ClCompile>
+    <ClCompile Include="TDCP-E.cpp">
+      <Filter>Section2-3\Knapsack</Filter>
+    </ClCompile>
     <ClCompile Include="TDPC-A.cpp">
-      <Filter>Section2-3</Filter>
+      <Filter>Section2-3\Knapsack</Filter>
     </ClCompile>
     <ClCompile Include="TDPC-D.cpp">
-      <Filter>Section2-3</Filter>
+      <Filter>Section2-3\Knapsack</Filter>
+    </ClCompile>
+    <ClCompile Include="EDPC-F.cpp">
+      <Filter>Section2-3\LCS</Filter>
+    </ClCompile>
+    <ClCompile Include="Indeednow-C.cpp">
+      <Filter>Section2-3\LCS</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

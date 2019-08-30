@@ -66,14 +66,14 @@
 //	}
 //	DMP(pfact);
 //
-//	auto dp = make_vec(2, N + 3, N + 2, N + 2, 0.0);
+//	auto dp = make_vec(2, 2 * N + 2, N + 1, N + 1, 0.0);
 //	dp[0][0][0][0] = 1.0;
 //
 //	for (int idx = 0; idx < N; idx++) {
 //
-//		for (int i = 0; i <= N; i++) {
-//			for (int j = 0; j <= N; j++) {
-//				for (int k = 0; k <= N; k++) {
+//		for (int i = 0; i < 2 * N; i++) {
+//			for (int j = 0; j < N; j++) {
+//				for (int k = 0; k < N; k++) {
 //					
 //					dp[(idx + 1) & 1][i][j][k]     += 1.0 / 6.0 * dp[idx & 1][i][j][k];
 //					dp[(idx + 1) & 1][i+1][j][k]   += 1.0 / 6.0 * dp[idx & 1][i][j][k];
@@ -87,15 +87,14 @@
 //			}
 //		}
 //
-//
 //	}
 //
 //	DMP(dp);
 //
 //	double ans = 0.0;
-//	for (int i = pfact[0]; i <= N + 2; i++) {
-//		for (int j = pfact[1]; j <= N + 1; j++) {
-//			for (int k = pfact[2]; k <= N + 1; k++) {
+//	for (int i = pfact[0]; i <= 2 * N; i++) {
+//		for (int j = pfact[1]; j <= N; j++) {
+//			for (int k = pfact[2]; k <= N; k++) {
 //				ans += dp[N & 1][i][j][k];
 //			}
 //		}

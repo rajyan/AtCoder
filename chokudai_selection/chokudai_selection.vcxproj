@@ -137,9 +137,17 @@
     </ClCompile>
     <ClCompile Include="ARC001-B.cpp" />
     <ClCompile Include="ABC026-C.cpp" />
+    <ClCompile Include="ARC003-B.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="ARC006-D.cpp" />
     <ClCompile Include="ABC060-C.cpp" />
     <ClCompile Include="ABC-112-C.cpp" />
+    <ClCompile Include="ARC054-B.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

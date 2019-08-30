@@ -34,17 +34,22 @@
 //#define DMP(...) ((void)0)
 //#endif
 //
-//template<class T>
-//vector<T> make_vec(size_t s, T val) { return vector<T>(s, val); }
-//template<class T,class... Size> 
-//auto make_vec(T s, Size... tail) {
-//	return vector<decltype(make_vec(tail...))>(s, make_vec(tail...));
-//}
-//
 //int main() {
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	int N;
+//	cin >> N;
+//
+//	vector<string> s(N);
+//	for (int i = 0; i < N; i++) cin >> s[i];
+//	sort(s.begin(), s.end(), [](string l, string r) {
+//		reverse(l.begin(), l.end());
+//		reverse(r.begin(), r.end());
+//		return l < r;
+//	});
+//
+//	for (const auto &e : s) cout << e << "\n";
 //	return 0;
 //}

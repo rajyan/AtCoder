@@ -17,7 +17,7 @@
 //
 //template <class T>
 //ostream &operator<<(ostream &os, const vector<T> &vec) {
-//	for (const auto &e : vec) os << e << (&e == &vec.back() ? "" : " ");
+//	for (const auto &e : vec) os << e << (&e == &vec.back() ? "\n" : " ");
 //	return os;
 //}
 //
@@ -36,15 +36,38 @@
 //
 //template<class T>
 //vector<T> make_vec(size_t s, T val) { return vector<T>(s, val); }
-//template<class T,class... Size> 
-//auto make_vec(T s, Size... tail) {
+//template<class... Size>
+//auto make_vec(size_t s, Size... tail) {
 //	return vector<decltype(make_vec(tail...))>(s, make_vec(tail...));
 //}
+//
+//template<class T>
+//inline bool chmax(T &a, T b) { return a < b && (a = b, true); }
 //
 //int main() {
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
+//
+//	int W, N, K;
+//	cin >> W >> N >> K;
+//
+//	vector<pair<int,int>> ab(N);
+//	for (int i = 0; i < N; i++) cin >> ab[i].first >> ab[i].second;
+//
+//	auto dp = make_vec(2, W + 1, K + 1, 0);
+//	for (int i = 0; i < N; i++) {
+//		for (int w = 0; w <= W; w++) {
+//			for (int num = 0; num < K; num++) {
+//				chmax(dp[(i + 1) & 1][w][num + 1], dp[i & 1][w][num + 1]);
+//				if (w - ab[i].first >= 0) {
+//					chmax(dp[(i + 1) & 1][w][num + 1], dp[i & 1][w - ab[i].first][num] + ab[i].second);
+//				}
+//			}
+//		}
+//	}
+//
+//	cout << dp[N & 1][W][K] << "\n";
 //
 //	return 0;
 //}

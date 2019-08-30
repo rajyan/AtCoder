@@ -135,7 +135,15 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="ABC007-D.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="ABC009-C.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="ABC015-D.cpp">
       <SubType>
       </SubType>
     </ClCompile>
@@ -197,6 +205,14 @@
     <ClCompile Include="ARC037-B.cpp" />
     <ClCompile Include="ATC001-A.cpp" />
     <ClCompile Include="dfs_example.cpp" />
+    <ClCompile Include="EDPC-F.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="Indeednow-C.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="JOI2006yo-D.cpp">
       <SubType>
       </SubType>
@@ -223,6 +239,10 @@
       </SubType>
     </ClCompile>
     <ClCompile Include="ShortestPath.cpp" />
+    <ClCompile Include="TDCP-E.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="TDPC-A.cpp">
       <SubType>
       </SubType>
