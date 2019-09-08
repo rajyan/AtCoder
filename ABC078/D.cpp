@@ -15,7 +15,7 @@
 //
 //template <class T>
 //ostream &operator<<(ostream &os, const vector<T> &vec) {
-//	for (int i = 0; i < vec.size(); i++) {
+//	for (int i = 0; i < (int)vec.size(); i++) {
 //		os << vec[i] << (i + 1 == vec.size() ? "" : " ");
 //	}
 //	return os;
@@ -38,6 +38,14 @@
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
+//
+//	int N, Z, W;
+//	cin >> N >> Z >> W;
+//	
+//	vector<lint> a(N);
+//	for (int i = 0; i < N; i++) cin >> a[i];
+//
+//	cout << max(abs(W - a[N - 1]), N > 1 ? abs(a[N - 1] - a[N - 2]): 0) << "\n";
 //
 //	return 0;
 //}

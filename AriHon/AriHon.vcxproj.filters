@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Section2-1">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Section2-1\DFS">
+      <UniqueIdentifier>{16e8655b-9711-43c1-b00e-14114518d79f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Section2-1\BFS">
+      <UniqueIdentifier>{800e27e6-a6ea-4942-b4d7-de6537377d02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Section2-1\bit">
+      <UniqueIdentifier>{9df23c63-1ff1-45cd-9533-a855a4c1490e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Section1">
+      <UniqueIdentifier>{49bc62c8-661a-419a-9f51-c024f5e20ade}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Section2-1\permutation">
+      <UniqueIdentifier>{b9ddec6b-9977-43ad-a7c4-d9ee5b93bcbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Section2-2">
+      <UniqueIdentifier>{7f52b0b7-6372-4540-a5c8-ae41d1e5e59e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Section2-2\Scheduling">
+      <UniqueIdentifier>{f5f32b72-0c15-4da7-a3d7-5aa1eae266ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Section2-2\BestCowLine">
+      <UniqueIdentifier>{0c3d7788-1528-4632-a0e6-704287fbabf7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Section2-2\SarumansArmy">
+      <UniqueIdentifier>{615bad88-fbbb-472b-9ea1-14e5d5f5098a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Section2-3">
+      <UniqueIdentifier>{4e521c64-77db-450a-9cd8-7d0ee4141b82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Section2-3\Knapsack">
+      <UniqueIdentifier>{32665b2b-3eca-4a03-91db-19bca86a96fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Section2-3\LCS">
+      <UniqueIdentifier>{13f4eb87-cc74-4b2c-9214-86412a890053}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ARC004-A.cpp">
+      <Filter>Section1</Filter>
+    </ClCompile>
+    <ClCompile Include="ARC031-B.cpp">
+      <Filter>Section2-1\DFS</Filter>
+    </ClCompile>
+    <ClCompile Include="ARC037-B.cpp">
+      <Filter>Section2-1\DFS</Filter>
+    </ClCompile>
+    <ClCompile Include="ATC001-A.cpp">
+      <Filter>Section2-1\DFS</Filter>
+    </ClCompile>
+    <ClCompile Include="ARC029-A.cpp">
+      <Filter>Section2-1\bit</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC002-D.cpp">
+      <Filter>Section2-1\bit</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC007-C.cpp">
+      <Filter>Section2-1\BFS</Filter>
+    </ClCompile>
+    <ClCompile Include="AGC033-A.cpp">
+      <Filter>Section2-1\BFS</Filter>
+    </ClCompile>
+    <ClCompile Include="ARC005-C.cpp">
+      <Filter>Section2-1\BFS</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC088-D.cpp">
+      <Filter>Section2-1\BFS</Filter>
+    </ClCompile>
+    <ClCompile Include="JOPI2011yo-E.cpp">
+      <Filter>Section2-1\BFS</Filter>
+    </ClCompile>
+    <ClCompile Include="JOI2008ho_C.cpp">
+      <Filter>Section1</Filter>
+    </ClCompile>
+    <ClCompile Include="ShortestPath.cpp">
+      <Filter>Section2-1\BFS</Filter>
+    </ClCompile>
+    <ClCompile Include="dfs_example.cpp">
+      <Filter>Section2-1\DFS</Filter>
+    </ClCompile>
+    <ClCompile Include="ARC061-C.cpp">
+      <Filter>Section1</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC054-C.cpp">
+      <Filter>Section2-1\permutation</Filter>
+    </ClCompile>
+    <ClCompile Include="JOI2006yo-D.cpp">
+      <Filter>Section2-1\BFS</Filter>
+    </ClCompile>
+    <ClCompile Include="JOI2010yo-D.cpp">
+      <Filter>Section2-1\permutation</Filter>
+    </ClCompile>
+    <ClCompile Include="JOI2007yo-A.cpp">
+      <Filter>Section2-2</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC104-C.cpp">
+      <Filter>Section2-1\bit</Filter>
+    </ClCompile>
+    <ClCompile Include="KUPC2015-A.cpp">
+      <Filter>Section2-2\Scheduling</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC103-D.cpp">
+      <Filter>Section2-2\Scheduling</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC038-D_ver2.cpp">
+      <Filter>Section2-2\Scheduling</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC038-D.cpp">
+      <Filter>Section2-2\Scheduling</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC076-C.cpp">
+      <Filter>Section2-2\BestCowLine</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC007-B.cpp">
+      <Filter>Section2-2\BestCowLine</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC009-C.cpp">
+      <Filter>Section2-2\BestCowLine</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC114-C.cpp">
+      <Filter>Section2-1\DFS</Filter>
+    </ClCompile>
+    <ClCompile Include="ARC006-C.cpp">
+      <Filter>Section2-2\SarumansArmy</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC005-C.cpp">
+      <Filter>Section2-2\SarumansArmy</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC091-C.cpp">
+      <Filter>Section2-2\SarumansArmy</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC007-D.cpp">
+      <Filter>Section2-3\Knapsack</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC015-D.cpp">
+      <Filter>Section2-3\Knapsack</Filter>
+    </ClCompile>
+    <ClCompile Include="TDCP-E.cpp">
+      <Filter>Section2-3\Knapsack</Filter>
+    </ClCompile>
+    <ClCompile Include="TDPC-A.cpp">
+      <Filter>Section2-3\Knapsack</Filter>
+    </ClCompile>
+    <ClCompile Include="TDPC-D.cpp">
+      <Filter>Section2-3\Knapsack</Filter>
+    </ClCompile>
+    <ClCompile Include="EDPC-F.cpp">
+      <Filter>Section2-3\LCS</Filter>
+    </ClCompile>
+    <ClCompile Include="Indeednow-C.cpp">
+      <Filter>Section2-3\LCS</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
