@@ -86,7 +86,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <Optimization>MaxSpeed</Optimization>
+      <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp14</LanguageStandard>
@@ -153,6 +153,10 @@
       </SubType>
     </ClCompile>
     <ClCompile Include="ARC054-B.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="cf2015-C.cpp">
       <SubType>
       </SubType>
     </ClCompile>

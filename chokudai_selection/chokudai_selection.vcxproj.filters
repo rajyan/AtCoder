@@ -46,5 +46,8 @@
     <ClCompile Include="ARC016-C.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="cf2015-C.cpp">
+      <Filter>ソース ファイル\solved</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

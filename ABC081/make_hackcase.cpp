@@ -4,6 +4,7 @@
 //#include <iostream>
 //#include <iomanip>
 //#include <sstream>
+//#include <fstream>
 //#include <vector>
 //#include <map>
 //#include <queue>
@@ -38,6 +39,16 @@
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
+//
+//	ofstream of("hack.txt");
+//	of << 50 << "\n";
+//	of << int(1e6) - 50 << " ";
+//
+//	for (int i = 0; i < 49; i++) {
+//		of << -int(1e5) - i << " ";
+//	}
+//
+//	of.close();
 //
 //	return 0;
 //}

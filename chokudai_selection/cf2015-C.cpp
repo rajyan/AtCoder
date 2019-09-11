@@ -39,5 +39,22 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	int N;
+//	cin >> N;
+//
+//	if (N == 0) cout << 32 << "\n";
+//	else {
+//		int ans = -1, dig = 0;
+//		double pi = acos(-1);
+//		DMP(pi);
+//		while (dig != N) {
+//			dig = (lint)floor(pi) % 10;
+//			DMP(dig % 10);
+//			pi *= 10;
+//			ans++;
+//		}
+//		cout << ans << "\n";
+//	}
+//
 //	return 0;
 //}
