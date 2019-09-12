@@ -127,6 +127,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\AriHon\ARC006-C.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="ABC008-D.cpp">
       <SubType>
       </SubType>
@@ -139,6 +143,11 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="ABC111-C.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="ABC112-C.cpp" />
     <ClCompile Include="ARC001-B.cpp" />
     <ClCompile Include="ABC026-C.cpp" />
     <ClCompile Include="ARC003-B.cpp">
@@ -147,7 +156,6 @@
     </ClCompile>
     <ClCompile Include="ARC006-D.cpp" />
     <ClCompile Include="ABC060-C.cpp" />
-    <ClCompile Include="ABC-112-C.cpp" />
     <ClCompile Include="ARC016-C.cpp">
       <SubType>
       </SubType>
@@ -161,6 +169,10 @@
       </SubType>
     </ClCompile>
     <ClCompile Include="dwango2015-C.cpp" />
+    <ClCompile Include="yahoo-procon2017-qual.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

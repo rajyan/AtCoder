@@ -28,9 +28,6 @@
     <ClCompile Include="ABC008-D.cpp">
       <Filter>ソース ファイル\solved</Filter>
     </ClCompile>
-    <ClCompile Include="ABC-112-C.cpp">
-      <Filter>ソース ファイル\solved</Filter>
-    </ClCompile>
     <ClCompile Include="ARC054-B.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
@@ -43,10 +40,22 @@
     <ClCompile Include="ABC016-C.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="cf2015-C.cpp">
+      <Filter>ソース ファイル\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="yahoo-procon2017-qual.cpp">
+      <Filter>ソース ファイル\solved</Filter>
+    </ClCompile>
     <ClCompile Include="ARC016-C.cpp">
+      <Filter>ソース ファイル\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC111-C.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="cf2015-C.cpp">
+    <ClCompile Include="ABC112-C.cpp">
+      <Filter>ソース ファイル\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="..\AriHon\ARC006-C.cpp">
       <Filter>ソース ファイル\solved</Filter>
     </ClCompile>
   </ItemGroup>
