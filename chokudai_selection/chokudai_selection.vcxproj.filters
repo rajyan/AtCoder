@@ -22,9 +22,6 @@
     <ClCompile Include="ABC060-C.cpp">
       <Filter>ソース ファイル\solved</Filter>
     </ClCompile>
-    <ClCompile Include="ABC062-C.cpp">
-      <Filter>ソース ファイル\solved</Filter>
-    </ClCompile>
     <ClCompile Include="ABC008-D.cpp">
       <Filter>ソース ファイル\solved</Filter>
     </ClCompile>
@@ -37,25 +34,28 @@
     <ClCompile Include="dwango2015-C.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="ABC016-C.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="cf2015-C.cpp">
       <Filter>ソース ファイル\solved</Filter>
     </ClCompile>
     <ClCompile Include="yahoo-procon2017-qual.cpp">
       <Filter>ソース ファイル\solved</Filter>
     </ClCompile>
-    <ClCompile Include="ARC016-C.cpp">
-      <Filter>ソース ファイル\solved</Filter>
-    </ClCompile>
-    <ClCompile Include="ABC111-C.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="ABC112-C.cpp">
       <Filter>ソース ファイル\solved</Filter>
     </ClCompile>
     <ClCompile Include="..\AriHon\ARC006-C.cpp">
+      <Filter>ソース ファイル\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC062-C.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC111-C.cpp">
+      <Filter>ソース ファイル\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="ARC016-C.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC016-C.cpp">
       <Filter>ソース ファイル\solved</Filter>
     </ClCompile>
   </ItemGroup>
