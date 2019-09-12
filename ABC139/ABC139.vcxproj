@@ -20,9 +20,10 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{5973213f-a003-4ecd-8a74-5d2c0fae91f2}</ProjectGuid>
-    <RootNamespace>AriHon</RootNamespace>
+    <ProjectGuid>{97f32a6d-4474-42b6-8141-34d3e19f6ee1}</ProjectGuid>
+    <RootNamespace>ABC139</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <ProjectName>ABC139</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -126,132 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ABC002-D.cpp" />
-    <ClCompile Include="ABC005-C.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="ABC007-B.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="ABC007-D.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="ABC009-C.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="ABC015-D.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="ABC038-D.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="ABC038-D_ver2.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="ABC054-C.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="ABC076-C.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="ABC091-C.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="ABC103-D.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="ABC104-C.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="ABC114-C.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="ARC006-C.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="ARC061-C.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="ABC088-D.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="AGC033-A.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="ARC004-A.cpp" />
-    <ClCompile Include="ARC005-C.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="ARC029-A.cpp" />
-    <ClCompile Include="ARC031-B.cpp" />
-    <ClCompile Include="ARC037-B.cpp" />
-    <ClCompile Include="ATC001-A.cpp" />
-    <ClCompile Include="dfs_example.cpp" />
-    <ClCompile Include="EDPC-F.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="Indeednow-C.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="JOI2006yo-D.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="JOI2007yo-A.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="JOI2008ho_C.cpp" />
-    <ClCompile Include="ABC007-C.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="JOI2010yo-D.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="JOPI2011yo-E.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="KUPC2015-A.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="ShortestPath.cpp" />
-    <ClCompile Include="TDCP-E.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="TDPC-A.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="TDPC-D.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="yahoo-procon2017-final-A.cpp" />
+    <ClCompile Include="A.cpp" />
+    <ClCompile Include="B.cpp" />
+    <ClCompile Include="C.cpp" />
+    <ClCompile Include="D.cpp" />
+    <ClCompile Include="E.cpp" />
+    <ClCompile Include="F.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

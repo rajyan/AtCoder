@@ -34,17 +34,37 @@
 //#define DMP(...) ((void)0)
 //#endif
 //
+//template<class T>
+//vector<T> make_vec(size_t s, T val) { return vector<T>(s, val); }
+//template<class... Size>
+//auto make_vec(size_t s, Size... tail) {
+//	return vector<decltype(make_vec(tail...))>(s, make_vec(tail...));
+//}
+//
 //int main() {
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	long double P;
-//	cin >> P;
-//	
-//	long double x = max(0.0l, 1.5 * log2(P * log(2) / 1.5));
-//	cout << fixed << setprecision(10);
-//	cout << x + P * pow(0.5l, x / 1.5) << "\n";
+//	string s;
+//	cin >> s;
+//	const string t = "yahoo";
+//
+//	auto dp = make_vec(s.size() + 1, 100101, INF);
+//	iota(dp[0].begin(), dp[0].end(), 0);
+//	for (int i = 0; i < s.size(); i++) {
+//		for (int j = 0; j < 100100; j++) {
+//			dp[i + 1][j + 1] = min({ dp[i][j],dp[i][j + 1],dp[i + 1][j] });
+//			if (s[i] != t[j % 5]) dp[i + 1][j + 1]++;
+//		}
+//	}
+//
+//	int ans = INF;
+//	for (int i = 0; i < 100100; i += 5) {
+//		ans = min(ans, dp[s.size()][i]);
+//	}
+//
+//	cout << min(ans, (int)s.size()) << "\n";
 //
 //	return 0;
 //}

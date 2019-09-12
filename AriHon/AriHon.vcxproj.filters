@@ -157,5 +157,8 @@
     <ClCompile Include="Indeednow-C.cpp">
       <Filter>Section2-3\LCS</Filter>
     </ClCompile>
+    <ClCompile Include="yahoo-procon2017-final-A.cpp">
+      <Filter>Section2-3\LCS</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

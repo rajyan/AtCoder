@@ -39,12 +39,11 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	long double P;
-//	cin >> P;
-//	
-//	long double x = max(0.0l, 1.5 * log2(P * log(2) / 1.5));
-//	cout << fixed << setprecision(10);
-//	cout << x + P * pow(0.5l, x / 1.5) << "\n";
+//	int a, b;
+//	cin >> a >> b;
+//
+//	if( b!=1) cout << (b - 2) / (a - 1) + 1 << "\n";
+//	else cout << "0\n";
 //
 //	return 0;
 //}

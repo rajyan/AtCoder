@@ -39,12 +39,14 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	long double P;
-//	cin >> P;
+//	string s, t;
+//	cin >> s >> t;
 //	
-//	long double x = max(0.0l, 1.5 * log2(P * log(2) / 1.5));
-//	cout << fixed << setprecision(10);
-//	cout << x + P * pow(0.5l, x / 1.5) << "\n";
+//	int ans = 0;
+//	for (int i = 0; i < 3; i++) {
+//		ans += s[i] == t[i];
+//	}
+//	cout << ans << "\n";
 //
 //	return 0;
 //}
