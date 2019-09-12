@@ -35,19 +35,19 @@
 //
 //class UnionFind {
 //private:
-//	vector<int> data;
-//	int root(int r) { return data[r] < 0 ? r : data[r] = root(data[r]); }
+//	vector<int> item;
+//	int root(int r) { return item[r] < 0 ? r : item[r] = root(item[r]); }
 //
 //public:
-//	UnionFind(int size) : data(size, -1) { }
+//	UnionFind(int size) : item(size, -1) { }
 //	bool is_same(int r, int c) { return root(r) == root(c); }
-//	int size(int r) { return -data[root(r)]; }
+//	int size(int r) { return -item[root(r)]; }
 //
 //	void unify(int r, int c) {
 //		r = root(r); c = root(c);
 //		if (r != c) {
-//			if (data[c] < data[r]) swap(r, c);
-//			data[r] += data[c]; data[c] = r;
+//			if (item[c] < item[r]) swap(r, c);
+//			item[r] += item[c]; item[c] = r;
 //		}
 //	}
 //};

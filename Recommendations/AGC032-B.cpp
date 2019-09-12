@@ -39,20 +39,46 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int N, T;
-//	cin >> N >> T;
+//	int N;
+//	cin >> N;
+//	
+//	vector<pair<int, int>> edge;
+//	edge.reserve(N*(N-1)/2);
 //
-//	vector<lint> t(N);
-//	for (int i = 0; i < N; i++) cin >> t[i];
-//	t.emplace_back(LINF); // ”Ô•º
+//	if (N & 1) {
 //
-//	lint ans = 0;
-//	for (int i = 0; i < N; i++) {
-//		if (t[i + 1] - t[i] > T) ans += T;
-//		else ans += t[i + 1] - t[i];
+//		int node = N, except = 0;
+//		while (except < N) {
+//			for (int j = 1; j < node; j++) {
+//				if (j != except) edge.emplace_back(j, node);
+//			}
+//			node--;
+//			except++;
+//		}
+//
+//	}
+//	else {
+//
+//		for (int i = 1; i < N / 2; i++) edge.emplace_back(i, i + 1);
+//		edge.emplace_back(N / 2, N);
+//		for (int i = N; i > N / 2 + 1; i--) edge.emplace_back(i, i - 1);
+//		edge.emplace_back(N / 2 + 1, 1);
+//
+//		if(N != 4) for (int i = 0; i < N; i++) edge.emplace_back(edge[i].first, N + 1 - edge[i].second);
+//
 //	}
 //
-//	cout << ans << "\n";
+//	cout << edge.size() << "\n";
+//	for (const auto &e : edge) cout << e.first << " " << e.second << "\n";
+//
+//	//// dbg
+//	//vector<int> dbg(N);
+//	//for (const auto &e : edge) {
+//	//	dbg[e.first-1] += e.second;
+//	//	dbg[e.second-1] += e.first;
+//	//}
+//	//DMP(dbg);
+//	//assert(all_of(dbg.begin(), dbg.end(), [&](int d) {return d == dbg[0]; }));
 //
 //	return 0;
 //}

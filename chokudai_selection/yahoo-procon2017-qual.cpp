@@ -34,25 +34,57 @@
 //#define DMP(...) ((void)0)
 //#endif
 //
+//template<class T>
+//inline bool chmax(T &a, T b) { return a < b && (a = b, true); }
+//
 //int main() {
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int N, T;
-//	cin >> N >> T;
+//	int N, K;
+//	cin >> N >> K;
 //
-//	vector<lint> t(N);
-//	for (int i = 0; i < N; i++) cin >> t[i];
-//	t.emplace_back(LINF); // ”Ô•º
-//
-//	lint ans = 0;
-//	for (int i = 0; i < N; i++) {
-//		if (t[i + 1] - t[i] > T) ans += T;
-//		else ans += t[i + 1] - t[i];
+//	vector<int> A(N);
+//	for (int i = 0; i < K; i++) {
+//		int a;
+//		cin >> a;
+//		--a;
+//		A[a] = 1;
 //	}
 //
-//	cout << ans << "\n";
+//	vector<string> S(N);
+//	for (int i = 0; i < N; i++) cin >> S[i];
+//
+//	auto CommonSubstr = [](string &l, string &r) {
+//		string csub = "";
+//		int cnt = 0;
+//		while ((int)l.size() > cnt && (int)r.size() > cnt) {
+//			if (l[cnt] == r[cnt]) csub += l[cnt];
+//			else break;
+//			cnt++;
+//		}
+//		return csub;
+//	};
+//
+//	string ans = "*";
+//	for (int i = 0; i < N; i++) {
+//		if (A[i]) {
+//			if (ans == "*") ans = S[i];
+//			else ans = CommonSubstr(ans, S[i]);
+//		}
+//	}
+//
+//	int rem = -1;
+//	for (int i = 0; i < N; i++) {
+//		if (!A[i]) {
+//			auto tmp = CommonSubstr(ans, S[i]);
+//			chmax(rem, (int)tmp.size());
+//		}
+//	}
+//
+//	if (rem >= (int)ans.size()) cout << -1 << "\n";
+//	else cout << ans.substr(0, rem + 1) << "\n";
 //
 //	return 0;
 //}

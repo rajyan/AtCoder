@@ -4,6 +4,7 @@
 //#include <iostream>
 //#include <iomanip>
 //#include <sstream>
+//#include <fstream>
 //#include <vector>
 //#include <map>
 //#include <queue>
@@ -39,20 +40,15 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int N, T;
-//	cin >> N >> T;
+//	ofstream of("hack.txt");
+//	of << 50 << "\n";
+//	of << int(1e6) - 50 << " ";
 //
-//	vector<lint> t(N);
-//	for (int i = 0; i < N; i++) cin >> t[i];
-//	t.emplace_back(LINF); // ”Ô•º
-//
-//	lint ans = 0;
-//	for (int i = 0; i < N; i++) {
-//		if (t[i + 1] - t[i] > T) ans += T;
-//		else ans += t[i + 1] - t[i];
+//	for (int i = 0; i < 49; i++) {
+//		of << -int(1e5) - i << " ";
 //	}
 //
-//	cout << ans << "\n";
+//	of.close();
 //
 //	return 0;
 //}

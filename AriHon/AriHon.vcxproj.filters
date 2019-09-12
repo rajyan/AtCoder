@@ -41,6 +41,9 @@
     <Filter Include="Section2-3\LCS">
       <UniqueIdentifier>{13f4eb87-cc74-4b2c-9214-86412a890053}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Section2-3\Knapsack2">
+      <UniqueIdentifier>{82a21c6b-5b03-4956-b47c-4a324c109039}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ARC004-A.cpp">
@@ -155,9 +158,6 @@
       <Filter>Section2-3\LCS</Filter>
     </ClCompile>
     <ClCompile Include="Indeednow-C.cpp">
-      <Filter>Section2-3\LCS</Filter>
-    </ClCompile>
-    <ClCompile Include="yahoo-procon2017-final-A.cpp">
       <Filter>Section2-3\LCS</Filter>
     </ClCompile>
   </ItemGroup>

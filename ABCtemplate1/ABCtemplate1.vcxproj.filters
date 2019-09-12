@@ -27,7 +27,10 @@
     <ClCompile Include="D.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="make_hackcase.cpp">
+    <ClCompile Include="E.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="F.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>

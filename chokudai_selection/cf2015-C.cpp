@@ -39,20 +39,22 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int N, T;
-//	cin >> N >> T;
+//	int N;
+//	cin >> N;
 //
-//	vector<lint> t(N);
-//	for (int i = 0; i < N; i++) cin >> t[i];
-//	t.emplace_back(LINF); // ”Ô•º
-//
-//	lint ans = 0;
-//	for (int i = 0; i < N; i++) {
-//		if (t[i + 1] - t[i] > T) ans += T;
-//		else ans += t[i + 1] - t[i];
+//	if (N == 0) cout << 32 << "\n";
+//	else {
+//		int ans = -1, dig = 0;
+//		double pi = acos(-1);
+//		DMP(pi);
+//		while (dig != N) {
+//			dig = (lint)floor(pi) % 10;
+//			DMP(dig % 10);
+//			pi *= 10;
+//			ans++;
+//		}
+//		cout << ans << "\n";
 //	}
-//
-//	cout << ans << "\n";
 //
 //	return 0;
 //}

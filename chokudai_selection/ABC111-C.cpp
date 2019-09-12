@@ -39,20 +39,25 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int N, T;
-//	cin >> N >> T;
+//	int n;
+//	cin >> n;
 //
-//	vector<lint> t(N);
-//	for (int i = 0; i < N; i++) cin >> t[i];
-//	t.emplace_back(LINF); // ”Ô•º
+//	vector<int> v(n);
+//	for (int i = 0; i < n; i++) cin >> v[i];
 //
-//	lint ans = 0;
-//	for (int i = 0; i < N; i++) {
-//		if (t[i + 1] - t[i] > T) ans += T;
-//		else ans += t[i + 1] - t[i];
+//	map<int, int> mp_even, mp_odd;
+//	for (int i = 0; i < n; i++) {
+//		if (i & 1) mp_odd[v[i]]++;
+//		else mp_even[v[i]]++;
 //	}
 //
-//	cout << ans << "\n";
+//	auto comp = [](auto &l, auto &r) {return l.second > r.second; };
+//	vector<pair<int, int>> top2_odd(2), top2_even(2);
+//	partial_sort_copy(mp_odd.begin(), mp_odd.end(), top2_odd.begin(), top2_odd.end(), comp);
+//	partial_sort_copy(mp_even.begin(), mp_even.end(), top2_even.begin(), top2_even.end(), comp);
+//
+//	if (top2_odd[0].first != top2_even[0].first) cout << n - (top2_odd[0].second + top2_even[0].second) << "\n";
+//	else cout << n - max(top2_odd[0].second + top2_even[1].second, top2_odd[1].second + top2_even[0].second) << "\n";
 //
 //	return 0;
 //}

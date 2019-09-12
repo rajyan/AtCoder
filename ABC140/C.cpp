@@ -39,18 +39,13 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int N, T;
-//	cin >> N >> T;
+//	int N;
+//	cin >> N;
+//	vector<int> B(N - 1);
+//	for (int i = 0; i < N - 1; i++) cin >> B[i];
 //
-//	vector<lint> t(N);
-//	for (int i = 0; i < N; i++) cin >> t[i];
-//	t.emplace_back(LINF); // ”Ô•º
-//
-//	lint ans = 0;
-//	for (int i = 0; i < N; i++) {
-//		if (t[i + 1] - t[i] > T) ans += T;
-//		else ans += t[i + 1] - t[i];
-//	}
+//	int ans = B[0] + B.back();
+//	for (int i = 0; i < N - 2; i++) ans += min(B[i], B[i + 1]);
 //
 //	cout << ans << "\n";
 //
