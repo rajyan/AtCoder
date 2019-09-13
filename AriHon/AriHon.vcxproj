@@ -259,6 +259,10 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="topological_sort.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="yahoo-procon2017-final-A.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

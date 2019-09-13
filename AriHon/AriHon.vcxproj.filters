@@ -44,6 +44,9 @@
     <Filter Include="Section2-3\Knapsack2">
       <UniqueIdentifier>{82a21c6b-5b03-4956-b47c-4a324c109039}</UniqueIdentifier>
     </Filter>
+    <Filter Include="TopologicalSort">
+      <UniqueIdentifier>{344f7fcd-8a2a-44f7-80e9-687bea09fdbb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ARC004-A.cpp">
@@ -159,6 +162,18 @@
     </ClCompile>
     <ClCompile Include="Indeednow-C.cpp">
       <Filter>Section2-3\LCS</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC032-D.cpp">
+      <Filter>Section2-3\Knapsack2</Filter>
+    </ClCompile>
+    <ClCompile Include="ARC057-B.cpp">
+      <Filter>Section2-3\Knapsack2</Filter>
+    </ClCompile>
+    <ClCompile Include="yahoo-procon2017-final-A.cpp">
+      <Filter>Section2-3\LCS</Filter>
+    </ClCompile>
+    <ClCompile Include="topological_sort.cpp">
+      <Filter>TopologicalSort</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

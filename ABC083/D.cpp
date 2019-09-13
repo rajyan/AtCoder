@@ -34,6 +34,9 @@
 //#define DMP(...) ((void)0)
 //#endif
 //
+//template<class T>
+//inline bool chmin(T &a, T b) { return a > b && (a = b, true); }
+//
 //int main() {
 //
 //	cin.tie(nullptr);
@@ -42,10 +45,11 @@
 //	string S;
 //	cin >> S;
 //
-//	vector<int> A(S.size() + 1);
-//	for (int i = 0; i < S.size(); i++) A[i + 1] = A[i] + S[i] - '0';
+//	int sz = (int)S.size();
+//	int ans = S.size();
+//	for (int i = 0; i < sz - 1; i++) if (S[i] != S[i + 1]) chmin(ans, max(i + 1, sz - i - 1));
 //
-//	DMP(A);
+//	cout << ans << "\n";
 //
 //	return 0;
 //}

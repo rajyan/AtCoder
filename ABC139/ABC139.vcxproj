@@ -86,7 +86,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <Optimization>MaxSpeed</Optimization>
+      <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp14</LanguageStandard>
@@ -132,6 +132,10 @@
     <ClCompile Include="C.cpp" />
     <ClCompile Include="D.cpp" />
     <ClCompile Include="E.cpp" />
+    <ClCompile Include="E_Ver2.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="F.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

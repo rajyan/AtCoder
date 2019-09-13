@@ -28,7 +28,11 @@
 //
 //	cin.tie(0);
 //
+//	int N, K;
+//	cin >> N >> K;
 //
+//	if ((N + 1) / 2 >= K) cout << "YES" << "\n";
+//	else cout << "NO" << "\n";
 //
 //	return 0;
 //}
