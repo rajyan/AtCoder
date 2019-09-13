@@ -136,6 +136,11 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="E_ver3.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="E_ver4.cpp" />
     <ClCompile Include="F.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

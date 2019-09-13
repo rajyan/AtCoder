@@ -46,7 +46,7 @@
 //
 //	void add_edge(int from, int to) { edges[from].emplace_back(to); }
 //
-//	vector<int> build() {
+//	int build() {
 //
 //		for (int i = 0; i < V; i++) for (const auto &e : edges[i]) in[e]++;
 //		vector<int> used(V), res;
@@ -68,14 +68,15 @@
 //			for (const auto &e : edges[now]) {
 //				in[e]--;
 //				if (in[e] == 0) {
-//					if (used[e]) return vector<int>(); // unable to sort
-//					used[e] = 1;
+//					if (used[e]) return -1; // unable to sort
+//					used[e] = used[now] + 1;
 //					que.emplace(e);
 //				}
 //			}
 //		}
 //
-//		return res;
+//		if (res.size() != V) return -1;
+//		else return *max_element(used.begin(), used.end());
 //	}
 //
 //};
@@ -90,12 +91,6 @@
 //
 //	auto id = [&](int l, int r) { return min(l, r)*N + max(l, r); };
 //
-//	auto rid = [&](int id) {
-//		int row = id / N, col = id % N;
-//		if (row >= col) return make_pair(-1, -1);
-//		else return make_pair(row, col);
-//	};
-//
 //	topological_sort ts(N * N);
 //	for (int i = 0; i < N; i++) {
 //		vector<int> A(N - 1);
@@ -103,33 +98,7 @@
 //		for (int j = 0; j < N - 2; j++) ts.add_edge(id(i, A[j] - 1), id(i, A[j + 1] - 1));
 //	}
 //
-//	auto ord = ts.build();
-//	DMP(ord);
-//
-//	if (ord.size() != N * N) cout << -1 << "\n";
-//	else {
-//
-//		vector<int> used(N);
-//		int ans = 1;
-//		for (int i = 0; i < N*N; i++) {
-//			int row, col;
-//			tie(row, col) = rid(ord[i]);
-//
-//			if (row == -1) continue;
-//
-//			if (used[row] || used[col]) {
-//				ans++;
-//				fill(used.begin(), used.end(), 0);
-//			}
-//
-//			used[row] = 1;
-//			used[col] = 1;
-//
-//		}
-//
-//		cout << ans << "\n";
-//
-//	}
+//	cout << ts.build() << "\n";
 //
 //	return 0;
 //}

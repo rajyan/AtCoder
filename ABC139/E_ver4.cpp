@@ -39,19 +39,19 @@
 //private:
 //	int V;
 //	vector<vector<int>> edges;
-//	vector<int> in;
+//	vector<int> used;
 //public:
-//	topological_sort(int n) :V(n), edges(n), in(n) {}
-//	topological_sort(vector<vector<int>> &edges) :V(edges.size()), in(edges.size()) { this->edges = edges; }
+//	topological_sort(int n) :V(n), edges(n), used(n) {}
+//	topological_sort(vector<vector<int>> &edges) :V(edges.size()), used(edges.size()) { this->edges = edges; }
 //
 //	void add_edge(int from, int to) { edges[from].emplace_back(to); }
 //
 //	vector<int> build() {
 //
+//		vector<int> res, in(V);
 //		for (int i = 0; i < V; i++) for (const auto &e : edges[i]) in[e]++;
-//		vector<int> used(V), res;
-//		res.reserve(V);
 //
+//		res.reserve(V);
 //		queue<int> que;
 //		for (int i = 0; i < V; i++) {
 //			if (in[i] == 0 && !used[i]) {
@@ -59,7 +59,6 @@
 //				que.emplace(i);
 //			}
 //		}
-//
 //		while (!que.empty()) {
 //			int now = que.front();
 //			DMP(now, in);
@@ -69,13 +68,18 @@
 //				in[e]--;
 //				if (in[e] == 0) {
 //					if (used[e]) return vector<int>(); // unable to sort
-//					used[e] = 1;
+//					used[e] = used[now] + 1;
 //					que.emplace(e);
 //				}
 //			}
 //		}
 //
 //		return res;
+//	}
+//
+//	int longest_path() {
+//		if (none_of(used.begin(), used.end(), [](int u) { return u > 0; })) build();
+//		return *max_element(used.begin(), used.end());
 //	}
 //
 //};
@@ -90,12 +94,6 @@
 //
 //	auto id = [&](int l, int r) { return min(l, r)*N + max(l, r); };
 //
-//	auto rid = [&](int id) {
-//		int row = id / N, col = id % N;
-//		if (row >= col) return make_pair(-1, -1);
-//		else return make_pair(row, col);
-//	};
-//
 //	topological_sort ts(N * N);
 //	for (int i = 0; i < N; i++) {
 //		vector<int> A(N - 1);
@@ -103,33 +101,8 @@
 //		for (int j = 0; j < N - 2; j++) ts.add_edge(id(i, A[j] - 1), id(i, A[j + 1] - 1));
 //	}
 //
-//	auto ord = ts.build();
-//	DMP(ord);
-//
-//	if (ord.size() != N * N) cout << -1 << "\n";
-//	else {
-//
-//		vector<int> used(N);
-//		int ans = 1;
-//		for (int i = 0; i < N*N; i++) {
-//			int row, col;
-//			tie(row, col) = rid(ord[i]);
-//
-//			if (row == -1) continue;
-//
-//			if (used[row] || used[col]) {
-//				ans++;
-//				fill(used.begin(), used.end(), 0);
-//			}
-//
-//			used[row] = 1;
-//			used[col] = 1;
-//
-//		}
-//
-//		cout << ans << "\n";
-//
-//	}
+//	if (ts.build().size() != N * N) cout << -1 << "\n";
+//	else cout << ts.longest_path() << "\n";
 //
 //	return 0;
 //}
