@@ -159,6 +159,10 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="ABC041-D.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="ABC054-C.cpp">
       <SubType>
       </SubType>
@@ -246,6 +250,10 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="nikkei2019_qual.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="ShortestPath.cpp" />
     <ClCompile Include="TDCP-E.cpp">
       <SubType>
@@ -259,11 +267,15 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="tenka1_2016_qualA-C.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="topological_sort.cpp">
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="yahoo-procon2017-final-A.cpp" />
+    <ClCompile Include="yahoo_procon2017_final-A.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

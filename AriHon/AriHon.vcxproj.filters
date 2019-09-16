@@ -169,11 +169,20 @@
     <ClCompile Include="ARC057-B.cpp">
       <Filter>Section2-3\Knapsack2</Filter>
     </ClCompile>
-    <ClCompile Include="yahoo-procon2017-final-A.cpp">
-      <Filter>Section2-3\LCS</Filter>
-    </ClCompile>
     <ClCompile Include="topological_sort.cpp">
       <Filter>TopologicalSort</Filter>
+    </ClCompile>
+    <ClCompile Include="nikkei2019_qual.cpp">
+      <Filter>TopologicalSort</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC041-D.cpp">
+      <Filter>TopologicalSort</Filter>
+    </ClCompile>
+    <ClCompile Include="tenka1_2016_qualA-C.cpp">
+      <Filter>TopologicalSort</Filter>
+    </ClCompile>
+    <ClCompile Include="yahoo_procon2017_final-A.cpp">
+      <Filter>Section2-3\LCS</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
