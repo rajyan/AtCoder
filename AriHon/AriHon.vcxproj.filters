@@ -184,5 +184,8 @@
     <ClCompile Include="yahoo_procon2017_final-A.cpp">
       <Filter>Section2-3\LCS</Filter>
     </ClCompile>
+    <ClCompile Include="joi2007_ho-D.cpp">
+      <Filter>TopologicalSort</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

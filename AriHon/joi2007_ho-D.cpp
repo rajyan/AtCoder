@@ -52,7 +52,7 @@
 //		for (int i = 0; i < V; i++) for (const auto &e : edges[i]) in[e]++;
 //
 //		res.reserve(V);
-//		priority_queue<int, vector<int>, greater<int>> que;
+//		queue<int> que;
 //		for (int i = 0; i < V; i++) {
 //			if (in[i] == 0 && !used[i]) {
 //				used[i] = 1;
@@ -60,7 +60,7 @@
 //			}
 //		}
 //		while (!que.empty()) {
-//			int now = que.top();
+//			int now = que.front();
 //			DMP(now, in);
 //			que.pop();
 //			res.emplace_back(now);
@@ -77,9 +77,10 @@
 //		return res;
 //	}
 //
-//	int longest_path() {
-//		if (none_of(used.begin(), used.end(), [](int u) { return u > 0; })) build();
-//		return *max_element(used.begin(), used.end()) - 1;
+//	bool other_ans() {
+//		sort(used.begin(), used.end());
+//		used.erase(unique(used.begin(), used.end()), used.end());
+//		return V != used.size();
 //	}
 //
 //};
@@ -89,26 +90,18 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int N;
-//	cin >> N;
+//	int n, m;
+//	cin >> n >> m;
 //
-//	topological_sort ts(26);
-//	bool pos = true;
-//	for (int i = 0; i < N; i++) {
-//		string a, b;
+//	topological_sort ts(n);
+//	for (int i = 0; i < m; i++) {
+//		int a, b;
 //		cin >> a >> b;
-//
-//		int cnt = 0, sz = min(a.size(), b.size());
-//		while (cnt < sz && a[cnt] == b[cnt]) cnt++;
-//
-//		if (cnt == sz && a.size() > b.size()) pos = false;
-//		else ts.add_edge(a[cnt] - 'a', b[cnt] - 'a');
-//
+//		a--, b--;
+//		ts.add_edge(a, b);
 //	}
-//	auto ord = ts.build();
-//
-//	if (ord.size() == 26 && pos) for (const auto &c : ord) cout << char(c + 'a') << (&c == &ord.back() ? "\n" : "");
-//	else cout << -1 << "\n";
+//	for (const auto &e : ts.build()) cout << e + 1 << "\n";
+//	cout << ts.other_ans() << "\n";
 //
 //	return 0;
 //}

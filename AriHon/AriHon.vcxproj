@@ -233,6 +233,10 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="joi2007_ho-D.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="JOI2008ho_C.cpp" />
     <ClCompile Include="ABC007-C.cpp">
       <SubType>
