@@ -34,30 +34,42 @@
 //#define DMP(...) ((void)0)
 //#endif
 //
-//template<class T>
-//inline bool chmin(T &a, T b) { return a > b && (a = b, true); }
+//template <class T1, class T2>
+//ostream &operator<<(ostream &os, const pair<T1, T2> &p) {
+//	os << "(" << p.first << "," << p.second << ")";
+//	return os;
+//}
+//
+//template <class T1, class T2>
+//ostream &operator<<(ostream &os, const map<T1, T2> &mp) {
+//	for (const auto &e : mp) os << e << " ";
+//	return os;
+//}
 //
 //int main() {
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int N, M;
-//	cin >> N >> M;
+//	int N;
+//	cin >> N;
 //
-//	vector<double> ans(N, 1e10);
-//	for (int i = 0; i < M; i++) {
-//		int num, price;
-//		cin >> num >> price;
-//		for (int j = 0; j < num; j++) {
-//			int id, prob;
-//			cin >> id >> prob;
-//			id--;
-//			chmin(ans[id], 100.0 / prob * price);
-//		}
+//	vector<pair<int, int>> box(N);
+//	for (int i = 0; i < N; i++) {
+//		int f, s;
+//		cin >> f >> s;
+//		box[i] = { f, -s };
+//	}
+//	sort(box.begin(), box.end());
+//	DMP(box);
+//
+//	vector<int> dp(N, INF);
+//	for (int i = 0; i < (int)box.size(); i++) {
+//		*lower_bound(dp.begin(), dp.end(), -box[i].second) = -box[i].second;
 //	}
 //
-//	cout << accumulate(ans.begin(), ans.end(), 0.0) << "\n";
+//	DMP(dp);
+//	cout << lower_bound(dp.begin(), dp.end(), INF) - dp.begin() << "\n";
 //
 //	return 0;
 //}

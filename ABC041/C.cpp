@@ -5,6 +5,7 @@
 //#include <iomanip>
 //#include <sstream>
 //#include <vector>
+//#include <set>
 //#include <map>
 //#include <queue>
 //#include <numeric>
@@ -12,7 +13,7 @@
 //
 //using namespace std;
 //using lint = long long;
-//constexpr int MOD = 1000000007, INF = 1111111111;
+//constexpr int MOD = 1000000007, INF = 1010101010;
 //constexpr lint LINF = 1LL << 60;
 //
 //template <class T>
@@ -34,30 +35,23 @@
 //#define DMP(...) ((void)0)
 //#endif
 //
-//template<class T>
-//inline bool chmin(T &a, T b) { return a > b && (a = b, true); }
-//
 //int main() {
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int N, M;
-//	cin >> N >> M;
+//	int N;
+//	cin >> N;
 //
-//	vector<double> ans(N, 1e10);
-//	for (int i = 0; i < M; i++) {
-//		int num, price;
-//		cin >> num >> price;
-//		for (int j = 0; j < num; j++) {
-//			int id, prob;
-//			cin >> id >> prob;
-//			id--;
-//			chmin(ans[id], 100.0 / prob * price);
-//		}
+//	vector<pair<int, int>> stu(N);
+//	for (int i = 0; i < N; i++) {
+//		int h;
+//		cin >> h;
+//		stu[i] = { h, i + 1 };
 //	}
+//	sort(stu.begin(), stu.end(), greater<pair<int, int>>());
 //
-//	cout << accumulate(ans.begin(), ans.end(), 0.0) << "\n";
+//	for (const auto &e : stu) cout << e.second << (&e == &stu.back() ? "\n" : " ");
 //
 //	return 0;
 //}

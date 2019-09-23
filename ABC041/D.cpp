@@ -5,6 +5,7 @@
 //#include <iomanip>
 //#include <sstream>
 //#include <vector>
+//#include <set>
 //#include <map>
 //#include <queue>
 //#include <numeric>
@@ -12,7 +13,7 @@
 //
 //using namespace std;
 //using lint = long long;
-//constexpr int MOD = 1000000007, INF = 1111111111;
+//constexpr int MOD = 1000000007, INF = 1010101010;
 //constexpr lint LINF = 1LL << 60;
 //
 //template <class T>
@@ -35,29 +36,47 @@
 //#endif
 //
 //template<class T>
-//inline bool chmin(T &a, T b) { return a > b && (a = b, true); }
+//vector<T> make_vec(size_t s, T val) { return vector<T>(s, val); }
+//template<class... Size>
+//auto make_vec(size_t s, Size... tail) {
+//	return vector<decltype(make_vec(tail...))>(s, make_vec(tail...));
+//}
+//
+//template<class T>
+//inline bool chmax(T &a, T b) { return a < b && (a = b, true); }
 //
 //int main() {
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int N, M;
-//	cin >> N >> M;
+//	int n, m;
+//	cin >> n >> m;
 //
-//	vector<double> ans(N, 1e10);
-//	for (int i = 0; i < M; i++) {
-//		int num, price;
-//		cin >> num >> price;
-//		for (int j = 0; j < num; j++) {
-//			int id, prob;
-//			cin >> id >> prob;
-//			id--;
-//			chmin(ans[id], 100.0 / prob * price);
+//	vector<vector<int>> edges(n);
+//	for (int i = 0; i < m; i++) {
+//		int x, y;
+//		cin >> x >> y;
+//		x--, y--;
+//		edges[x].emplace_back(y);
+//	}
+//
+//	auto dp = make_vec(n + 1, (1 << n), 0LL);
+//	dp[0][(1 << n) - 1] = 1;
+//
+//	for (int i = 0; i < n; i++) {
+//		for (int bit = 0; bit < (1 << n); bit++) {
+//			for (int j = 0; j < n; j++) {
+//				if (any_of(edges[j].begin(), edges[j].end(), [&](int e) {return (1 << e) & bit; })) continue;
+//				if (bit & (1 << j)) dp[i + 1][bit - (1 << j)] += dp[i][bit];
+//			}
 //		}
 //	}
 //
-//	cout << accumulate(ans.begin(), ans.end(), 0.0) << "\n";
+//	lint ans = 0;
+//	for (int bit = 0; bit < (1 << n); bit++) chmax(ans, dp[n][bit]);
+//
+//	cout << ans << "\n";
 //
 //	return 0;
 //}

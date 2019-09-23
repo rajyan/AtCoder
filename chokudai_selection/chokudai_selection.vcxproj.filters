@@ -22,9 +22,6 @@
     <ClCompile Include="ABC008-D.cpp">
       <Filter>ソース ファイル\solved</Filter>
     </ClCompile>
-    <ClCompile Include="ARC054-B.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="ARC003-B.cpp">
       <Filter>ソース ファイル\solved</Filter>
     </ClCompile>
@@ -65,6 +62,9 @@
       <Filter>ソース ファイル\solved</Filter>
     </ClCompile>
     <ClCompile Include="ARC006-D_ver2.cpp">
+      <Filter>ソース ファイル\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="ARC054-B.cpp">
       <Filter>ソース ファイル\solved</Filter>
     </ClCompile>
   </ItemGroup>

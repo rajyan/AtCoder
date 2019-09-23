@@ -5,6 +5,7 @@
 //#include <iomanip>
 //#include <sstream>
 //#include <vector>
+//#include <set>
 //#include <map>
 //#include <queue>
 //#include <numeric>
@@ -12,12 +13,12 @@
 //
 //using namespace std;
 //using lint = long long;
-//constexpr int MOD = 1000000007, INF = 1111111111;
+//constexpr int MOD = 1000000007, INF = 1010101010;
 //constexpr lint LINF = 1LL << 60;
 //
 //template <class T>
 //ostream &operator<<(ostream &os, const vector<T> &vec) {
-//	for (const auto &e : vec) os << e << (&e == &vec.back() ? "" : " ");
+//	for (const auto &e : vec) os << e << (&e == &vec.back() ? "\n" : "");
 //	return os;
 //}
 //
@@ -34,30 +35,22 @@
 //#define DMP(...) ((void)0)
 //#endif
 //
-//template<class T>
-//inline bool chmin(T &a, T b) { return a > b && (a = b, true); }
-//
 //int main() {
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int N, M;
-//	cin >> N >> M;
+//	int H, W, A, B;
+//	cin >> H >> W >> A >> B;
 //
-//	vector<double> ans(N, 1e10);
-//	for (int i = 0; i < M; i++) {
-//		int num, price;
-//		cin >> num >> price;
-//		for (int j = 0; j < num; j++) {
-//			int id, prob;
-//			cin >> id >> prob;
-//			id--;
-//			chmin(ans[id], 100.0 / prob * price);
+//	vector<vector<int>> grid(H, vector<int>(W));
+//	for (int i = 0; i < H; i++) {
+//		for (int j = 0; j < W; j++) {
+//			if (i < B && j < A || i >= B && j >= A) grid[i][j] = 1;
 //		}
 //	}
 //
-//	cout << accumulate(ans.begin(), ans.end(), 0.0) << "\n";
+//	cout << grid << "\n";
 //
 //	return 0;
 //}

@@ -34,30 +34,18 @@
 //#define DMP(...) ((void)0)
 //#endif
 //
-//template<class T>
-//inline bool chmin(T &a, T b) { return a > b && (a = b, true); }
-//
 //int main() {
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int N, M;
-//	cin >> N >> M;
+//	string s;
+//	cin >> s;
 //
-//	vector<double> ans(N, 1e10);
-//	for (int i = 0; i < M; i++) {
-//		int num, price;
-//		cin >> num >> price;
-//		for (int j = 0; j < num; j++) {
-//			int id, prob;
-//			cin >> id >> prob;
-//			id--;
-//			chmin(ans[id], 100.0 / prob * price);
-//		}
-//	}
+//	int n;
+//	cin >> n;
 //
-//	cout << accumulate(ans.begin(), ans.end(), 0.0) << "\n";
+//	cout << s[n - 1] << endl;
 //
 //	return 0;
 //}
