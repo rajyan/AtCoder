@@ -40,5 +40,16 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	string s;
+//	int k;
+//	cin >> s >> k;
+//
+//	vector<string> S;
+//	for (int i = 0; i <= (int)s.size() - k; i++) S.emplace_back(s.substr(i, k));
+//	sort(S.begin(), S.end());
+//	S.erase(unique(S.begin(), S.end()), S.end());
+//
+//	cout << S.size() << "\n";
+//
 //	return 0;
 //}

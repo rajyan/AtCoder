@@ -35,10 +35,43 @@
 //#define DMP(...) ((void)0)
 //#endif
 //
+//template<class T>
+//inline bool chmax(T &a, T b) { return a < b && (a = b, true); }
+//
 //int main() {
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
+//
+//	int N, K;
+//	cin >> N >> K;
+//
+//	vector<int> s(N);
+//	for (int i = 0; i < N; i++) cin >> s[i];
+//
+//	lint mul = 1;
+//	int ans = 0, L = 0;
+//	for (int R = 0; R < N; R++) {
+//		if (s[R] == 0) {
+//			cout << N << "\n";
+//			return 0;
+//		}
+//		else {
+//
+//			mul *= s[R];
+//			if (mul <= K) chmax(ans, R - L + 1);
+//
+//			else {
+//				while (mul > K && L < R) {
+//					mul /= s[L];
+//					L++;
+//				}
+//			}
+//
+//		}
+//	}
+//
+//	cout << ans << "\n";
 //
 //	return 0;
 //}

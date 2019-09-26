@@ -187,5 +187,11 @@
     <ClCompile Include="joi2007_ho-D.cpp">
       <Filter>TopologicalSort</Filter>
     </ClCompile>
+    <ClCompile Include="AOJ-KanpSackProblem.cpp">
+      <Filter>Section2-3\Knapsack2</Filter>
+    </ClCompile>
+    <ClCompile Include="Maximum-Cup-D.cpp">
+      <Filter>Section2-3\Knapsack2</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

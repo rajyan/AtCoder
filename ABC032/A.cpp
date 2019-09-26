@@ -15,13 +15,26 @@
 //constexpr int MOD = 1000000007, INF = 1111111111;
 //constexpr lint LINF = 1LL << 60;
 //
+//////////////////// Debug
+//
 //template <class T>
 //ostream &operator<<(ostream &os, const vector<T> &vec) {
-//	for (const auto &e : vec) os << e << (&e == &vec.back() ? "" : " ");
+//	for (const auto &e : vec) os << e << (&e == &vec.back() ? "\n" : " ");
 //	return os;
 //}
 //
-//#ifdef _DEBUG
+//template <class T1, class T2>
+//ostream &operator<<(ostream &os, const pair<T1, T2> &p) {
+//	os << "(" << p.first << "," << p.second << ")";
+//	return os;
+//}
+//
+//template <class T1, class T2>
+//ostream &operator<<(ostream &os, const map<T1, T2> &mp) {
+//	for (const auto &e : mp) os << e << " ";
+//	return os;
+//}
+//
 //template <class T>
 //void dump(const char* str, T &&h) { cerr << str << " = " << h << "\n"; };
 //template <class Head, class... Tail>
@@ -30,9 +43,12 @@
 //	dump(str + (*(str + 1) == ' ' ? 2 : 1), t...);
 //}
 //#define DMP(...) dump(#__VA_ARGS__, __VA_ARGS__)
-//#else 
-//#define DMP(...) ((void)0)
-//#endif
+//
+/////////////////// Debug end
+//
+//#define all(vec) vec.begin(), vec.end()
+//#define REP(i,m,n) for(int i=(int)(m) ; i < (int) (n) ; i++ )
+//#define rep(i,n) REP(i,0,n)
 //
 //template<class T>
 //inline bool chmax(T &a, T b) { return a < b && (a = b, true); }
@@ -40,43 +56,27 @@
 //template<class T>
 //inline bool chmin(T &a, T b) { return a > b && (a = b, true); }
 //
+//template<class T>
+//vector<T> make_vec(size_t s, T val) { return vector<T>(s, val); }
+//template<class... Size>
+//auto make_vec(size_t s, Size... tail) {
+//	return vector<decltype(make_vec(tail...))>(s, make_vec(tail...));
+//}
+//
 //int main() {
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int N;
-//	cin >> N;
+//	int a, b, n;
+//	cin >> a >> b >> n;
 //
-//	vector<vector<int>> emp(N);
-//	for (int i = 0; i < N - 1; i++) {
-//		int b;
-//		cin >> b; b--;
-//		emp[b].emplace_back(i + 1);
-//	}
-//	DMP(emp[0]);
-//
-//	vector<int> sal(N);
-//	auto dfs = [&](auto &&f, int id) -> int {
-//
-//		int res = 0;
-//		if (emp[id].empty()) res = 1;
-//		else {
-//			int minsal = INF, maxsal = 0;
-//			for (const auto &e : emp[id]) {
-//				if (!sal[e]) sal[e] = f(f, e);
-//				chmin(minsal, sal[e]);
-//				chmax(maxsal, sal[e]);
-//			}
-//			res = minsal + maxsal + 1;
+//	REP(i, n, 100000) {
+//		if (i%a == 0 && i%b == 0) {
+//			cout << i << endl;
+//			break;
 //		}
-//
-//		return res;
-//
-//	};
-//
-//	cout << dfs(dfs, 0) << "\n";
-//	DMP(sal);
+//	}
 //
 //	return 0;
 //}

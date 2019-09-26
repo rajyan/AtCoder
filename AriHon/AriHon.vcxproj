@@ -187,6 +187,7 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="AOJ-KanpSackProblem.cpp" />
     <ClCompile Include="ARC006-C.cpp">
       <SubType>
       </SubType>
@@ -251,6 +252,10 @@
       </SubType>
     </ClCompile>
     <ClCompile Include="KUPC2015-A.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="Maximum-Cup-D.cpp">
       <SubType>
       </SubType>
     </ClCompile>

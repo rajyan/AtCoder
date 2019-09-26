@@ -18,7 +18,7 @@
 //
 //template <class T>
 //ostream &operator<<(ostream &os, const vector<T> &vec) {
-//	for (const auto &e : vec) os << e << (&e == &vec.back() ? "" : " ");
+//	for (const auto &e : vec) os << e << (&e == &vec.back() ? "\n" : " ");
 //	return os;
 //}
 //
@@ -35,10 +35,34 @@
 //#define DMP(...) ((void)0)
 //#endif
 //
+//template<class T>
+//vector<T> make_vec(size_t s, T val) { return vector<T>(s, val); }
+//template<class... Size>
+//auto make_vec(size_t s, Size... tail) {
+//	return vector<decltype(make_vec(tail...))>(s, make_vec(tail...));
+//}
+//
 //int main() {
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
+//
+//	int N, W;
+//	cin >> N >> W;
+//
+//	vector<int> w(N), v(N);
+//	for (int i = 0; i < N; i++) cin >> v[i] >> w[i];
+//
+//	auto dp = make_vec(N + 1, W + 1, 0);
+//	for (int i = 0; i < N; i++) {
+//		for (int j = 0; j <= W; j++) {
+//			if (j - w[i] >= 0) dp[i + 1][j] = max(dp[i][j], dp[i + 1][j - w[i]] + v[i]);
+//			else dp[i + 1][j] = dp[i][j];
+//		}
+//	}
+//	DMP(dp);
+//
+//	cout << dp[N][W] << "\n";
 //
 //	return 0;
 //}
