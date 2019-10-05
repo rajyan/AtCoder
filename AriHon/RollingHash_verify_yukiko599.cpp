@@ -18,7 +18,7 @@
 //
 //template <class T>
 //ostream &operator<<(ostream &os, const vector<T> &vec) {
-//	for (const auto &e : vec) os << e << (&e == &vec.back() ? "\n" : " ");
+//	for (const auto &e : vec) os << e << (&e == &vec.back() ? "" : " ");
 //	return os;
 //}
 //
@@ -35,7 +35,7 @@
 //#define DMP(...) ((void)0)
 //#endif
 //
-//template<int Modulo = MOD> struct Mint {
+//template<int Modulo> struct Mint {
 //
 //	lint val;
 //	constexpr Mint(lint v = 0) noexcept : val(v % Modulo) { if (val < 0) v += Modulo; }
@@ -95,10 +95,12 @@
 //};
 //
 ////// mod, base from https://gist.github.com/privet-kitty/295ac9202b7abb3039b493f8238bf40f
-//template< class Mint1 = Mint<2147483647>, class Mint2 = Mint<2147483629> >
 //class RollingHash {
 //
 //private:
+//	using Mint1 = Mint<2147483647>;
+//	using Mint2 = Mint<2147483629>;
+//
 //	vector<Mint1> hash1, pow1;
 //	vector<Mint2> hash2, pow2;
 //	const int base1 = 2147483634;
@@ -131,6 +133,26 @@
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
+//
+//	string S; 
+//	cin >> S;
+//	int sz = S.size();
+//	RollingHash rh(S);
+//
+//	using mint = Mint<MOD>;
+//	vector<mint> dp(sz / 2 + 1, 0);
+//	dp[0] = 1;
+//	for (int i = 1; i <= sz / 2; i++) {
+//		for (int j = 1; j <= i; j++) {
+//			if (rh.get(i - j, i) == rh.get(sz - i, sz - (i - j))) {
+//				dp[i] += dp[i - j];
+//			}
+//		}
+//	}
+//
+//	mint ans = 0;
+//	for (int i = 0; i < sz / 2 + 1; i++)  ans += dp[i];
+//	cout << ans << "\n";
 //
 //	return 0;
 //}

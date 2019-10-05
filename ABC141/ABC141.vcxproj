@@ -133,6 +133,10 @@
     <ClCompile Include="D.cpp" />
     <ClCompile Include="E.cpp" />
     <ClCompile Include="Ever_2.cpp" />
+    <ClCompile Include="Ever_3.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="F.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

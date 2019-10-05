@@ -94,43 +94,34 @@
 //	}
 //};
 //
-////// mod, base from https://gist.github.com/privet-kitty/295ac9202b7abb3039b493f8238bf40f
-//template< class Mint1 = Mint<2147483647>, class Mint2 = Mint<2147483629> >
-//class RollingHash {
-//
-//private:
-//	vector<Mint1> hash1, pow1;
-//	vector<Mint2> hash2, pow2;
-//	const int base1 = 2147483634;
-//	const int base2 = 2147483627;
-//	int sz;
-//
-//public:
-//	RollingHash() {}
-//	RollingHash(const string &s) :sz(s.size()) {
-//
-//		hash1.assign(sz + 1, 0); pow1.assign(sz + 1, 1);
-//		hash2.assign(sz + 1, 0); pow2.assign(sz + 1, 1);
-//
-//		for (int i = 0; i < sz; i++) {
-//			hash1[i + 1] = hash1[i] * base1 + s[i];
-//			pow1[i + 1] = pow1[i] * base1;
-//			hash2[i + 1] = hash2[i] * base2 + s[i];
-//			pow2[i + 1] = pow2[i] * base2;
-//		}
-//	}
-//
-//	pair<int, int> get(int l, int r) {
-//		int res1 = (hash1[r] - hash1[l] * pow1[r - l]).val;
-//		int res2 = (hash2[r] - hash2[l] * pow2[r - l]).val;
-//		return { res1, res2 };
-//	}
-//};
+//using mint = Mint<>;
 //
 //int main() {
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
+//
+//	int N, M;
+//	cin >> N >> M;
+//
+//	vector<int> S(N), T(M);
+//	for (int i = 0; i < N; i++) cin >> S[i];
+//	for (int i = 0; i < M; i++) cin >> T[i];
+//
+//	vector<vector<mint>> dp(N + 1, vector<mint>(M + 1));
+//	vector<vector<mint>> sum(N + 1, vector<mint>(M + 1));
+//	dp[0][0] = 1;
+//	DMP(S, T);
+//	for (int i = 0; i < N; i++) {
+//		for (int j = 0; j < M; j++) {
+//			if (S[i] == T[j]) dp[i + 1][j + 1] = sum[i][j] + 1;
+//			sum[i + 1][j + 1] = sum[i + 1][j] + sum[i][j + 1] - sum[i][j] + dp[i + 1][j + 1];
+//		}
+//	}
+//
+//	DMP(dp, sum);
+//
+//	cout << sum[N][M] + 1 << "\n";
 //
 //	return 0;
 //}

@@ -128,9 +128,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AGC024-C.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="AGC032-B.cpp" />
     <ClCompile Include="ABC020-C.cpp" />
     <ClCompile Include="C.cpp" />
+    <ClCompile Include="checkcpp.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="coorcomp.cpp">
       <SubType>
       </SubType>
@@ -138,6 +146,10 @@
     <ClCompile Include="D.cpp" />
     <ClCompile Include="E.cpp" />
     <ClCompile Include="F.cpp" />
+    <ClCompile Include="primeONsieve.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

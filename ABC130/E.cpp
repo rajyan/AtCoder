@@ -117,8 +117,8 @@
 //	for (int i = 0; i < M; i++) cin >> T[i];
 //
 //	auto dp = make_vec(N + 1, M + 1, mint(0));
-//	for (int i = 0; i < N; i++) dp[i][0] = 1;
-//	for (int j = 0; j < M; j++) dp[0][j] = 1;
+//	for (int i = 0; i <= N; i++) dp[i][0] = 1;
+//	for (int j = 0; j <= M; j++) dp[0][j] = 1;
 //
 //	for (int i = 0; i < N; i++) {
 //		for (int j = 0; j < M; j++) {
@@ -127,7 +127,7 @@
 //		}
 //	}
 //
-//	cout << dp[N][M] + 2 << "\n";
+//	cout << dp[N][M] << "\n";
 //
 //	return 0;
 //}

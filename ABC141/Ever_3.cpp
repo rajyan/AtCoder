@@ -18,7 +18,7 @@
 //
 //template <class T>
 //ostream &operator<<(ostream &os, const vector<T> &vec) {
-//	for (const auto &e : vec) os << e << (&e == &vec.back() ? "\n" : " ");
+//	for (const auto &e : vec) os << e << (&e == &vec.back() ? "" : " ");
 //	return os;
 //}
 //
@@ -35,7 +35,7 @@
 //#define DMP(...) ((void)0)
 //#endif
 //
-//template<int Modulo = MOD> struct Mint {
+//template<int Modulo> struct Mint {
 //
 //	lint val;
 //	constexpr Mint(lint v = 0) noexcept : val(v % Modulo) { if (val < 0) v += Modulo; }
@@ -95,10 +95,12 @@
 //};
 //
 ////// mod, base from https://gist.github.com/privet-kitty/295ac9202b7abb3039b493f8238bf40f
-//template< class Mint1 = Mint<2147483647>, class Mint2 = Mint<2147483629> >
 //class RollingHash {
 //
 //private:
+//	using Mint1 = Mint<2147483647>;
+//	using Mint2 = Mint<2147483629>;
+//
 //	vector<Mint1> hash1, pow1;
 //	vector<Mint2> hash2, pow2;
 //	const int base1 = 2147483634;
@@ -131,6 +133,38 @@
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
+//
+//	int N;
+//	string S;
+//	cin >> N >> S;
+//
+//	RollingHash rh(S);
+//
+//	auto check = [&](int d) {
+//		map<pair<int, int>, int> mp;
+//		for (int i = 0; i + d <= N; i++) {
+//			auto hp = rh.get(i, i + d);
+//			if (mp.find(hp) == mp.end()) mp[hp] = i;
+//			else if (i - mp[hp] >= d) return true;
+//		}
+//		return false;
+//	};
+//
+//	auto biSearch = [&](auto f) {
+//		int ok = -1;
+//		int ng = N;
+//
+//		while (abs(ok - ng) > 1) {
+//			int mid = (ok + ng) / 2;
+//
+//			if (f(mid)) ok = mid;
+//			else ng = mid;
+//		}
+//
+//		return ok;
+//	};
+//
+//	cout << biSearch(check) << "\n";
 //
 //	return 0;
 //}

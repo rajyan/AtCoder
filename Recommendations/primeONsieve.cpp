@@ -18,7 +18,7 @@
 //
 //template <class T>
 //ostream &operator<<(ostream &os, const vector<T> &vec) {
-//	for (const auto &e : vec) os << e << (&e == &vec.back() ? "\n" : " ");
+//	for (const auto &e : vec) os << e << (&e == &vec.back() ? "" : " ");
 //	return os;
 //}
 //
@@ -34,6 +34,97 @@
 //#else 
 //#define DMP(...) ((void)0)
 //#endif
+//
+//const int N = 10000;
+//int min_pf[N];
+//vector<int> prime;
+//
+//class Prime {
+//private:
+//	vector<int> min_pf; // min_pf[i] = minimum prime factor of i
+//	vector<int> prime;
+//
+//	// linear sieve https://cp-algorithms.com/algebra/prime-sieve-linear.html
+//	void sieve(int N) {
+//		min_pf[0] = min_pf[1] = -1;
+//		for (int i = 2; i < N; i++) {
+//			if (min_pf[i] == 0) {
+//				prime.push_back(i);
+//				min_pf[i] = i;
+//			}
+//			for (int j = 0; j < (int)(prime.size()); ++j) {
+//				if (prime[j] > min_pf[i] || i * prime[j] >= N) break;
+//				min_pf[i * prime[j]] = prime[j];
+//			}
+//		}
+//	}
+//
+//public:
+//	Prime(int N = 110000000) : min_pf(N + 1) { 
+//		assert(3 <= N && N < INF);
+//		sieve(N + 1); 
+//	}
+//
+//	vector<pair<lint, int>> factorize(lint n) {
+//
+//		vector<pair<lint, int>> res;
+//		for (lint i = 2; i * i <= n; i++) {
+//			if (n < (lint)min_pf.size()) break;
+//			int cnt = 0;
+//			while (n % i == 0) {
+//				cnt++;
+//				n /= i;
+//			}
+//			if (cnt) res.emplace_back(i, cnt);
+//		}
+//
+//		if (n >= (lint)min_pf.size()) res.emplace_back(n, 1);
+//		else {
+//			int prev = min_pf[n], cnt = 0;
+//			while (n != 1) {
+//				int now = min_pf[n];
+//				n /= now;
+//				cnt++;
+//				if (prev != now) {
+//					res.emplace_back(prev, cnt);
+//					prev = now;
+//					cnt = 0;
+//				}
+//			}
+//		}
+//		return res;
+//	}
+//
+//	// verified using boost miller_rabin_test https://wandbox.org/permlink/6YepW3J9SQNFwWxu
+//	bool isPrime(lint n) {
+//		if (n < (int)(min_pf.size())) return min_pf[n] == n;
+//		else if (n % 2 == 0 || n % 3 == 0) return false;
+//		else if (n % 6 != 1 && n % 6 != 5) return false;
+//		for (lint i = 5; i * i <= n; i += 6) {
+//			if (n % i == 0) return false;
+//			if (n % (i + 2) == 0) return false;
+//		}
+//		return true;
+//	}
+//};
+//
+//template <class T>
+//ostream &operator<<(ostream &os, const set<T> &st) {
+//	for (const auto &e : st) os << e << " ";
+//	return os;
+//}
+//
+//template <class T1, class T2>
+//ostream &operator<<(ostream &os, const pair<T1, T2> &p) {
+//	os << "(" << p.first << "," << p.second << ")";
+//	return os;
+//}
+//
+//template <class T1, class T2>
+//ostream &operator<<(ostream &os, const map<T1, T2> &mp) {
+//	for (const auto &e : mp) os << e << " ";
+//	return os;
+//}
 //
 //template<int Modulo = MOD> struct Mint {
 //
@@ -94,43 +185,26 @@
 //	}
 //};
 //
-////// mod, base from https://gist.github.com/privet-kitty/295ac9202b7abb3039b493f8238bf40f
-//template< class Mint1 = Mint<2147483647>, class Mint2 = Mint<2147483629> >
-//class RollingHash {
-//
-//private:
-//	vector<Mint1> hash1, pow1;
-//	vector<Mint2> hash2, pow2;
-//	const int base1 = 2147483634;
-//	const int base2 = 2147483627;
-//	int sz;
-//
-//public:
-//	RollingHash() {}
-//	RollingHash(const string &s) :sz(s.size()) {
-//
-//		hash1.assign(sz + 1, 0); pow1.assign(sz + 1, 1);
-//		hash2.assign(sz + 1, 0); pow2.assign(sz + 1, 1);
-//
-//		for (int i = 0; i < sz; i++) {
-//			hash1[i + 1] = hash1[i] * base1 + s[i];
-//			pow1[i + 1] = pow1[i] * base1;
-//			hash2[i + 1] = hash2[i] * base2 + s[i];
-//			pow2[i + 1] = pow2[i] * base2;
-//		}
-//	}
-//
-//	pair<int, int> get(int l, int r) {
-//		int res1 = (hash1[r] - hash1[l] * pow1[r - l]).val;
-//		int res2 = (hash2[r] - hash2[l] * pow2[r - l]).val;
-//		return { res1, res2 };
-//	}
-//};
+//using mint = Mint<>;
 //
 //int main() {
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
+//
+//	int N;
+//	cin >> N;
+//
+//	Prime p(1000);
+//	map<int, int> mp;
+//	for (int i = 2; i <= N; i++) {
+//		auto pfact = p.factorize(i);
+//		for (const auto &e : pfact) mp[e.first] += e.second;
+//	}
+//
+//	mint ans = 1;
+//	for (const auto &e : mp) ans *= e.second + 1;
+//	cout << ans << "\n";
 //
 //	return 0;
 //}

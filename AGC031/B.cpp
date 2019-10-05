@@ -18,7 +18,7 @@
 //
 //template <class T>
 //ostream &operator<<(ostream &os, const vector<T> &vec) {
-//	for (const auto &e : vec) os << e << (&e == &vec.back() ? "\n" : " ");
+//	for (const auto &e : vec) os << e << (&e == &vec.back() ? "" : " ");
 //	return os;
 //}
 //
@@ -94,43 +94,29 @@
 //	}
 //};
 //
-////// mod, base from https://gist.github.com/privet-kitty/295ac9202b7abb3039b493f8238bf40f
-//template< class Mint1 = Mint<2147483647>, class Mint2 = Mint<2147483629> >
-//class RollingHash {
+//using mint = Mint<>;
 //
-//private:
-//	vector<Mint1> hash1, pow1;
-//	vector<Mint2> hash2, pow2;
-//	const int base1 = 2147483634;
-//	const int base2 = 2147483627;
-//	int sz;
-//
-//public:
-//	RollingHash() {}
-//	RollingHash(const string &s) :sz(s.size()) {
-//
-//		hash1.assign(sz + 1, 0); pow1.assign(sz + 1, 1);
-//		hash2.assign(sz + 1, 0); pow2.assign(sz + 1, 1);
-//
-//		for (int i = 0; i < sz; i++) {
-//			hash1[i + 1] = hash1[i] * base1 + s[i];
-//			pow1[i + 1] = pow1[i] * base1;
-//			hash2[i + 1] = hash2[i] * base2 + s[i];
-//			pow2[i + 1] = pow2[i] * base2;
-//		}
+//lint modpow(lint a, lint n, lint mod = MOD) {
+//	lint res = 1;
+//	while (n > 0) {
+//		if (n & 1) res = res * a % mod;
+//		a = a * a % mod;
+//		n >>= 1;
 //	}
-//
-//	pair<int, int> get(int l, int r) {
-//		int res1 = (hash1[r] - hash1[l] * pow1[r - l]).val;
-//		int res2 = (hash2[r] - hash2[l] * pow2[r - l]).val;
-//		return { res1, res2 };
-//	}
-//};
+//	return res;
+//}
 //
 //int main() {
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
+//
+//	int N;
+//	cin >> N;
+//
+//	vector<int> C(N);
+//	for (int i = 0; i < N; i++) cin >> C[i];
+//
 //
 //	return 0;
 //}

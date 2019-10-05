@@ -31,5 +31,14 @@
     <ClCompile Include="coorcomp.cpp">
       <Filter>ソース ファイル\solved</Filter>
     </ClCompile>
+    <ClCompile Include="AGC024-C.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="primeONsieve.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="checkcpp.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -18,7 +18,7 @@
 //
 //template <class T>
 //ostream &operator<<(ostream &os, const vector<T> &vec) {
-//	for (const auto &e : vec) os << e << (&e == &vec.back() ? "\n" : " ");
+//	for (const auto &e : vec) os << e << (&e == &vec.back() ? "" : " ");
 //	return os;
 //}
 //
@@ -125,12 +125,25 @@
 //		int res2 = (hash2[r] - hash2[l] * pow2[r - l]).val;
 //		return { res1, res2 };
 //	}
+//
 //};
+//
+//bool operator==(const pair<int, int>&p1, const pair<int, int>&p2) { return p1.first == p2.first && p1.second == p2.second; }
 //
 //int main() {
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
+//
+//	string T, P;
+//	cin >> T >> P;
+//	int tsz = T.size();
+//	int psz = P.size();
+//
+//	RollingHash<> rht(T), rhp(P);
+//	for (int i = 0; i <= tsz - psz; i++) {
+//		if (rht.get(i, i + psz) == rhp.get(0, psz)) cout << i << "\n";
+//	}
 //
 //	return 0;
 //}
