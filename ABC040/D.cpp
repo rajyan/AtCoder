@@ -40,31 +40,5 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	string s;
-//	lint k;
-//	cin >> s >> k;
-//
-//	string s1 = s;
-//	string s2 = s1 + s1;
-//	lint cnt1 = 0, cnt2 = 0;
-//	for (int i = 0; i < s1.size() - 1; i++) {
-//		if (s1[i + 1] == s1[i]) {
-//			cnt1++;
-//			s1[i + 1] = '*';
-//		}
-//	}
-//	for (int i = 0; i < s2.size() - 1; i++) {
-//		if (s2[i + 1] == s2[i]) {
-//			cnt2++;
-//			s2[i + 1] = '*';
-//		}
-//	}
-//	DMP(cnt1, cnt2);
-//
-//	if (cnt1 * 2 == cnt2) cout << cnt1 * k << "\n";
-//	else if (all_of(s.begin(), s.end(), [&](auto c) { return c == s[0]; })) cout << (cnt1 + 2) * k / 2 << "\n";
-//	else if (cnt1 * 2 < cnt2) cout << k - 1 + cnt1 * k << "\n";
-//	else exit(1);
-//
 //	return 0;
 //}

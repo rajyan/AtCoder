@@ -1,3 +1,6 @@
+//
+//// https://judge.yosupo.jp/submission/952
+//
 //#include <cassert>
 //#include <cstdio>
 //#include <cmath>
@@ -18,7 +21,7 @@
 //
 //template <class T>
 //ostream &operator<<(ostream &os, const vector<T> &vec) {
-//	for (const auto &e : vec) os << e << (&e == &vec.back() ? "" : " ");
+//	for (const auto &e : vec) os << e << (&e == &vec.back() ? "\n" : " ");
 //	return os;
 //}
 //
@@ -35,36 +38,42 @@
 //#define DMP(...) ((void)0)
 //#endif
 //
+//class UnionFind {
+//private:
+//	vector<int> data;
+//	int root(int x) { return data[x] < 0 ? x : data[x] = root(data[x]); }
+//
+//public:
+//	UnionFind(int size) : data(size, -1) { }
+//	bool is_same(int x, int y) { return root(x) == root(y); }
+//	int size(int x) { return -data[root(x)]; }
+//
+//	bool unify(int x, int y) {
+//		x = root(x); y = root(y);
+//		if (x != y) {
+//			if (data[y] < data[x]) swap(x, y);
+//			data[x] += data[y]; data[y] = x;
+//			return true;
+//		}
+//		return false;
+//	}
+//};
+//
 //int main() {
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	string s;
-//	lint k;
-//	cin >> s >> k;
+//	int N, Q;
+//	cin >> N >> Q;
 //
-//	string s1 = s;
-//	string s2 = s1 + s1;
-//	lint cnt1 = 0, cnt2 = 0;
-//	for (int i = 0; i < s1.size() - 1; i++) {
-//		if (s1[i + 1] == s1[i]) {
-//			cnt1++;
-//			s1[i + 1] = '*';
-//		}
+//	UnionFind uf(N);
+//	for (int i = 0; i < Q; i++) {
+//		int t, u, v;
+//		cin >> t >> u >> v;
+//		if (t == 0) uf.unify(u, v);
+//		else cout << uf.is_same(u, v) << "\n";
 //	}
-//	for (int i = 0; i < s2.size() - 1; i++) {
-//		if (s2[i + 1] == s2[i]) {
-//			cnt2++;
-//			s2[i + 1] = '*';
-//		}
-//	}
-//	DMP(cnt1, cnt2);
-//
-//	if (cnt1 * 2 == cnt2) cout << cnt1 * k << "\n";
-//	else if (all_of(s.begin(), s.end(), [&](auto c) { return c == s[0]; })) cout << (cnt1 + 2) * k / 2 << "\n";
-//	else if (cnt1 * 2 < cnt2) cout << k - 1 + cnt1 * k << "\n";
-//	else exit(1);
 //
 //	return 0;
 //}

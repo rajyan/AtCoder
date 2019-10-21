@@ -40,5 +40,8 @@
     <ClCompile Include="checkcpp.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="CODEFES2014.cpp">
+      <Filter>ソース ファイル\solved</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

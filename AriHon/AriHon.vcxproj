@@ -197,6 +197,10 @@
     </ClCompile>
     <ClCompile Include="AOJ-KanpSackProblem.cpp" />
     <ClCompile Include="AOJ1138.cpp" />
+    <ClCompile Include="AOJ212.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="ARC006-C.cpp">
       <SubType>
       </SubType>

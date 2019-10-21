@@ -265,5 +265,8 @@
     <ClCompile Include="AOJ1138.cpp">
       <Filter>Section2-1</Filter>
     </ClCompile>
+    <ClCompile Include="AOJ212.cpp">
+      <Filter>Section2-5\Dijkstra2</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

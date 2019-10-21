@@ -20,10 +20,10 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{898f96ff-bfec-437c-b22e-d18f7a8a4b7d}</ProjectGuid>
-    <RootNamespace>Recommendations</RootNamespace>
+    <ProjectGuid>{8f1c4299-9a1e-47ae-af37-df75cc7b3702}</ProjectGuid>
+    <RootNamespace>ABC143</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
-    <ProjectName>Recommendations</ProjectName>
+    <ProjectName>ABC143</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -92,7 +92,6 @@
       <LanguageStandard>stdcpp14</LanguageStandard>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <EnableParallelCodeGeneration>true</EnableParallelCodeGeneration>
-      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -128,29 +127,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AGC024-C.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="AGC032-B.cpp" />
-    <ClCompile Include="ABC020-C.cpp" />
+    <ClCompile Include="A.cpp" />
+    <ClCompile Include="B.cpp" />
     <ClCompile Include="C.cpp" />
-    <ClCompile Include="checkcpp.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="CODEFES2014.cpp" />
-    <ClCompile Include="coorcomp.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
     <ClCompile Include="D.cpp" />
     <ClCompile Include="E.cpp" />
+    <ClCompile Include="E_ver2.cpp" />
+    <ClCompile Include="E_ver3.cpp" />
+    <ClCompile Include="E_ver4.cpp" />
     <ClCompile Include="F.cpp" />
-    <ClCompile Include="primeONsieve.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
