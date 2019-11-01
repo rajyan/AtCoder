@@ -19,6 +19,26 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\AriHon\RollingHash-verify.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="..\AriHon\RollingHash-verify2.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="..\AriHon\RollingHash-verify_yukiko430.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="..\AriHon\RollingHash_verify_yukiko599.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="..\Recommendations\primeONsieve.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="UnionFind20191019_1.cpp" />
     <ClCompile Include="UnionFind20191019_2.cpp" />
     <ClCompile Include="UnionFind20191019_3.cpp">

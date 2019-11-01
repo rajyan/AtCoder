@@ -47,9 +47,6 @@
     <Filter Include="TopologicalSort">
       <UniqueIdentifier>{344f7fcd-8a2a-44f7-80e9-687bea09fdbb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="RoollingHash">
-      <UniqueIdentifier>{e70ddb6d-1228-49f3-a0c2-95e7dc5e3add}</UniqueIdentifier>
-    </Filter>
     <Filter Include="UnionFind">
       <UniqueIdentifier>{058094c8-34b2-4d9e-a5fc-5c8718afd680}</UniqueIdentifier>
     </Filter>
@@ -211,18 +208,6 @@
     <ClCompile Include="Maximum-Cup-D.cpp">
       <Filter>Section2-3\Knapsack2</Filter>
     </ClCompile>
-    <ClCompile Include="RollingHash_verify_yukiko599.cpp">
-      <Filter>RoollingHash</Filter>
-    </ClCompile>
-    <ClCompile Include="RollingHash-verify.cpp">
-      <Filter>RoollingHash</Filter>
-    </ClCompile>
-    <ClCompile Include="RollingHash-verify2.cpp">
-      <Filter>RoollingHash</Filter>
-    </ClCompile>
-    <ClCompile Include="RollingHash-verify_yukiko430.cpp">
-      <Filter>RoollingHash</Filter>
-    </ClCompile>
     <ClCompile Include="ATC001-B.cpp">
       <Filter>UnionFind</Filter>
     </ClCompile>
@@ -262,10 +247,10 @@
     <ClCompile Include="WUPC2012-E.cpp">
       <Filter>Section2-5\Dijkstra2</Filter>
     </ClCompile>
-    <ClCompile Include="AOJ1138.cpp">
-      <Filter>Section2-1</Filter>
-    </ClCompile>
     <ClCompile Include="AOJ212.cpp">
+      <Filter>Section2-5\Dijkstra2</Filter>
+    </ClCompile>
+    <ClCompile Include="AOJ1138.cpp">
       <Filter>Section2-5\Dijkstra2</Filter>
     </ClCompile>
   </ItemGroup>

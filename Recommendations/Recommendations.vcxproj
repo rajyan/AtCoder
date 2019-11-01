@@ -134,6 +134,10 @@
     </ClCompile>
     <ClCompile Include="AGC032-B.cpp" />
     <ClCompile Include="ABC020-C.cpp" />
+    <ClCompile Include="ARC005-C.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="C.cpp" />
     <ClCompile Include="checkcpp.cpp">
       <SubType>
@@ -147,10 +151,6 @@
     <ClCompile Include="D.cpp" />
     <ClCompile Include="E.cpp" />
     <ClCompile Include="F.cpp" />
-    <ClCompile Include="primeONsieve.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

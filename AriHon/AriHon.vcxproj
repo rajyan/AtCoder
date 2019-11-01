@@ -312,22 +312,6 @@
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="RollingHash-verify.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="RollingHash-verify2.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="RollingHash-verify_yukiko430.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="RollingHash_verify_yukiko599.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
     <ClCompile Include="ShortestPath.cpp" />
     <ClCompile Include="SoundHound2018-D.cpp">
       <SubType>
