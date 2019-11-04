@@ -18,7 +18,7 @@
 //
 //template <class T>
 //ostream &operator<<(ostream &os, const vector<T> &vec) {
-//	for (const auto &e : vec) os << e << (&e == &vec.back() ? "" : " ");
+//	for (const auto &e : vec) os << e << (&e == &vec.back() ? "\n" : " ");
 //	return os;
 //}
 //
@@ -40,26 +40,20 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	// f(t) = At + B sin(C pi t) - 100
+//	string s;
+//	cin >> s;
+//	if (s.front() == '>') s = '<' + s;
+//	if (s.back() == '<') s += '>';
 //
-//	int A, B, C;
-//	cin >> A >> B >> C;
-//
-//	using ld = long double;
-//	const ld pi = acosl(-1);
-//	ld t = 100.0L / A;
-//
-//	// ニュートン法
-//	for (int i = 0; i < 10000; i++) {
-//
-//		ld y_t = A * t + B * sinl(C * t * pi) - 100;
-//		ld grad = A + B * C * pi * cosl(C * t * pi);
-//
-//		t = -y_t / grad + t;
-//
+//	vector<int> a(s.size() + 1);
+//	for (int i = 0; i < (int)s.size() - 1; i++) {
+//		if (s[i] == '<') a[i + 1] = a[i] + 1;
 //	}
-//
-//	cout << fixed << setprecision(10) << t << "\n";
+//	for (int i = (int)s.size() - 1; i >= 0; i--) {
+//		if (s[i] == '>') a[i] = max(a[i + 1] + 1, a[i]);
+//	}
+//	
+//	cout << accumulate(a.begin(), a.end(), 0LL) << "\n";
 //
 //	return 0;
 //}
