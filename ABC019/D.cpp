@@ -35,51 +35,34 @@
 //#define DMP(...) ((void)0)
 //#endif
 //
-//template<class T = lint>
-//struct Edge {
-//	int from, to;
-//	T cost;
-//	Edge() {}
-//	Edge(int from, int to, T cost = 1) : from(from), to(to), cost(cost) {}
-//	bool operator>(const Edge &r) const { return this->cost > r.cost; }
-//	friend ostream& operator<<(ostream& os, const Edge<T> &e) { return os << e.from << " " << e.to << " " << e.cost; }
-//};
-//
+//template<class T>
+//inline bool chmax(T &a, const T b) { return a < b && (a = b, true); }
 //
 //int main() {
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int L;
-//	cin >> L;
+//	int N;
+//	cin >> N;
 //
-//	vector<Edge<int>> ans;
-//	ans.reserve(60);
-//
-//	int vert = 0;
-//	for (int i = 20; i >= 1; i--) {
-//		if ((1 << i) & L) {
-//			vert = i;
-//			break;
-//		}
+//	int max_idx = 0, max_d = 0;
+//	for (int i = 2; i <= N; i++) {
+//		cout << "? 1 " << i << endl;
+//		int d;
+//		cin >> d;
+//		if (chmax(max_d, d)) max_idx = i;
 //	}
 //
-//	for (int i = 0; i < vert; i++) {
-//		ans.emplace_back(i + 1, i + 2, 0);
-//		ans.emplace_back(i + 1, i + 2, (1 << i));
+//	for (int i = 1; i <= N; i++) {
+//		if (i == max_idx) continue;
+//		cout << "? " << max_idx << " " << i << endl;
+//		int d;
+//		cin >> d;
+//		chmax(max_d, d);
 //	}
 //
-//	int cost = (1 << vert);
-//	for (int i = vert - 1; i >= 0; i--) {
-//		if (L & (1 << i)) {
-//			ans.emplace_back(i + 1, vert + 1, cost);
-//			cost += (1 << i);
-//		}
-//	}
-//
-//	cout << vert + 1 << " " << ans.size() << "\n";
-//	cout << ans << "\n";
+//	cout << "! " << max_d << endl;
 //
 //	return 0;
 //}

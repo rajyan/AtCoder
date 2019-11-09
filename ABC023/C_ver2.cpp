@@ -18,7 +18,7 @@
 //
 //template <class T>
 //ostream &operator<<(ostream &os, const vector<T> &vec) {
-//	for (const auto &e : vec) os << e << (&e == &vec.back() ? "\n" : " ");
+//	for (const auto &e : vec) os << e << (&e == &vec.back() ? "" : " ");
 //	return os;
 //}
 //
@@ -35,50 +35,51 @@
 //#define DMP(...) ((void)0)
 //#endif
 //
-//template<class T = lint>
-//struct Edge {
-//	int from, to;
-//	T cost;
-//	Edge() {}
-//	Edge(int from, int to, T cost = 1) : from(from), to(to), cost(cost) {}
-//	bool operator>(const Edge &r) const { return this->cost > r.cost; }
-//	friend ostream& operator<<(ostream& os, const Edge<T> &e) { return os << e.from << " " << e.to << " " << e.cost; }
-//};
-//
-//
 //int main() {
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int L;
-//	cin >> L;
+//	int R, C, K;
+//	cin >> R >> C >> K;
 //
-//	vector<Edge<int>> ans;
-//	ans.reserve(60);
+//	int N;
+//	cin >> N;
 //
-//	int vert = 0;
-//	for (int i = 20; i >= 1; i--) {
-//		if ((1 << i) & L) {
-//			vert = i;
-//			break;
+//	vector<lint> row(R), col(C);
+//	map<int, vector<int>> candy;
+//	for (int i = 0; i < N; i++) {
+//		int r, c;
+//		cin >> r >> c;
+//		r--, c--;
+//		row[r]++;
+//		col[c]++;
+//		candy[r].emplace_back(c);
+//	}
+//
+//	auto sort_col = col;
+//	sort(sort_col.begin(), sort_col.end());
+//
+//	lint ans = 0;
+//	for (int i = 0; i < R; i++) {
+//
+//		lint col_cnt1 = upper_bound(sort_col.begin(), sort_col.end(), K - row[i]) - lower_bound(sort_col.begin(), sort_col.end(), K - row[i]);
+//		if (col_cnt1 != 0) {
+//			ans += col_cnt1;
+//			for (const auto &c : candy[i]) {
+//				if (col[c] == K - row[i]) ans--;
+//			}
 //		}
-//	}
 //
-//	for (int i = 0; i < vert; i++) {
-//		ans.emplace_back(i + 1, i + 2, 0);
-//		ans.emplace_back(i + 1, i + 2, (1 << i));
-//	}
-//
-//	int cost = (1 << vert);
-//	for (int i = vert - 1; i >= 0; i--) {
-//		if (L & (1 << i)) {
-//			ans.emplace_back(i + 1, vert + 1, cost);
-//			cost += (1 << i);
+//		lint col_cnt2 = upper_bound(sort_col.begin(), sort_col.end(), K - row[i] + 1) - lower_bound(sort_col.begin(), sort_col.end(), K - row[i] + 1);
+//		if (col_cnt2 != 0) {
+//			for (const auto &c : candy[i]) {
+//				if (col[c] == K - row[i] + 1) ans++;
+//			}
 //		}
+//
 //	}
 //
-//	cout << vert + 1 << " " << ans.size() << "\n";
 //	cout << ans << "\n";
 //
 //	return 0;

@@ -7,7 +7,7 @@
 //#include <vector>
 //#include <set>
 //#include <map>
-//#include <queue>
+//#include <stack>
 //#include <numeric>
 //#include <algorithm>
 //
@@ -35,51 +35,66 @@
 //#define DMP(...) ((void)0)
 //#endif
 //
-//template<class T = lint>
-//struct Edge {
-//	int from, to;
-//	T cost;
-//	Edge() {}
-//	Edge(int from, int to, T cost = 1) : from(from), to(to), cost(cost) {}
-//	bool operator>(const Edge &r) const { return this->cost > r.cost; }
-//	friend ostream& operator<<(ostream& os, const Edge<T> &e) { return os << e.from << " " << e.to << " " << e.cost; }
-//};
-//
-//
 //int main() {
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int L;
-//	cin >> L;
+//	int N;
+//	cin >> N;
 //
-//	vector<Edge<int>> ans;
-//	ans.reserve(60);
+//	vector<int> A(N), B(N);
+//	for (int i = 0; i < N; i++) cin >> A[i];
+//	for (int i = 0; i < N; i++) cin >> B[i];
 //
-//	int vert = 0;
-//	for (int i = 20; i >= 1; i--) {
-//		if ((1 << i) & L) {
-//			vert = i;
-//			break;
+//	multimap<int, int> mp;
+//	for (int i = 0; i < N; i++) mp.emplace(B[i], i);
+//
+//	int cnt = 0;
+//	set<int> idx_A;
+//	for (int i = 0; i < N; i++) idx_A.emplace(i);
+//
+//	while (cnt <= N - 2) {
+//
+//		if (idx_A.empty()) {
+//			cout << "Yes" << "\n";
+//			return 0;
 //		}
-//	}
 //
-//	for (int i = 0; i < vert; i++) {
-//		ans.emplace_back(i + 1, i + 2, 0);
-//		ans.emplace_back(i + 1, i + 2, (1 << i));
-//	}
+//		auto now = idx_A.begin();
 //
-//	int cost = (1 << vert);
-//	for (int i = vert - 1; i >= 0; i--) {
-//		if (L & (1 << i)) {
-//			ans.emplace_back(i + 1, vert + 1, cost);
-//			cost += (1 << i);
+//		while (true) {
+//
+//			if (idx_A.empty()) {
+//				cout << "Yes" << "\n";
+//				return 0;
+//			}
+//			
+//			auto it = mp.upper_bound(A[*now]);
+//			it--;
+//
+//			if (it == mp.end()) {
+//				cout << "No" << "\n";
+//				return 0;
+//			}
+//
+//			if (it->second >= *now) {
+//				idx_A.erase(now);
+//				mp.erase(it);
+//				break;
+//			}
+//
+//			idx_A.erase(now);
+//			now = idx_A.find(it->second);
+//			mp.erase(it);
+//
+//			cnt++;
+//
 //		}
+//
 //	}
 //
-//	cout << vert + 1 << " " << ans.size() << "\n";
-//	cout << ans << "\n";
+//	cout << "No" << "\n";
 //
 //	return 0;
 //}

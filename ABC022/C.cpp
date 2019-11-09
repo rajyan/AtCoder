@@ -35,51 +35,52 @@
 //#define DMP(...) ((void)0)
 //#endif
 //
-//template<class T = lint>
-//struct Edge {
-//	int from, to;
-//	T cost;
-//	Edge() {}
-//	Edge(int from, int to, T cost = 1) : from(from), to(to), cost(cost) {}
-//	bool operator>(const Edge &r) const { return this->cost > r.cost; }
-//	friend ostream& operator<<(ostream& os, const Edge<T> &e) { return os << e.from << " " << e.to << " " << e.cost; }
-//};
-//
+//template<class T>
+//inline bool chmin(T &a, const T b) { return a > b && (a = b, true); }
 //
 //int main() {
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int L;
-//	cin >> L;
+//	int N, M;
+//	cin >> N >> M;
 //
-//	vector<Edge<int>> ans;
-//	ans.reserve(60);
+//	vector<vector<int>> dist(N, vector<int>(N, INF));
+//	for (int i = 0; i < N; i++) dist[i][i] = 0;
 //
-//	int vert = 0;
-//	for (int i = 20; i >= 1; i--) {
-//		if ((1 << i) & L) {
-//			vert = i;
-//			break;
+//	vector<pair<int, int>> memo;
+//	memo.reserve(N);
+//	for (int i = 0; i < M; i++) {
+//		int a, b, c;
+//		cin >> a >> b >> c;
+//		a--, b--;
+//
+//		if (a && b) { 
+//			dist[a][b] = c;
+//			dist[b][a] = c;
+//		}
+//		else memo.emplace_back(max(a, b), c);
+//	}
+//
+//	for (int k = 0; k < N; k++) {
+//		for (int i = 0; i < N; i++) {
+//			for (int j = 0; j < N; j++) {
+//				chmin(dist[i][j], dist[i][k] + dist[k][j]);
+//			}
 //		}
 //	}
 //
-//	for (int i = 0; i < vert; i++) {
-//		ans.emplace_back(i + 1, i + 2, 0);
-//		ans.emplace_back(i + 1, i + 2, (1 << i));
-//	}
-//
-//	int cost = (1 << vert);
-//	for (int i = vert - 1; i >= 0; i--) {
-//		if (L & (1 << i)) {
-//			ans.emplace_back(i + 1, vert + 1, cost);
-//			cost += (1 << i);
+//	int ans = INF;
+//	for (const auto &i : memo) {
+//		for (const auto &j : memo) {
+//			if (i.first == j.first) continue;
+//			chmin(ans, i.second + dist[i.first][j.first] + j.second);
 //		}
 //	}
 //
-//	cout << vert + 1 << " " << ans.size() << "\n";
-//	cout << ans << "\n";
+//	if(ans != INF) cout << ans << "\n";
+//	else cout << -1 << "\n";
 //
 //	return 0;
 //}

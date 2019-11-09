@@ -35,51 +35,46 @@
 //#define DMP(...) ((void)0)
 //#endif
 //
-//template<class T = lint>
-//struct Edge {
-//	int from, to;
-//	T cost;
-//	Edge() {}
-//	Edge(int from, int to, T cost = 1) : from(from), to(to), cost(cost) {}
-//	bool operator>(const Edge &r) const { return this->cost > r.cost; }
-//	friend ostream& operator<<(ostream& os, const Edge<T> &e) { return os << e.from << " " << e.to << " " << e.cost; }
-//};
-//
-//
 //int main() {
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int L;
-//	cin >> L;
+//	int N;
+//	cin >> N;
 //
-//	vector<Edge<int>> ans;
-//	ans.reserve(60);
+//	vector<lint> H(N), S(N);
+//	for (int i = 0; i < N; i++) cin >> H[i] >> S[i];
 //
-//	int vert = 0;
-//	for (int i = 20; i >= 1; i--) {
-//		if ((1 << i) & L) {
-//			vert = i;
-//			break;
+//	auto judge = [&](lint x) {
+//
+//		vector<double> max_t(N);
+//		for (int i = 0; i < N; i++) max_t[i] = (double)(x - H[i]) / S[i];
+//		sort(max_t.begin(), max_t.end());
+//
+//		DMP(max_t);
+//		for (int i = 0; i < N; i++) if (max_t[i] < i) return false;
+//
+//		return true;
+//
+//	};
+//
+//	auto biSearch = [&](auto f) {
+//
+//		lint ok = LINF;
+//		lint ng = -1;
+//
+//		while (abs(ok - ng) > 1) {
+//			lint mid = (ok + ng) / 2;
+//
+//			if (f(mid)) ok = mid;
+//			else ng = mid;
 //		}
-//	}
 //
-//	for (int i = 0; i < vert; i++) {
-//		ans.emplace_back(i + 1, i + 2, 0);
-//		ans.emplace_back(i + 1, i + 2, (1 << i));
-//	}
+//		return ok;
+//	};
 //
-//	int cost = (1 << vert);
-//	for (int i = vert - 1; i >= 0; i--) {
-//		if (L & (1 << i)) {
-//			ans.emplace_back(i + 1, vert + 1, cost);
-//			cost += (1 << i);
-//		}
-//	}
-//
-//	cout << vert + 1 << " " << ans.size() << "\n";
-//	cout << ans << "\n";
+//	cout << biSearch(judge) << "\n";
 //
 //	return 0;
 //}
