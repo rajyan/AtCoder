@@ -47,5 +47,74 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	auto b = make_vec(2, 3, 0);
+//	auto c = make_vec(3, 2, 0);
+//
+//	for (int i = 0; i < 2; i++) for (int j = 0; j < 3; j++) cin >> b[i][j];
+//	for (int i = 0; i < 3; i++) for (int j = 0; j < 2; j++) cin >> c[i][j];
+//
+//	auto calc_res = [&](auto &grid) {
+//
+//		int res = 0;
+//		for (int i = 0; i < 2; i++) {
+//			for (int j = 0; j < 3; j++) {
+//				res += (grid[i][j] == grid[i + 1][j]) * b[i][j];
+//			}
+//		}
+//		for (int i = 0; i < 3; i++) {
+//			for (int j = 0; j < 2; j++) {
+//				res += (grid[i][j] == grid[i][j + 1]) * c[i][j];
+//			}
+//		}
+//
+//		return res;
+//	};
+//
+//	auto id = [&](const auto &grid) {
+//		// 3i–@‚Åindex‚ð•t‚¯‚é
+//		int res = 0, tmp = 1;
+//		for (int i = 0; i < 3; i++) {
+//			for (int j = 0; j < 3; j++) {
+//				res += (grid[i][j] + 1) * tmp;
+//				tmp *= 3;
+//			}
+//		}
+//		return res;
+//	};
+//
+//	vector<int> memo(19683, -1); // 19683 = 3^9
+//	auto dfs = [&](auto &&f, const auto &grid, const int turn) -> int {
+//
+//		if (memo[id(grid)] != -1) return memo[id(grid)];
+//		if (turn == 9) return memo[id(grid)] = calc_res(grid);
+//
+//		bool is_chokudai = !(turn & 1);
+//		int res = is_chokudai ? 0 : INF;
+//
+//		for (int i = 0; i < 3; i++) {
+//			for (int j = 0; j < 3; j++) {
+//
+//				if (grid[i][j] != -1) continue;
+//				auto tmp = grid;
+//				tmp[i][j] = is_chokudai;
+//
+//				if (is_chokudai) res = max(res, f(f, tmp, turn + 1));
+//				else res = min(res, f(f, tmp, turn + 1));
+//
+//			}
+//		}
+//
+//		return memo[id(grid)] = res;
+//
+//	};
+//
+//	int choukudai = dfs(dfs, make_vec(3, 3, -1), 0);
+//	int sum = 0;
+//	for (int i = 0; i < 2; i++) for (int j = 0; j < 3; j++) sum += b[i][j];
+//	for (int i = 0; i < 3; i++) for (int j = 0; j < 2; j++) sum += c[i][j];
+//
+//	cout << choukudai << "\n";
+//	cout << sum - choukudai << "\n";
+//
 //	return 0;
 //}
