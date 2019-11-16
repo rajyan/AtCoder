@@ -40,5 +40,12 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	int A, B, C, D;
+//	cin >> A >> B >> C >> D;
+//
+//	if (1.0*B / A > 1.0*D / C) cout << "TAKAHASHI" << "\n";
+//	else if (1.0*B / A == 1.0*D / C) cout << "DRAW" << "\n";
+//	else cout << "AOKI" << "\n";
+//
 //	return 0;
 //}

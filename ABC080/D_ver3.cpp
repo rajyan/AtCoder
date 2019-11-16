@@ -35,17 +35,44 @@
 //#define DMP(...) ((void)0)
 //#endif
 //
-//template<class T>
-//vector<T> make_vec(size_t s, T val) { return vector<T>(s, val); }
-//template<class... Size>
-//auto make_vec(size_t s, Size... tail) {
-//	return vector<decltype(make_vec(tail...))>(s, make_vec(tail...));
-//}
-//
 //int main() {
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
+//
+//	int N, C;
+//	cin >> N >> C;
+//
+//	vector<int> s(N), t(N), c(N);
+//	for (int i = 0; i < N; i++) {
+//		cin >> s[i] >> t[i] >> c[i];
+//		s[i]--, t[i]--, c[i]--;
+//	}
+//	DMP(s, t, c);
+//
+//	vector<vector<int>> memo(C + 1, vector<int>(100011));
+//	for (int i = 0; i < N; i++) {
+//		memo[c[i]][s[i]]++;
+//		memo[c[i]][t[i] + 1]--;
+//	}
+//
+//	for (int c = 0; c < C; c++) {
+//		for (int i = 0; i < 100010; i++) {
+//			memo[c][i + 1] += memo[c][i];
+//		}
+//	}
+//	//DMP(memo);
+//
+//	int ans = 0;
+//	for (int i = 0; i < 100011; i++) {
+//		int cnt = 0;
+//		for (int c = 0; c < C; c++) {
+//			if (memo[c][i]) cnt++;
+//		}
+//		ans = max(ans, cnt);
+//	}
+//
+//	cout << ans << "\n";
 //
 //	return 0;
 //}

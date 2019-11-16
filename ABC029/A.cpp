@@ -40,5 +40,9 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	string W;
+//	cin >> W;
+//	cout << W + 's' << "\n";
+//
 //	return 0;
 //}

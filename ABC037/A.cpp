@@ -40,5 +40,10 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	int a, b, c;
+//	cin >> a >> b >> c;
+//
+//	cout << c / min(a,b) << "\n";
+//
 //	return 0;
 //}

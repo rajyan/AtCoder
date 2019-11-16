@@ -40,5 +40,12 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	int n, m;
+//	cin >> n >> m;
+//
+//	double sub = n % 12 * 30 + 30.0 * m / 60 - m * 6;
+//	if (sub > 0) cout << min(sub, 360 -sub) << "\n";
+//	else cout << min(-sub, 360 + sub) << "\n";
+//
 //	return 0;
 //}

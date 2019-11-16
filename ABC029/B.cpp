@@ -40,5 +40,14 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	int cnt = 0;
+//	for (int i = 0; i < 12; i++) {
+//		string s;
+//		cin >> s;
+//		if (any_of(s.begin(), s.end(), [](auto c) {return c == 'r'; })) cnt++;
+//	}
+//
+//	cout << cnt << "\n";
+//
 //	return 0;
 //}

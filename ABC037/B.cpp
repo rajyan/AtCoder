@@ -40,5 +40,20 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	int N, Q;
+//	cin >> N >> Q;
+//
+//	vector<int> L(Q), R(Q), T(Q);
+//	for (int i = 0; i < Q; i++) cin >> L[i] >> R[i] >> T[i];
+//
+//	vector<int> ans(N);
+//	for (int i = 0; i < Q; i++) {
+//		for (int j = L[i] - 1; j < R[i]; j++) {
+//			ans[j] = T[i];
+//		}
+//	}
+//
+//	cout << ans << "\n";
+//
 //	return 0;
 //}
