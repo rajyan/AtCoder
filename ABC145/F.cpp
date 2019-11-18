@@ -40,47 +40,28 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int R, G, B;
-//	cin >> R >> G >> B;
+//	int N, K;
+//	cin >> N >> K;
 //
-//	auto calc_cost = [](const int &num, const int &center, const int &r) {
+//	vector<int> H(N + 1);
+//	for (int i = 0; i < N; i++) cin >> H[i];
 //
-//		// O(1) ‚É‚Å‚«‚é‚ª—]—T‚ª‚ ‚é‚Ì‚Å
-//		int res = 0;
-//		for (int i = r; i > r - num; i--) {
-//			res += abs(i - center);
-//		}
+//	vector<pair<int, int>> sum(N);
+//	for (int i = 0; i < N; i++) {
+//		if (H[i + 1] > H[i]) sum[i] = { H[i + 1] - H[i], i };
+//	}
+//	
+//	partial_sort(sum.begin(), sum.begin() + K, sum.end(), [&](auto &l, auto &r) {return l.first > r.first || (l.first == r.first) && H[l.second] > H[r.second]; });
+//	//sort(sum.begin(), sum.end(), [](auto &l, auto &r) {return l.second < r.second; });
+//	for (int i = 0; i < K; i++) {
+//		int idx = sum[i].second;
+//		H[idx + 1] = H[idx];
+//	}
+//	DMP(H);
 //
-//		return res;
-//	};
-//
-//	auto min_cost = [](const int &num) {
-//		// 0 1 1 2 2 ... ‚Ì˜aB‹ôŠï‚Åê‡•ª‚¯
-//		return ((num - 1) / 2 + 1) * ((num - 1) / 2) + ((num + 1) % 2) * num / 2;
-//	};
-//
-//	DMP(min_cost(R), min_cost(G), min_cost(B));
-//
-//	int ans = INF;
-//	// R‚Ì‰E’[‚ÌÀ•W‚Å‘S’Tõ
-//	for (int x = -300; x <= 300; x++) {
-//
-//		int sum = 0;
-//		
-//		// R
-//		if (-100 + R / 2 <= x) sum += min_cost(R);
-//		else sum += calc_cost(R, -100, x);
-//
-//		// G
-//		if (x < 0 - G / 2 && 0 + G / 2 <= x + G) sum += min_cost(G);
-//		else sum += calc_cost(G, 0, x + G);
-//
-//		// B
-//		if (x + G < 100 - B / 2) sum += min_cost(B);
-//		else sum += calc_cost(B, 100, x + G + B);
-//
-//		ans = min(ans, sum);
-//
+//	lint ans = 0;
+//	for (int i = 0; i < N; i++) {
+//		if (H[i + 1] < H[i]) ans += H[i] - H[i + 1];
 //	}
 //
 //	cout << ans << "\n";

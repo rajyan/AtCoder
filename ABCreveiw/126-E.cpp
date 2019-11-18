@@ -35,52 +35,51 @@
 //#define DMP(...) ((void)0)
 //#endif
 //
+//class UnionFind {
+//private:
+//	vector<int> data;
+//
+//public:
+//	UnionFind(int size) : data(size, -1) { }
+//
+//	int root(int x) { return data[x] < 0 ? x : data[x] = root(data[x]); }
+//	bool is_same(int x, int y) { return root(x) == root(y); }
+//	int size(int x) { return -data[root(x)]; }
+//
+//	bool unify(int x, int y) {
+//		x = root(x); y = root(y);
+//		if (x != y) {
+//			if (data[y] < data[x]) swap(x, y);
+//			data[x] += data[y]; data[y] = x;
+//			return true;
+//		}
+//		return false;
+//	}
+//};
+//
+//
 //int main() {
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int R, G, B;
-//	cin >> R >> G >> B;
+//	int N, M;
+//	cin >> N >> M;
 //
-//	auto calc_cost = [](const int &num, const int &center, const int &r) {
-//
-//		// O(1) にできるが余裕があるので
-//		int res = 0;
-//		for (int i = r; i > r - num; i--) {
-//			res += abs(i - center);
-//		}
-//
-//		return res;
-//	};
-//
-//	auto min_cost = [](const int &num) {
-//		// 0 1 1 2 2 ... の和。偶奇で場合分け
-//		return ((num - 1) / 2 + 1) * ((num - 1) / 2) + ((num + 1) % 2) * num / 2;
-//	};
-//
-//	DMP(min_cost(R), min_cost(G), min_cost(B));
-//
-//	int ans = INF;
-//	// Rの右端の座標で全探索
-//	for (int x = -300; x <= 300; x++) {
-//
-//		int sum = 0;
+//	UnionFind uf(N);
+//	for (int i = 0; i < M; i++) {
 //		
-//		// R
-//		if (-100 + R / 2 <= x) sum += min_cost(R);
-//		else sum += calc_cost(R, -100, x);
+//		int x, y, z;
+//		cin >> x >> y >> z;
+//		x--, y--;
 //
-//		// G
-//		if (x < 0 - G / 2 && 0 + G / 2 <= x + G) sum += min_cost(G);
-//		else sum += calc_cost(G, 0, x + G);
+//		uf.unify(x, y);
 //
-//		// B
-//		if (x + G < 100 - B / 2) sum += min_cost(B);
-//		else sum += calc_cost(B, 100, x + G + B);
+//	}
 //
-//		ans = min(ans, sum);
-//
+//	int ans = 0;
+//	for (int i = 0; i < N; i++) {
+//		if (uf.root(i) == i) ans++;
 //	}
 //
 //	cout << ans << "\n";

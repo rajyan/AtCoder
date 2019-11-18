@@ -35,54 +35,46 @@
 //#define DMP(...) ((void)0)
 //#endif
 //
+//template<class T = lint>
+//struct Edge {
+//	int to;
+//	T cost;
+//	Edge() {}
+//	Edge(int to, T cost = 1) : to(to), cost(cost) {}
+//	bool operator>(const Edge &r) const { return this->cost > r.cost; }
+//};
+//
 //int main() {
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int R, G, B;
-//	cin >> R >> G >> B;
+//	int N;
+//	cin >> N;
 //
-//	auto calc_cost = [](const int &num, const int &center, const int &r) {
-//
-//		// O(1) にできるが余裕があるので
-//		int res = 0;
-//		for (int i = r; i > r - num; i--) {
-//			res += abs(i - center);
-//		}
-//
-//		return res;
-//	};
-//
-//	auto min_cost = [](const int &num) {
-//		// 0 1 1 2 2 ... の和。偶奇で場合分け
-//		return ((num - 1) / 2 + 1) * ((num - 1) / 2) + ((num + 1) % 2) * num / 2;
-//	};
-//
-//	DMP(min_cost(R), min_cost(G), min_cost(B));
-//
-//	int ans = INF;
-//	// Rの右端の座標で全探索
-//	for (int x = -300; x <= 300; x++) {
-//
-//		int sum = 0;
-//		
-//		// R
-//		if (-100 + R / 2 <= x) sum += min_cost(R);
-//		else sum += calc_cost(R, -100, x);
-//
-//		// G
-//		if (x < 0 - G / 2 && 0 + G / 2 <= x + G) sum += min_cost(G);
-//		else sum += calc_cost(G, 0, x + G);
-//
-//		// B
-//		if (x + G < 100 - B / 2) sum += min_cost(B);
-//		else sum += calc_cost(B, 100, x + G + B);
-//
-//		ans = min(ans, sum);
-//
+//	vector<vector<Edge<int>>> edges(N);
+//	for (int i = 0; i < N - 1; i++) {
+//		int u, v, len;
+//		cin >> u >> v >> len;
+//		u--, v--;
+//		edges[u].emplace_back(v, len);
+//		edges[v].emplace_back(u, len);
 //	}
 //
+//	vector<int> used(N), ans(N);
+//	auto dfs = [&](auto && f, int d) -> void {
+//		
+//		for (const auto &e : edges[d]) {
+//			if (!used[e.to]) {
+//				ans[e.to] = ans[d] ^ (e.cost & 1);
+//				used[e.to] = 1;
+//				f(f, e.to);
+//			}
+//		}
+//
+//	};
+//
+//	dfs(dfs, 0);
 //	cout << ans << "\n";
 //
 //	return 0;

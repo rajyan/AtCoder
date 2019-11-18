@@ -20,10 +20,10 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{fc2fdb0b-d5ba-4984-97f2-7c0baf53515e}</ProjectGuid>
-    <RootNamespace>chokudai_selection</RootNamespace>
+    <ProjectGuid>{95fc389d-6a2c-4148-8040-de4258a50bde}</ProjectGuid>
+    <RootNamespace>ABC145</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
-    <ProjectName>chokudai_selection</ProjectName>
+    <ProjectName>ABC145</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -127,68 +127,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\AriHon\ARC006-C.cpp">
+    <ClCompile Include="A.cpp" />
+    <ClCompile Include="B.cpp" />
+    <ClCompile Include="C.cpp" />
+    <ClCompile Include="D.cpp" />
+    <ClCompile Include="E.cpp" />
+    <ClCompile Include="E_ver2.cpp">
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="ABC008-D.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="ABC016-C.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="ABC062-C.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="ABC111-C.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="ABC112-C.cpp" />
-    <ClCompile Include="ARC001-B.cpp" />
-    <ClCompile Include="ABC026-C.cpp" />
-    <ClCompile Include="ARC003-B.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="ARC006-D.cpp" />
-    <ClCompile Include="ABC060-C.cpp" />
-    <ClCompile Include="ARC006-D_ver2.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="ARC016-C.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="ARC054-B.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="cf2015-C.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="cf_final-C.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="cf_final-C_ver2.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="dwango2015-C.cpp" />
-    <ClCompile Include="montecarlo.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="yahoo-procon2017-qual.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
+    <ClCompile Include="F.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

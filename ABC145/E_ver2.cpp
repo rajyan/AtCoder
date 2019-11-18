@@ -35,52 +35,51 @@
 //#define DMP(...) ((void)0)
 //#endif
 //
+//template<class T>
+//vector<T> make_vec(size_t s, T val) { return vector<T>(s, val); }
+//template<class... Size>
+//auto make_vec(size_t s, Size... tail) {
+//	return vector<decltype(make_vec(tail...))>(s, make_vec(tail...));
+//}
+//
+//template<class T>
+//inline bool chmax(T &a, const T b) { return a < b && (a = b, true); }
+//
 //int main() {
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int R, G, B;
-//	cin >> R >> G >> B;
+//	int N, T;
+//	cin >> N >> T;
 //
-//	auto calc_cost = [](const int &num, const int &center, const int &r) {
+//	vector<int> A(N), B(N);
+//	for (int i = 0; i < N; i++) cin >> A[i] >> B[i];
 //
-//		// O(1) にできるが余裕があるので
-//		int res = 0;
-//		for (int i = r; i > r - num; i--) {
-//			res += abs(i - center);
+//	auto dp_f = make_vec(N + 1, T, 0);
+//	auto dp_b = make_vec(N + 1, T, 0);
+//
+//	for (int i = 0; i < N; i++) {
+//		for (int j = 0; j < T; j++) {
+//			chmax(dp_f[i + 1][j], dp_f[i][j]);
+//			if (j > A[i]) chmax(dp_f[i + 1][j - A[i]], dp_f[i][j] + B[i]);
 //		}
+//	}
+//	DMP(dp_f);
 //
-//		return res;
-//	};
+//	for (int i = N - 1; i >= 0; i--) {
+//		for (int j = 0; j < T; j++) {
+//			chmax(dp_b[i][j], dp_b[i + 1][j]);
+//			if (j > A[i]) chmax(dp_b[i][j - A[i]], dp_b[i + 1][j] + B[i]);
+//		}
+//	}
+//	DMP(dp_b);
 //
-//	auto min_cost = [](const int &num) {
-//		// 0 1 1 2 2 ... の和。偶奇で場合分け
-//		return ((num - 1) / 2 + 1) * ((num - 1) / 2) + ((num + 1) % 2) * num / 2;
-//	};
-//
-//	DMP(min_cost(R), min_cost(G), min_cost(B));
-//
-//	int ans = INF;
-//	// Rの右端の座標で全探索
-//	for (int x = -300; x <= 300; x++) {
-//
-//		int sum = 0;
-//		
-//		// R
-//		if (-100 + R / 2 <= x) sum += min_cost(R);
-//		else sum += calc_cost(R, -100, x);
-//
-//		// G
-//		if (x < 0 - G / 2 && 0 + G / 2 <= x + G) sum += min_cost(G);
-//		else sum += calc_cost(G, 0, x + G);
-//
-//		// B
-//		if (x + G < 100 - B / 2) sum += min_cost(B);
-//		else sum += calc_cost(B, 100, x + G + B);
-//
-//		ans = min(ans, sum);
-//
+//	int ans = 0;
+//	for (int i = 0; i < N; i++) {
+//		for (int j = 0; j < T; j++) {
+//			chmax(ans, dp_f[i][j] + dp_b[i + 1][T - 1 - j] + B[i]);
+//		}
 //	}
 //
 //	cout << ans << "\n";

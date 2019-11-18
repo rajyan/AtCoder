@@ -40,50 +40,37 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int R, G, B;
-//	cin >> R >> G >> B;
+//	int N, Q;
+//	cin >> N >> Q;
 //
-//	auto calc_cost = [](const int &num, const int &center, const int &r) {
+//	struct rw { 
+//		int s, t, x; 
+//		rw(int s = 0, int t = 0, int x = 0) :s(s), t(t), x(x) {}
+//	};
+//	vector<rw> RW(N);
+//	for (int i = 0; i < N; i++) {
+//		int s, t, x;
+//		cin >> s >> t >> x;
+//		RW[i] = { s, t, x };
+//	}
+//	sort(RW.begin(), RW.end(), [](auto &l, auto &r) { return (l.s - l.x) < (r.s - r.x); });
 //
-//		// O(1) ‚É‚Å‚«‚é‚ª—]—T‚ª‚ ‚é‚Ì‚Å
-//		int res = 0;
-//		for (int i = r; i > r - num; i--) {
-//			res += abs(i - center);
+//	int idx = 0;
+//	priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>> pq;
+//	for (int i = 0; i < Q; i++) {
+//
+//		int d;
+//		cin >> d;
+//
+//		while (idx < N && RW[idx].s - RW[idx].x <= d) {
+//			pq.emplace(RW[idx].x, RW[idx].t - RW[idx].x);
+//			idx++;
 //		}
+//		while (!pq.empty() && pq.top().second <= d) pq.pop();
 //
-//		return res;
-//	};
-//
-//	auto min_cost = [](const int &num) {
-//		// 0 1 1 2 2 ... ‚Ì˜aB‹ôŠï‚Åê‡•ª‚¯
-//		return ((num - 1) / 2 + 1) * ((num - 1) / 2) + ((num + 1) % 2) * num / 2;
-//	};
-//
-//	DMP(min_cost(R), min_cost(G), min_cost(B));
-//
-//	int ans = INF;
-//	// R‚Ì‰E’[‚ÌÀ•W‚Å‘S’Tõ
-//	for (int x = -300; x <= 300; x++) {
-//
-//		int sum = 0;
-//		
-//		// R
-//		if (-100 + R / 2 <= x) sum += min_cost(R);
-//		else sum += calc_cost(R, -100, x);
-//
-//		// G
-//		if (x < 0 - G / 2 && 0 + G / 2 <= x + G) sum += min_cost(G);
-//		else sum += calc_cost(G, 0, x + G);
-//
-//		// B
-//		if (x + G < 100 - B / 2) sum += min_cost(B);
-//		else sum += calc_cost(B, 100, x + G + B);
-//
-//		ans = min(ans, sum);
+//		cout << (pq.empty() ? -1 : pq.top().first) << "\n";
 //
 //	}
-//
-//	cout << ans << "\n";
 //
 //	return 0;
 //}

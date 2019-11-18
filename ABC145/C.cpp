@@ -40,50 +40,29 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int R, G, B;
-//	cin >> R >> G >> B;
+//	int N;
+//	cin >> N;
 //
-//	auto calc_cost = [](const int &num, const int &center, const int &r) {
+//	vector<double> x(N), y(N);
+//	for (int i = 0; i < N; i++) cin >> x[i] >> y[i];
 //
-//		// O(1) ‚É‚Å‚«‚é‚ª—]—T‚ª‚ ‚é‚Ì‚Å
-//		int res = 0;
-//		for (int i = r; i > r - num; i--) {
-//			res += abs(i - center);
+//	double ans = .0;
+//	vector<int> perm(N);
+//	iota(perm.begin(), perm.end(), 0);
+//	do {
+//
+//		double sum = .0;
+//		for (int i = 0; i < N - 1; i++) {
+//			sum += sqrt((x[perm[i]] - x[perm[i + 1]]) * (x[perm[i]] - x[perm[i + 1]]) +
+//				(y[perm[i]] - y[perm[i + 1]]) * (y[perm[i]] - y[perm[i + 1]]));
 //		}
 //
-//		return res;
-//	};
+//		ans += sum;
 //
-//	auto min_cost = [](const int &num) {
-//		// 0 1 1 2 2 ... ‚Ì˜aB‹ôŠï‚Åê‡•ª‚¯
-//		return ((num - 1) / 2 + 1) * ((num - 1) / 2) + ((num + 1) % 2) * num / 2;
-//	};
+//	} while (next_permutation(perm.begin(), perm.end()));
 //
-//	DMP(min_cost(R), min_cost(G), min_cost(B));
-//
-//	int ans = INF;
-//	// R‚Ì‰E’[‚ÌÀ•W‚Å‘S’Tõ
-//	for (int x = -300; x <= 300; x++) {
-//
-//		int sum = 0;
-//		
-//		// R
-//		if (-100 + R / 2 <= x) sum += min_cost(R);
-//		else sum += calc_cost(R, -100, x);
-//
-//		// G
-//		if (x < 0 - G / 2 && 0 + G / 2 <= x + G) sum += min_cost(G);
-//		else sum += calc_cost(G, 0, x + G);
-//
-//		// B
-//		if (x + G < 100 - B / 2) sum += min_cost(B);
-//		else sum += calc_cost(B, 100, x + G + B);
-//
-//		ans = min(ans, sum);
-//
-//	}
-//
-//	cout << ans << "\n";
+//	for (int i = 1; i <= N; i++) ans /= i;
+//	cout << fixed << setprecision(10) << ans << "\n";
 //
 //	return 0;
 //}

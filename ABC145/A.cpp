@@ -40,50 +40,10 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
-//	int R, G, B;
-//	cin >> R >> G >> B;
+//	int r;
+//	cin >> r;
 //
-//	auto calc_cost = [](const int &num, const int &center, const int &r) {
-//
-//		// O(1) にできるが余裕があるので
-//		int res = 0;
-//		for (int i = r; i > r - num; i--) {
-//			res += abs(i - center);
-//		}
-//
-//		return res;
-//	};
-//
-//	auto min_cost = [](const int &num) {
-//		// 0 1 1 2 2 ... の和。偶奇で場合分け
-//		return ((num - 1) / 2 + 1) * ((num - 1) / 2) + ((num + 1) % 2) * num / 2;
-//	};
-//
-//	DMP(min_cost(R), min_cost(G), min_cost(B));
-//
-//	int ans = INF;
-//	// Rの右端の座標で全探索
-//	for (int x = -300; x <= 300; x++) {
-//
-//		int sum = 0;
-//		
-//		// R
-//		if (-100 + R / 2 <= x) sum += min_cost(R);
-//		else sum += calc_cost(R, -100, x);
-//
-//		// G
-//		if (x < 0 - G / 2 && 0 + G / 2 <= x + G) sum += min_cost(G);
-//		else sum += calc_cost(G, 0, x + G);
-//
-//		// B
-//		if (x + G < 100 - B / 2) sum += min_cost(B);
-//		else sum += calc_cost(B, 100, x + G + B);
-//
-//		ans = min(ans, sum);
-//
-//	}
-//
-//	cout << ans << "\n";
+//	cout << r * r << "\n";
 //
 //	return 0;
 //}
