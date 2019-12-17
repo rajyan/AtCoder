@@ -40,5 +40,20 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	int N, T;
+//	cin >> N >> T;
+//
+//	vector<int> A(N);
+//	for (int i = 0; i < N; i++) cin >> A[i];
+//	A.emplace_back(INF); // ”Ô•º
+//
+//	lint ans = 0;
+//	for (int i = 0; i < N; i++) {
+//		if (A[i] + T < A[i + 1]) ans += T;
+//		else ans += A[i + 1] - A[i];
+//	}
+//
+//	cout << ans << "\n";
+//
 //	return 0;
 //}

@@ -42,6 +42,35 @@
 //	int N;
 //	cin >> N;
 //
+//	vector<lint> A(N), B(N);
+//	for (int i = 0; i < N; i++) cin >> A[i];
+//	for (int i = 0; i < N; i++) cin >> B[i];
 //
+//	priority_queue<pair<lint, lint>> pq;
+//	for (int i = 0; i < N; i++) pq.emplace(B[i], i);
+//	lint ans = 0;
+//	while (!pq.empty()) {
+//
+//		lint b, idx;
+//		tie(b, idx) = pq.top();
+//		pq.pop();
+//		if (A[idx] == B[idx]) continue;
+//
+//		lint sum = B[(idx + 1) % N] + B[(idx + N - 1) % N];
+//		lint cnt = (B[idx] - A[idx]) / sum;
+//
+//		if (cnt <= 0) {
+//			ans = -1;
+//			break;
+//		}
+//
+//		B[idx] -= sum * cnt;
+//		pq.emplace(B[idx], idx);
+//		ans += cnt;
+//
+//	}
+//
+//	cout << ans << "\n";
+//	
 //	return 0;
 //}

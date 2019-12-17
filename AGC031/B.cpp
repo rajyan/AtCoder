@@ -35,10 +35,11 @@
 //#define DMP(...) ((void)0)
 //#endif
 //
-//template<int Modulo = MOD> struct Mint {
+//template<int Modulo = MOD>
+//struct Mint {
 //
 //	lint val;
-//	constexpr Mint(lint v = 0) noexcept : val(v % Modulo) { if (val < 0) v += Modulo; }
+//	constexpr Mint(lint v = 0) noexcept : val(v % Modulo) { if (val < 0) val += Modulo; }
 //
 //	constexpr Mint& operator += (const Mint &r) noexcept {
 //		val += r.val;
@@ -96,16 +97,6 @@
 //
 //using mint = Mint<>;
 //
-//lint modpow(lint a, lint n, lint mod = MOD) {
-//	lint res = 1;
-//	while (n > 0) {
-//		if (n & 1) res = res * a % mod;
-//		a = a * a % mod;
-//		n >>= 1;
-//	}
-//	return res;
-//}
-//
 //int main() {
 //
 //	cin.tie(nullptr);
@@ -116,7 +107,35 @@
 //
 //	vector<int> C(N);
 //	for (int i = 0; i < N; i++) cin >> C[i];
+//	C.erase(unique(C.begin(), C.end()), C.end());
 //
+//
+//	vector<vector<int>> edges(N);
+//	for (int i = 0; i < N - 1; i++) {
+//		edges[i].emplace_back(i + 1);
+//	}
+//
+//	map<int, vector<int>> mp;
+//	for (int i = 0; i < C.size(); i++) {
+//		mp[C[i]].emplace_back(i);
+//	}
+//
+//	for (const auto &e : mp) {
+//		auto vec = e.second;
+//		for (int i = 0; i + 1 < vec.size(); i++) {
+//			edges[vec[i]].emplace_back(vec[i + 1]);
+//		}
+//	}
+//
+//	vector<mint> ans(N);
+//	ans[0] = 1;
+//	for (int i = 0; i < N; i++) {
+//		for (const auto &e : edges[i]) {
+//			ans[e] += ans[i];
+//		}
+//	}
+//
+//	cout << ans.back() << "\n";
 //
 //	return 0;
 //}

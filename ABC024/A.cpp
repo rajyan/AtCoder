@@ -40,5 +40,14 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	int A, B, C, K, S, T;
+//	cin >> A >> B >> C >> K >> S >> T;
+//
+//	int ans = A * S + B * T;
+//
+//	if (S + T >= K) ans -= (S + T) * C;
+//
+//	cout << ans << "\n";
+//
 //	return 0;
 //}

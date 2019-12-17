@@ -40,5 +40,27 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	int N;
+//	cin >> N;
+//
+//	vector<int> a(N);
+//	for (int i = 0; i < N; i++) cin >> a[i];
+//	int sum = accumulate(a.begin(), a.end(), 0);
+//
+//	if (sum % N != 0) {
+//		cout << -1 << "\n";
+//		return 0;
+//	}
+//
+//	const int goal = sum / N;
+//	int ans = 0, tmp = 0, cnt = 0;
+//	for (int i = 0; i < N - 1; i++) {
+//		tmp += a[i];
+//		if (tmp == ++cnt * goal) tmp = cnt = 0;
+//		else ans++;
+//	}
+//
+//	cout << ans << "\n";
+//
 //	return 0;
 //}

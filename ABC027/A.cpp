@@ -40,5 +40,14 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	int ans = 0;
+//	for (int i = 0; i < 3; i++) {
+//		int l;
+//		cin >> l;
+//		ans ^= l;
+//	}
+//
+//	cout << ans << "\n";
+//
 //	return 0;
 //}

@@ -40,5 +40,29 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	int N;
+//	cin >> N;
+//	string S;
+//	cin >> S;
+//
+//	bool pos = true;
+//	if (N % 2 == 0 || S[N / 2] != 'b') pos = false;
+//
+//	for (int i = 0; i < N - 1; i++) {
+//
+//		if (S[i] != 'a' && S[i] != 'b' && S[i] != 'c') {
+//			pos = false;
+//			break;
+//		}
+//
+//		if (S[i] == 'a' && S[i + 1] != 'b') pos = false;
+//		if (S[i] == 'b' && S[i + 1] != 'c') pos = false;
+//		if (S[i] == 'c' && S[i + 1] != 'a') pos = false;
+//
+//	}
+//
+//	if (pos) cout << (N - 1) / 2 << "\n";
+//	else cout << -1 << "\n";
+//
 //	return 0;
 //}

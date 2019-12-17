@@ -40,5 +40,9 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	int X;
+//	cin >> X;
+//	cout << X/10+X%10 << "\n";
+//
 //	return 0;
 //}

@@ -139,6 +139,27 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="130-E.cpp" />
+    <ClCompile Include="131-E.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="131-F.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="132-E.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="133-E.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="test.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -40,5 +40,10 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	int a, b, c;
+//	cin >> a >> b >> c;
+//
+//	cout << a + b + c - max({ a,b,c }) - min({ a,b,c }) << "\n";
+//
 //	return 0;
 //}

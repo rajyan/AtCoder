@@ -40,5 +40,14 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	string s;
+//	cin >> s;
+//
+//	int N;
+//	cin >> N;
+//	N--;
+//
+//	cout << ""s + s[N/5] + s[N%5] << "\n";
+//
 //	return 0;
 //}
