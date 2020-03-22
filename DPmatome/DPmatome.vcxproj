@@ -129,6 +129,22 @@
     <ClCompile Include="F.cpp" />
     <ClCompile Include="G.cpp" />
     <ClCompile Include="H.cpp" />
+    <ClCompile Include="I.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="J.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="K.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="K_ver2.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

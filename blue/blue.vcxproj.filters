@@ -7,15 +7,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="B.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="C.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="D.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="E.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
@@ -23,6 +14,15 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="jsc2019_qual.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="keyence2019-D.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="ARC103-E.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="AGC026-B.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>

@@ -18,7 +18,7 @@
 //
 //template <class T>
 //ostream &operator<<(ostream &os, const vector<T> &vec) {
-//	for (const auto &e : vec) os << e << (&e == &vec.back() ? "\n" : " ");
+//	for (const auto &e : vec) os << e << (&e == &vec.back() ? "" : "\n");
 //	return os;
 //}
 //
@@ -39,6 +39,20 @@
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
+//
+//	vector<vector<int>> abc(3, vector<int>(2));
+//	for (int i = 0; i < 3; i++) {
+//		cin >> abc[i][0];
+//		abc[i][1] = i;
+//	}
+//	sort(abc.begin(), abc.end(), greater<>());
+//
+//	vector<int> ans(3);
+//	for (int i = 0; i < 3; i++) {
+//		ans[abc[i][1]] = i + 1;
+//	}
+//
+//	cout << ans << endl;
 //
 //	return 0;
 //}

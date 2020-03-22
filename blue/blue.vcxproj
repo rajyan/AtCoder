@@ -128,9 +128,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="jsc2019_qual.cpp" />
-    <ClCompile Include="B.cpp" />
-    <ClCompile Include="C.cpp" />
-    <ClCompile Include="D.cpp" />
+    <ClCompile Include="keyence2019-D.cpp" />
+    <ClCompile Include="ARC103-E.cpp" />
+    <ClCompile Include="AGC026-B.cpp" />
     <ClCompile Include="E.cpp" />
     <ClCompile Include="F.cpp" />
   </ItemGroup>
