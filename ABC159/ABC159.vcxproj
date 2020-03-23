@@ -20,10 +20,10 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{acdbf671-63cd-4c24-8699-3037333f0171}</ProjectGuid>
-    <RootNamespace>cyan</RootNamespace>
+    <ProjectGuid>{dd6b059b-8df8-4bd8-be52-c7d070de2c41}</ProjectGuid>
+    <RootNamespace>ABC159</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
-    <ProjectName>cyan</ProjectName>
+    <ProjectName>ABC159</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -127,28 +127,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AGC002.cpp" />
-    <ClCompile Include="AGC003-C.cpp" />
-    <ClCompile Include="AGC006.cpp" />
-    <ClCompile Include="AGC019-B.cpp" />
-    <ClCompile Include="aising2019-C.cpp" />
-    <ClCompile Include="AGC024-C.cpp" />
-    <ClCompile Include="ARC030-B.cpp" />
-    <ClCompile Include="ARC048.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="ARC052-B.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="codefes2016-C.cpp" />
-    <ClCompile Include="codefes2016-D.cpp" />
-    <ClCompile Include="codefes_qual2016-C.cpp" />
-    <ClCompile Include="Tenka1-2018-D.cpp" />
-    <ClCompile Include="soundhound2018-C.cpp" />
-    <ClCompile Include="AGC023-B.cpp" />
-    <ClCompile Include="AGC020-B.cpp" />
+    <ClCompile Include="A.cpp" />
+    <ClCompile Include="B.cpp" />
+    <ClCompile Include="C.cpp" />
+    <ClCompile Include="D.cpp" />
+    <ClCompile Include="E.cpp" />
+    <ClCompile Include="E_ver2.cpp" />
+    <ClCompile Include="F.cpp" />
+    <ClCompile Include="F_ver2.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
