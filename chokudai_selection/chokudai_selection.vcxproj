@@ -156,6 +156,10 @@
     </ClCompile>
     <ClCompile Include="ARC006-D.cpp" />
     <ClCompile Include="ABC060-C.cpp" />
+    <ClCompile Include="ARC006-D_ver2.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="ARC016-C.cpp">
       <SubType>
       </SubType>
@@ -168,7 +172,19 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="cf_final-C.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="cf_final-C_ver2.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="dwango2015-C.cpp" />
+    <ClCompile Include="montecarlo.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="yahoo-procon2017-qual.cpp">
       <SubType>
       </SubType>

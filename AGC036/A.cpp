@@ -15,7 +15,7 @@
 //#define DMP(x) ((void)0)
 //#endif
 //
-//const int MOD = 1000000007, INF = 1111111111; 
+//const int MOD = 1000000007, INF = 1111111111;
 //using namespace std;
 //using lint = long long;
 //
@@ -23,6 +23,14 @@
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
+//
+//	lint S;
+//	cin >> S;
+//
+//	lint bi = 1'000'000'000;
+//
+//	if (S != bi * bi) cout << "0 0 1 " << bi << " " << S / bi + 1 << " " << bi - S % bi << "\n";
+//	else  cout << "0 0 1 " << bi << " " << bi << "  0" << "\n";
 //
 //	return 0;
 //}

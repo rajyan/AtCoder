@@ -23,5 +23,10 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	int N, K;
+//	cin >> N >> K;
+//
+//	int sqN = (int)sqrt(N);
+//
 //	return 0;
 //}

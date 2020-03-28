@@ -23,5 +23,38 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	int Q;
+//	cin >> Q;
+//
+//	using ull = unsigned long long;
+//	auto sqrt_lint = [&](ull n) {
+//		
+//		ull ok = 0;
+//		ull ng = n;
+//
+//		while (max(ng,ok) - min(ng,ok) > 1) {
+//			ull mid = (ok + ng) / 2;
+//			DMP(mid);
+//			if (mid * mid < n) ok = mid;
+//			else ng = mid;
+//		}
+//
+//		return ok;
+//	};
+//
+//	for (int i = 0; i < Q; i++) {
+//
+//		lint A, B;
+//		cin >> A >> B;
+//
+//		lint sqrt_AB = sqrt_lint(A * B);
+//		DMP(sqrt_AB);
+//		
+//		lint min_AB = min(A, B);
+//
+//		cout << sqrt_AB * 2 - 1 + (A == B) - (min_AB * (2 * sqrt_AB - min_AB + 1) >= A * B) << "\n";
+//
+//	}
+//
 //	return 0;
 //}

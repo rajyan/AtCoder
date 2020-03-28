@@ -127,6 +127,10 @@
     <ClCompile Include="C.cpp" />
     <ClCompile Include="D.cpp" />
     <ClCompile Include="D_ver2.cpp" />
+    <ClCompile Include="D_ver3.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

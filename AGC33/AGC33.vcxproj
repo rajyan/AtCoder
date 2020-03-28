@@ -124,7 +124,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="A.cpp" />
+    <ClCompile Include="A_ver2.cpp" />
     <ClCompile Include="B.cpp" />
+    <ClCompile Include="B_ver2.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="B_ver3.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="B_ver4.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="C.cpp" />
     <ClCompile Include="D.cpp" />
   </ItemGroup>

@@ -10,9 +10,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ARC006-D.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="ARC001-B.cpp">
       <Filter>ソース ファイル\solved</Filter>
     </ClCompile>
@@ -24,9 +21,6 @@
     </ClCompile>
     <ClCompile Include="ABC008-D.cpp">
       <Filter>ソース ファイル\solved</Filter>
-    </ClCompile>
-    <ClCompile Include="ARC054-B.cpp">
-      <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="ARC003-B.cpp">
       <Filter>ソース ファイル\solved</Filter>
@@ -57,6 +51,24 @@
     </ClCompile>
     <ClCompile Include="ABC016-C.cpp">
       <Filter>ソース ファイル\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="cf_final-C.cpp">
+      <Filter>ソース ファイル\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="cf_final-C_ver2.cpp">
+      <Filter>ソース ファイル\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="ARC006-D.cpp">
+      <Filter>ソース ファイル\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="ARC006-D_ver2.cpp">
+      <Filter>ソース ファイル\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="ARC054-B.cpp">
+      <Filter>ソース ファイル\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="montecarlo.cpp">
+      <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

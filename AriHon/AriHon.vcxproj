@@ -151,11 +151,19 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="ABC035-C.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="ABC038-D.cpp">
       <SubType>
       </SubType>
     </ClCompile>
     <ClCompile Include="ABC038-D_ver2.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="ABC041-D.cpp">
       <SubType>
       </SubType>
     </ClCompile>
@@ -183,7 +191,21 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="ABC126-D.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="AOJ-KanpSackProblem.cpp" />
+    <ClCompile Include="AOJ1138.cpp" />
+    <ClCompile Include="AOJ212.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="ARC006-C.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="ARC036-D.cpp">
       <SubType>
       </SubType>
     </ClCompile>
@@ -211,7 +233,19 @@
     <ClCompile Include="ARC029-A.cpp" />
     <ClCompile Include="ARC031-B.cpp" />
     <ClCompile Include="ARC037-B.cpp" />
+    <ClCompile Include="ARC097-D.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="ATC001-A.cpp" />
+    <ClCompile Include="ATC001-B.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="code_thanks2017.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="dfs_example.cpp" />
     <ClCompile Include="EDPC-F.cpp">
       <SubType>
@@ -225,7 +259,15 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="JOI2007-F.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="JOI2007yo-A.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="joi2007_ho-D.cpp">
       <SubType>
       </SubType>
     </ClCompile>
@@ -246,7 +288,35 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="Maximum-Cup-D.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="Maximum-Cup2018-C.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="Maximum-cup2018-C_ver2.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="Mujin2018-E.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="nikkei2019_qual.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="Primeverify_iroha2019day1-H.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="ShortestPath.cpp" />
+    <ClCompile Include="SoundHound2018-D.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="TDCP-E.cpp">
       <SubType>
       </SubType>
@@ -259,6 +329,19 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="tenka1_2016_qualA-C.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="topological_sort.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="WUPC2012-E.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="yahoo_procon2017_final-A.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
