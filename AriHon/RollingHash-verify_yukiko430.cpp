@@ -95,21 +95,19 @@
 //};
 //
 ////// mod, base from https://gist.github.com/privet-kitty/295ac9202b7abb3039b493f8238bf40f
-//class RollingHash {
+//class Rolling_hash {
 //
 //private:
-//	using Mint1 = Mint<2147483647>;
-//	using Mint2 = Mint<2147483629>;
+//	using Mod = Mint<2147483647>;
 //
-//	vector<Mint1> hash1, pow1;
-//	vector<Mint2> hash2, pow2;
+//	vector<Mod> hash1, pow1;
+//	vector<Mod> hash2, pow2;
 //	const int base1 = 2147483634;
 //	const int base2 = 2147483627;
 //	int sz;
 //
 //public:
-//	RollingHash() {}
-//	RollingHash(const string &s) :sz(s.size()) {
+//	Rolling_hash(const string &s) :sz(s.size()) {
 //
 //		hash1.assign(sz + 1, 0); pow1.assign(sz + 1, 1);
 //		hash2.assign(sz + 1, 0); pow2.assign(sz + 1, 1);
@@ -137,7 +135,7 @@
 //	string S;
 //	cin >> S;
 //
-//	RollingHash rh(S);
+//	Rolling_hash rh(S);
 //	map<pair<int,int>, int> memo;
 //	for (int d = 1; d <= 10; d++) {
 //		for (int i = 0; i <= (int)S.size() - d; i++) {
@@ -151,7 +149,7 @@
 //	for (int i = 0; i < N; i++) {
 //		string s;
 //		cin >> s;
-//		RollingHash tmprh(s);
+//		Rolling_hash tmprh(s);
 //		if (memo.find(tmprh.get(0, s.size())) != memo.end()) ans += memo[tmprh.get(0,s.size())];
 //	}
 //

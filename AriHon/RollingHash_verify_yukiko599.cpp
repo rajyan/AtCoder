@@ -35,10 +35,11 @@
 //#define DMP(...) ((void)0)
 //#endif
 //
-//template<int Modulo> struct Mint {
+//template<int Modulo = MOD>
+//struct Mint {
 //
 //	lint val;
-//	constexpr Mint(lint v = 0) noexcept : val(v % Modulo) { if (val < 0) v += Modulo; }
+//	constexpr Mint(lint v = 0) noexcept : val(v % Modulo) { if (val < 0) val += Modulo; }
 //
 //	constexpr Mint& operator += (const Mint &r) noexcept {
 //		val += r.val;
@@ -80,11 +81,12 @@
 //	friend ostream &operator << (ostream &os, const Mint<Modulo> &x) noexcept { return os << x.val; }
 //	friend istream &operator >> (istream &is, Mint<Modulo> &x) noexcept {
 //		lint tmp; is >> tmp;
-//		x = Mint<Modulo>(tmp);
+//		x = Mint(tmp);
 //		return is;
 //	}
-//	friend constexpr Mint<Modulo> modpow(const Mint<Modulo> &a, lint n) noexcept {
-//		Mint res(1), tmp = a;
+//
+//	constexpr Mint pow(lint n) noexcept {
+//		Mint res{ 1 }, tmp{ val };
 //		while (n > 0) {
 //			if (n & 1) res *= tmp;
 //			tmp *= tmp;
@@ -94,22 +96,22 @@
 //	}
 //};
 //
+//using mint = Mint<>;
+//
 ////// mod, base from https://gist.github.com/privet-kitty/295ac9202b7abb3039b493f8238bf40f
-//class RollingHash {
+//class Rolling_hash {
 //
 //private:
-//	using Mint1 = Mint<2147483647>;
-//	using Mint2 = Mint<2147483629>;
+//	using Mod = Mint<2147483647>;
 //
-//	vector<Mint1> hash1, pow1;
-//	vector<Mint2> hash2, pow2;
+//	vector<Mod> hash1, pow1;
+//	vector<Mod> hash2, pow2;
 //	const int base1 = 2147483634;
 //	const int base2 = 2147483627;
 //	int sz;
 //
 //public:
-//	RollingHash() {}
-//	RollingHash(const string &s) :sz(s.size()) {
+//	Rolling_hash(const string &s) :sz(s.size()) {
 //
 //		hash1.assign(sz + 1, 0); pow1.assign(sz + 1, 1);
 //		hash2.assign(sz + 1, 0); pow2.assign(sz + 1, 1);
@@ -137,7 +139,7 @@
 //	string S; 
 //	cin >> S;
 //	int sz = S.size();
-//	RollingHash rh(S);
+//	Rolling_hash rh(S);
 //
 //	using mint = Mint<MOD>;
 //	vector<mint> dp(sz / 2 + 1, 0);

@@ -48,5 +48,8 @@
     <ClCompile Include="..\Recommendations\primeONsieve.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="Rooling_hash_verify_abc141e.cpp">
+      <Filter>ソース ファイル\RoollingHash</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

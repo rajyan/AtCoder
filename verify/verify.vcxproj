@@ -39,6 +39,7 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="Rooling_hash_verify_abc141e.cpp" />
     <ClCompile Include="UnionFind20191019_1.cpp" />
     <ClCompile Include="UnionFind20191019_2.cpp" />
     <ClCompile Include="UnionFind20191019_3.cpp">
