@@ -151,6 +151,7 @@
     <ClCompile Include="D.cpp" />
     <ClCompile Include="E.cpp" />
     <ClCompile Include="F.cpp" />
+    <ClCompile Include="yukicoder_269.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

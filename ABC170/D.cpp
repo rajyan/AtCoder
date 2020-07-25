@@ -1,39 +1,22 @@
-//#include <cassert>
-//#include <cstdio>
-//#include <cmath>
 //#include <iostream>
-//#include <iomanip>
-//#include <sstream>
 //#include <vector>
-//#include <set>
-//#include <map>
-//#include <queue>
-//#include <numeric>
 //#include <algorithm>
 //
 //using namespace std;
-//using lint = long long;
-//constexpr int MOD = 1000000007, INF = 1010101010;
-//constexpr lint LINF = 1LL << 60;
-//
-//#ifdef _DEBUG
-//#include "../../library/library/debug_template.cpp"
-//#define DMP(...) dump(#__VA_ARGS__, __VA_ARGS__)
-//#else 
-//#define DMP(...) ((void)0)
-//#endif
-//
-//struct init {
-//	init() {
-//		cin.tie(nullptr); ios::sync_with_stdio(false);
-//		cout << fixed << setprecision(10);
-//	}
-//} init_;
 //
 //int main() {
-//
-//
-//
-//	return 0;
+//    int n;
+//    cin >> n;
+//    vector<int> a(n + 1);
+//    for (int i = 0; i < n; i++) cin >> a[i];
+//    sort(a.begin(), a.end() - 1);
+//    vector<int> used(1000011);
+//    int ans = 0;
+//    for (int i = 0; i < n; i++) {
+//        if (used[a[i]] == 0) {
+//            if (a[i] != a[i + 1]) ans++;
+//            for (int j = 1; j * a[i] < 1000010; j++) used[j * a[i]] = 1;
+//        }
+//    }
+//    cout << ans;
 //}
-//

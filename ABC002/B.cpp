@@ -40,5 +40,22 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	int N;
+//	cin >> N;
+//
+//	cout << setw(2) << setfill('0');
+//	if (N <= 5000) {
+//		cout << N / 100 << "\n";
+//	}
+//	else if (N <= 30000) {
+//		cout << N / 1000 + 50 << "\n";
+//	}
+//	else if (N <= 70000) {
+//		cout << (N / 1000 - 30) / 5 + 80 << "\n";
+//	}
+//	else {
+//		cout << 89 << "\n";
+//	}
+//
 //	return 0;
 //}

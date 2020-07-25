@@ -40,5 +40,13 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	int N;
+//	cin >> N;
+//
+//	vector<int> T(N);
+//	for (int i = 0; i < N; i++) cin >> T[i];
+//
+//	cout << *min_element(T.begin(), T.end()) << "\n";
+//
 //	return 0;
 //}

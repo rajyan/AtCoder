@@ -103,6 +103,15 @@
 //	int N;
 //	cin >> N;
 //
+//	vector<vector<int>> edges(N);
+//	for (int i = 0; i < N - 1; i++) {
+//		int u, v;
+//		cin >> u >> v;
+//		u--, v--;
+//		edges[u].emplace_back(v);
+//		edges[v].emplace_back(u);
+//	}
+//
 //	vector<mint> dp(N);
 //
 //	return 0;

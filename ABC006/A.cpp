@@ -40,5 +40,11 @@
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
 //
+//	int N;
+//	cin >> N;
+//
+//	if (N % 3 == 0) cout << "YES" << "\n";
+//	else cout << "NO" << "\n";
+//
 //	return 0;
 //}

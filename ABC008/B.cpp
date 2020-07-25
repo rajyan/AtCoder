@@ -35,10 +35,29 @@
 //#define DMP(...) ((void)0)
 //#endif
 //
+//template<class T>
+//inline bool chmax(T& a, const T b) { return a < b && (a = b, true); }
+//
 //int main() {
 //
 //	cin.tie(nullptr);
 //	ios::sync_with_stdio(false);
+//
+//	int N;
+//	cin >> N;
+//
+//	map<string, int> mp;
+//	for (int i = 0; i < N; i++) {
+//		string s;
+//		cin >> s;
+//		mp[s]++;
+//	}
+//
+//	int cnt = 0;
+//	string ans;
+//	for (const auto& [key, val] : mp) if (chmax(cnt, val)) ans = key;
+//
+//	cout << ans << "\n";
 //
 //	return 0;
 //}

@@ -89,7 +89,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp14</LanguageStandard>
+      <LanguageStandard>stdcpp17</LanguageStandard>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <EnableParallelCodeGeneration>true</EnableParallelCodeGeneration>
     </ClCompile>
@@ -127,12 +127,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AGC017-B.cpp" />
+    <ClCompile Include="aising2019-D.cpp" />
     <ClCompile Include="jsc2019_qual.cpp" />
     <ClCompile Include="keyence2019-D.cpp" />
     <ClCompile Include="ARC103-E.cpp" />
     <ClCompile Include="AGC026-B.cpp" />
     <ClCompile Include="E.cpp" />
     <ClCompile Include="F.cpp" />
+    <ClCompile Include="keyence2020-D.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
