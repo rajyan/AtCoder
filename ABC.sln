@@ -455,6 +455,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "nomura", "nomura\nomura.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "panasonic2020", "panasonic2020\panasonic2020.vcxproj", "{003E315F-D479-41D7-9E4F-6C495FE8E438}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "m-solutions2020", "m-solutions2020\m-solutions2020.vcxproj", "{31FD141B-F1EA-4363-844C-3F12C6B41464}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -2239,6 +2241,14 @@ Global
 		{003E315F-D479-41D7-9E4F-6C495FE8E438}.Release|x64.Build.0 = Release|x64
 		{003E315F-D479-41D7-9E4F-6C495FE8E438}.Release|x86.ActiveCfg = Release|Win32
 		{003E315F-D479-41D7-9E4F-6C495FE8E438}.Release|x86.Build.0 = Release|Win32
+		{31FD141B-F1EA-4363-844C-3F12C6B41464}.Debug|x64.ActiveCfg = Debug|x64
+		{31FD141B-F1EA-4363-844C-3F12C6B41464}.Debug|x64.Build.0 = Debug|x64
+		{31FD141B-F1EA-4363-844C-3F12C6B41464}.Debug|x86.ActiveCfg = Debug|Win32
+		{31FD141B-F1EA-4363-844C-3F12C6B41464}.Debug|x86.Build.0 = Debug|Win32
+		{31FD141B-F1EA-4363-844C-3F12C6B41464}.Release|x64.ActiveCfg = Release|x64
+		{31FD141B-F1EA-4363-844C-3F12C6B41464}.Release|x64.Build.0 = Release|x64
+		{31FD141B-F1EA-4363-844C-3F12C6B41464}.Release|x86.ActiveCfg = Release|Win32
+		{31FD141B-F1EA-4363-844C-3F12C6B41464}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -2457,6 +2467,7 @@ Global
 		{37B0A097-844F-461A-9B73-18B0647B2226} = {E8191BBC-AB7C-48BE-A7B6-AD0A9D3F6C28}
 		{E73F1D95-EC23-40DF-B9A1-B14AECB80748} = {E8191BBC-AB7C-48BE-A7B6-AD0A9D3F6C28}
 		{003E315F-D479-41D7-9E4F-6C495FE8E438} = {E8191BBC-AB7C-48BE-A7B6-AD0A9D3F6C28}
+		{31FD141B-F1EA-4363-844C-3F12C6B41464} = {E8191BBC-AB7C-48BE-A7B6-AD0A9D3F6C28}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FB1F0A33-0853-47C2-920F-AA2BF039B0CB}
