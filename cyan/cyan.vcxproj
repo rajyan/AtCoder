@@ -134,6 +134,7 @@
     <ClCompile Include="AGC046-B.cpp" />
     <ClCompile Include="aising2019-C.cpp" />
     <ClCompile Include="AGC024-C.cpp" />
+    <ClCompile Include="ARC022-B.cpp" />
     <ClCompile Include="ARC030-B.cpp" />
     <ClCompile Include="ARC048.cpp">
       <SubType>
