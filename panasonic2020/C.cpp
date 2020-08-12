@@ -32,7 +32,13 @@
 //
 //int main() {
 //
+//	lint a, b, c;
+//	cin >> a >> b >> c;
 //
+//	lint d = c - a - b;
+//
+//	if (d > 0 && 4 * a * b < d * d) cout << "Yes" << "\n";
+//	else cout << "No" << "\n";
 //
 //	return 0;
 //}
