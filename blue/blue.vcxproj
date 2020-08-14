@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="AGC017-B.cpp" />
     <ClCompile Include="aising2019-D.cpp" />
+    <ClCompile Include="ARC031.cpp" />
     <ClCompile Include="ARC064-E.cpp" />
     <ClCompile Include="codefes2016-C.cpp" />
     <ClCompile Include="codefes2016-D.cpp" />
