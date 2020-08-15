@@ -20,10 +20,10 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{e6259a02-d162-48c8-89f6-e925f6c96b77}</ProjectGuid>
-    <RootNamespace>blue</RootNamespace>
+    <ProjectGuid>{7ae019ba-6d88-4828-95e2-19b610ec6713}</ProjectGuid>
+    <RootNamespace>ABC175</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>blue</ProjectName>
+    <ProjectName>ABC175</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -127,21 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AGC017-B.cpp" />
-    <ClCompile Include="aising2019-D.cpp" />
-    <ClCompile Include="ARC031.cpp" />
-    <ClCompile Include="ARC033-C.cpp" />
-    <ClCompile Include="ARC064-E.cpp" />
-    <ClCompile Include="codefes2016-C.cpp" />
-    <ClCompile Include="codefes2016-D.cpp" />
-    <ClCompile Include="jsc2019_qual.cpp" />
-    <ClCompile Include="keyence2019-D.cpp" />
-    <ClCompile Include="ARC103-E.cpp" />
-    <ClCompile Include="AGC026-B.cpp" />
+    <ClCompile Include="A.cpp" />
+    <ClCompile Include="B.cpp" />
+    <ClCompile Include="C.cpp" />
+    <ClCompile Include="D.cpp" />
     <ClCompile Include="E.cpp" />
     <ClCompile Include="F.cpp" />
-    <ClCompile Include="keyence2020-D.cpp" />
-    <ClCompile Include="tenka1-2017-D.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -41,7 +41,7 @@
 //
 //	T sum(int k) const {
 //		T res = 0;
-//		for (k = k - 1; k >= 0; k = (k & (k + 1)) - 1) res += bit[k];
+//		for (--k; k >= 0; k = (k & (k + 1)) - 1) res += bit[k];
 //		return res;
 //	}
 //	T sum(int l, int r) const { return sum(r) - sum(l); }
@@ -50,29 +50,48 @@
 //		for (; k < n; k |= k + 1) bit[k] += x;
 //	}
 //	void set(int k, const T& x) { add(k, x - sum(k, k + 1)); }
+//
 //};
 //
 //int main() {
 //
-//	int N;
-//	cin >> N;
+//	int Q;
+//	cin >> Q;
 //
-//	vector<int> B(N);
-//	for (int i = 0; i < N; i++) {
-//		int b;
-//		cin >> b;
-//		b--;
-//		B[b] = i;
+//	FenwickTree<int> ft(200000);
+//
+//	for (int i = 0; i < Q; i++) {
+//		int t, x;
+//		cin >> t >> x;
+//		if (--t) {
+//
+//			auto judge = [&](auto idx) {
+//				return ft.sum(idx) >= x;
+//			};
+//
+//			auto binary_search = [&](auto f) {
+//
+//				auto ng = -1;
+//				auto ok = 200000;
+//
+//				while (abs(ok - ng) > 1) {
+//					auto mid = (ok + ng) / 2;
+//
+//					if (f(mid)) ok = mid;
+//					else ng = mid;
+//				}
+//
+//				return ok;
+//			};
+//
+//			int ans = binary_search(judge);
+//			cout << ans << "\n";
+//			ft.add(ans - 1, -1);
+//		}
+//		else {
+//			ft.add(--x, 1);
+//		}
 //	}
-//
-//	lint ans = 0;
-//	FenwickTree ft(N, 1);
-//	for (int i = 0; i < N; i++) {
-//		ans += min(ft.sum(B[i]), ft.sum(B[i] + 1, N));
-//		ft.add(B[i], -1);
-//	}
-//
-//	cout << ans << "\n";
 //
 //	return 0;
 //}
