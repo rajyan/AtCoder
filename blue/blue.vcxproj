@@ -134,6 +134,7 @@
     <ClCompile Include="ARC064-E.cpp" />
     <ClCompile Include="codefes2016-C.cpp" />
     <ClCompile Include="codefes2016-D.cpp" />
+    <ClCompile Include="AOJ_RSQ.cpp" />
     <ClCompile Include="jsc2019_qual.cpp" />
     <ClCompile Include="keyence2019-D.cpp" />
     <ClCompile Include="ARC103-E.cpp" />
