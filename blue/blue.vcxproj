@@ -132,6 +132,7 @@
     <ClCompile Include="ARC028-C.cpp" />
     <ClCompile Include="ARC031.cpp" />
     <ClCompile Include="ARC033-C.cpp" />
+    <ClCompile Include="ARC050-B.cpp" />
     <ClCompile Include="ARC064-E.cpp" />
     <ClCompile Include="codefes2016-C.cpp" />
     <ClCompile Include="codefes2016-D.cpp" />
