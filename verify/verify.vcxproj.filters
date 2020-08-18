@@ -51,5 +51,8 @@
     <ClCompile Include="Rooling_hash_verify_abc141e.cpp">
       <Filter>ソース ファイル\RoollingHash</Filter>
     </ClCompile>
+    <ClCompile Include="AOJ_disjoint_set.cpp">
+      <Filter>ソース ファイル\UnionFind</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
