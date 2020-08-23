@@ -89,7 +89,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp14</LanguageStandard>
+      <LanguageStandard>stdcpp17</LanguageStandard>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <EnableParallelCodeGeneration>true</EnableParallelCodeGeneration>
     </ClCompile>
@@ -119,6 +119,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -132,10 +133,13 @@
     <ClCompile Include="AGC006.cpp" />
     <ClCompile Include="AGC019-B.cpp" />
     <ClCompile Include="AGC046-B.cpp" />
+    <ClCompile Include="AGC046-C.cpp" />
     <ClCompile Include="aising2019-C.cpp" />
     <ClCompile Include="AGC024-C.cpp" />
     <ClCompile Include="ARC022-B.cpp" />
     <ClCompile Include="ARC030-B.cpp" />
+    <ClCompile Include="ARC034-C.cpp" />
+    <ClCompile Include="ARC043-B.cpp" />
     <ClCompile Include="ARC048.cpp">
       <SubType>
       </SubType>
@@ -144,6 +148,7 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="code-formula2014-C.cpp" />
     <ClCompile Include="codefes2016-C.cpp" />
     <ClCompile Include="codefes2016-D.cpp" />
     <ClCompile Include="codefes_qual2016-C.cpp" />
