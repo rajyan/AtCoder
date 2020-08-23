@@ -131,6 +131,7 @@
     <ClCompile Include="B.cpp" />
     <ClCompile Include="C.cpp" />
     <ClCompile Include="D.cpp" />
+    <ClCompile Include="D_ver2.cpp" />
     <ClCompile Include="E.cpp" />
     <ClCompile Include="F.cpp" />
   </ItemGroup>

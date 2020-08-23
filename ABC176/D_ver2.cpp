@@ -9,10 +9,9 @@
 //#include <cstdio>
 //#include <cmath>
 //#include <iostream>
-//#include <sstream>
 //#include <iomanip>
 //#include <vector>
-//#include <unordered_set>
+//#include <set>
 //#include <map>
 //#include <queue>
 //#include <numeric>
@@ -60,76 +59,55 @@
 //
 //using pnt = Point2D<lint>;
 //
-//inline uint64_t fnv1a_64(uint64_t data) {
-//
-//	uint64_t hash = 0xcbf29ce484222325;
-//	constexpr uint64_t prime = 0x100000001b3;
-//
-//	while (data) {
-//		hash = hash ^ (data % 10);
-//		hash *= prime;
-//		data /= 10;
-//	}
-//
-//	return hash;
+//template<class T>
+//vector<T> make_vec(size_t s, T val) { return vector<T>(s, val); }
+//template<class... Size>
+//auto make_vec(size_t s, Size... tail) {
+//	return vector<decltype(make_vec(tail...))>(s, make_vec(tail...));
 //}
 //
-//namespace std {
-//	template <>
-//	struct hash<pnt> {
-//		size_t operator()(const pnt& p) const {
-//			return fnv1a_64(p.x * 1000000 + p.y);
-//		}
-//	};
-//}
-//
+//template<class T>
+//inline bool chmin(T& a, const T b) { return a > b && (a = b, true); }
 //
 //int main() {
 //
-//	int h, w, m;
-//	cin >> h >> w >> m;
+//	int h, w;
+//	cin >> h >> w;
 //
-//	unordered_set<pnt> p;
-//	vector<int> row(h), col(w);
-//	for (int i = 0; i < m; i++) {
-//		int r, c;
-//		cin >> r >> c;
-//		r--, c-- ;
-//		p.emplace(r, c);
-//		row[r]++;
-//		col[c]++;
-//	}
+//	pnt st, go;
+//	cin >> st >> go;
+//	st -= pnt(1, 1);
+//	go -= pnt(1, 1);
 //
-//	vector<int> indr;
-//	int max_r = *max_element(row.begin(), row.end());
-//	for (int i = 0; i < h; i++) {
-//		if (max_r == row[i]) indr.emplace_back(i);
-//	}
+//	auto grid = make_vec(h, w, char());
+//	for (int i = 0; i < h; i++) for (int j = 0; j < w; j++) cin >> grid[i][j];
 //
-//	vector<int> indc;
-//	int max_c = *max_element(col.begin(), col.end());
-//	for (int i = 0; i < w; i++) {
-//		if (max_c == col[i]) indc.emplace_back(i);
-//	}
+//	auto in_grid = [&](auto& p) { return 0 <= p.x && p.x < h && 0 <= p.y && p.y < w; };
 //
-//	DMP(indr, indc);
+//	auto cost = make_vec(h, w, INF);
+//	st[cost] = 0;
+//	deque<pair<pnt, int>> dq;
+//	dq.emplace_back(st, 0);
+//	while (!dq.empty()) {
+//		auto [now, d] = dq.front();
+//		dq.pop_front();
+//		if (now[cost] < d) continue;
 //
-//	if (indr.size() * indc.size() > m) {
-//		cout << max_r + max_c << "\n";
-//		return 0;
-//	}
+//		vector<pnt> dxdy{ {1, 0}, {-1, 0}, {0, 1}, {0, -1} };
+//		for (const auto& del : dxdy) {
+//			auto next = now + del;
+//			if (in_grid(next) && next[grid] == '.' && chmin(next[cost], d)) dq.emplace_front(next, d);
+//		}
 //
-//	for (const auto& r : indr) {
-//		for (const auto& c : indc) {
-//			DMP(r, c);
-//			if (p.find(pnt(r, c)) == p.end()) {
-//				cout << max_r + max_c << "\n";
-//				return 0;
+//		for (int i = -2; i <= 2; i++) {
+//			for (int j = -2; j <= 2; j++) {
+//				auto next = now + pnt(i, j);
+//				if (in_grid(next) && next[grid] == '.' && chmin(next[cost], d + 1)) dq.emplace_back(next, d + 1);
 //			}
 //		}
 //	}
 //
-//	cout << max_r + max_c - 1 << "\n";
+//	cout << (go[cost] == INF ? -1 : go[cost]) << "\n";
 //
 //	return 0;
 //}
