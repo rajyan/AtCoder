@@ -54,5 +54,11 @@
     <ClCompile Include="AOJ_disjoint_set.cpp">
       <Filter>ソース ファイル\UnionFind</Filter>
     </ClCompile>
+    <ClCompile Include="modint.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="hash.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

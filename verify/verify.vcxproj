@@ -40,6 +40,8 @@
       </SubType>
     </ClCompile>
     <ClCompile Include="AOJ_disjoint_set.cpp" />
+    <ClCompile Include="hash.cpp" />
+    <ClCompile Include="modint.cpp" />
     <ClCompile Include="Rooling_hash_verify_abc141e.cpp" />
     <ClCompile Include="UnionFind20191019_1.cpp" />
     <ClCompile Include="UnionFind20191019_2.cpp" />
