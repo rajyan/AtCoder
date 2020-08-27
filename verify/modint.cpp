@@ -1,45 +1,40 @@
-
-#define PROBLEM "https://judge.yosupo.jp/problem/lca"
-
-#include "../../library/library/makevec.cpp"
-#include "../../library/library/nlz.cpp"
-#include "../../library/library/LowestCommonAncestor.cpp"
-
-#include <iostream>
-#include <iomanip>
-#include <vector>
-
-using namespace std;
-using lint = long long;
-constexpr int MOD = 1000000007, INF = 1010101010;
-constexpr lint LINF = 1LL << 60;
-
-struct init {
-	init() {
-		cin.tie(nullptr); ios::sync_with_stdio(false);
-		cout << fixed << setprecision(10);
-	}
-} init_;
-
-int main() {
-
-	int N, Q;
-	cin >> N >> Q;
-
-	auto edges = make_vec(N, 0, 0);
-	for (int i = 0; i < N - 1; i++) {
-		int p;
-		cin >> p;
-		edges[p].emplace_back(i + 1);
-		edges[i + 1].emplace_back(p);
-	}
-
-	LCA lca(edges);
-	for (int i = 0; i < Q; i++) {
-		int u, v;
-		cin >> u >> v;
-		cout << lca.get_lca(u, v) << "\n";
-	}
-
-	return 0;
-}
+//
+//#define PROBLEM "https://yukicoder.me/problems/no/1081"
+//
+//#ifdef FOR_TEST
+//#include "../../library/library/Modint.cpp"
+//#endif
+//
+//#include "../../library/library/Combination.cpp"
+//
+//#include <iostream>
+//#include <iomanip>
+//#include <vector>
+//
+//using namespace std;
+//
+//struct init {
+//	init() {
+//		cin.tie(nullptr); ios::sync_with_stdio(false);
+//		cout << fixed << setprecision(10);
+//	}
+//} init_;
+//
+//int main() {
+//
+//	int N;
+//	cin >> N;
+//
+//	vector<int> A(N);
+//	for (int i = 0; i < N; i++) cin >> A[i];
+//
+//	Combination<mint> C(200);
+//	mint ans = 0;
+//	for (int i = 0; i < N; i++) {
+//		ans += C(N - 1, i) * A[i];
+//	}
+//
+//	cout << ans << "\n";
+//
+//	return 0;
+//}

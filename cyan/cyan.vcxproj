@@ -156,6 +156,7 @@
     <ClCompile Include="soundhound2018-C.cpp" />
     <ClCompile Include="AGC023-B.cpp" />
     <ClCompile Include="AGC020-B.cpp" />
+    <ClCompile Include="tenka1_2012B-B.cpp" />
     <ClCompile Include="tenka1_2018-c.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
