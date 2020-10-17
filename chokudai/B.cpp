@@ -31,28 +31,7 @@
 //
 //int main() {
 //
-//	int N;
-//	cin >> N;
 //
-//	vector<int> cnt(N + 1);
-//	vector<int> A(N), B(N);
-//
-//	for (int i = 0; i < N; i++) {
-//		cin >> A[i];
-//		cnt[A[i]]++;
-//	}	
-//	for (int i = 0; i < N; i++) {
-//		cin >> B[i];
-//		cnt[B[i]]++;
-//	}
-//
-//	if (any_of(cnt.begin(), cnt.end(), [&N](auto c) { return c > N; })) {
-//		cout << "No" << "\n";
-//		return 0;
-//	}
-//
-//	cout << "Yes" << "\n";
-//	for (const auto& e : ans) cout << e << " ";
 //
 //	return 0;
 //}

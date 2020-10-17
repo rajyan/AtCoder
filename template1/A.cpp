@@ -31,28 +31,19 @@
 //
 //int main() {
 //
-//	int N;
-//	cin >> N;
+//	int n;
+//	cin >> n;
 //
-//	vector<int> cnt(N + 1);
-//	vector<int> A(N), B(N);
+//	vector<int> x(n), y(n);
+//	for (int i = 0; i < n; i++) cin >> x[i] >> y[i]; 
 //
-//	for (int i = 0; i < N; i++) {
-//		cin >> A[i];
-//		cnt[A[i]]++;
-//	}	
-//	for (int i = 0; i < N; i++) {
-//		cin >> B[i];
-//		cnt[B[i]]++;
+//	int ans = 0;
+//	for (int i = 0; i < n - 1; i++) {
+//		ans += abs(x[i + 1] - x[i]);
+//		ans += abs(y[i + 1] - y[i]);
 //	}
 //
-//	if (any_of(cnt.begin(), cnt.end(), [&N](auto c) { return c > N; })) {
-//		cout << "No" << "\n";
-//		return 0;
-//	}
-//
-//	cout << "Yes" << "\n";
-//	for (const auto& e : ans) cout << e << " ";
+//	cout << ans << "\n";
 //
 //	return 0;
 //}

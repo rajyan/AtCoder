@@ -34,25 +34,23 @@
 //	int N;
 //	cin >> N;
 //
-//	vector<int> cnt(N + 1);
-//	vector<int> A(N), B(N);
+//	vector<int> a(N), b(N), c(N);
+//	for (int i = 0; i < N; i++) cin >> a[i];
+//	for (int i = 0; i < N; i++) cin >> b[i];
+//	for (int i = 0; i < N; i++) cin >> c[i];
 //
-//	for (int i = 0; i < N; i++) {
-//		cin >> A[i];
-//		cnt[A[i]]++;
-//	}	
-//	for (int i = 0; i < N; i++) {
-//		cin >> B[i];
-//		cnt[B[i]]++;
+//	for (int bit = 0; bit < (1 << (N - 1)); bit++) {
+//		vector<int> sum;
+//		int p = 0;
+//		for (int i = 0; i < N - 1; i++) {
+//			if (bit & 1) {
+//				p += a[i];
+//				if (i > 1) p += c[i - 1];
+//				sum.emplace_back(p);
+//				p = b[i];
+//			}
+//		}
 //	}
-//
-//	if (any_of(cnt.begin(), cnt.end(), [&N](auto c) { return c > N; })) {
-//		cout << "No" << "\n";
-//		return 0;
-//	}
-//
-//	cout << "Yes" << "\n";
-//	for (const auto& e : ans) cout << e << " ";
 //
 //	return 0;
 //}

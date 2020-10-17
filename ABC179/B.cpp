@@ -34,25 +34,20 @@
 //	int N;
 //	cin >> N;
 //
-//	vector<int> cnt(N + 1);
-//	vector<int> A(N), B(N);
-//
+//	vector<int> memo(N);
 //	for (int i = 0; i < N; i++) {
-//		cin >> A[i];
-//		cnt[A[i]]++;
-//	}	
-//	for (int i = 0; i < N; i++) {
-//		cin >> B[i];
-//		cnt[B[i]]++;
+//		int d1, d2;
+//		cin >> d1 >> d2;
+//		memo[i] = d1 == d2;
 //	}
 //
-//	if (any_of(cnt.begin(), cnt.end(), [&N](auto c) { return c > N; })) {
-//		cout << "No" << "\n";
-//		return 0;
+//	bool ok = false;
+//	for (int i = 0; i < N - 2; i++) {
+//		if (memo[i] & memo[i + 1] & memo[i + 2]) ok = true;
 //	}
 //
-//	cout << "Yes" << "\n";
-//	for (const auto& e : ans) cout << e << " ";
+//	if (ok) cout << "Yes" << "\n";
+//	else cout << "No" << "\n";
 //
 //	return 0;
 //}
