@@ -29,30 +29,22 @@
 //	}
 //} init_;
 //
-//template<class T>
-//inline bool chmax(T& a, const T b) { return a < b && (a = b, true); }
-//
 //int main() {
 //
 //	int N;
 //	cin >> N;
 //
-//	vector<lint> x(N);
-//	for (int i = 0; i < N; i++) cin >> x[i];
+//	vector<string> S(N);
+//	for (int i = 0; i < N; i++) cin >> S[i];
 //
-//	double a = 0, b = 0, c = 0;
-//
+//	int cnt = 0;
 //	for (int i = 0; i < N; i++) {
-//		a += abs(x[i]);
-//		b += x[i] * x[i];
-//		chmax(c, (double)abs(x[i]));
+//		if (S[i] != "AC") {
+//			cnt++;
+//		}
 //	}
 //
-//	b = sqrt(b);
-//
-//	cout << a << "\n";
-//	cout << b << "\n";
-//	cout << c << "\n";
+//	cout << cnt * 5 << "\n";
 //
 //	return 0;
 //}

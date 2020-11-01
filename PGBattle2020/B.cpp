@@ -5,6 +5,7 @@
 //#define DMP(...) ((void)0)
 //#endif
 //
+//#include <string>
 //#include <cassert>
 //#include <cstdio>
 //#include <cmath>
@@ -29,30 +30,26 @@
 //	}
 //} init_;
 //
-//template<class T>
-//inline bool chmax(T& a, const T b) { return a < b && (a = b, true); }
-//
 //int main() {
 //
 //	int N;
 //	cin >> N;
 //
-//	vector<lint> x(N);
-//	for (int i = 0; i < N; i++) cin >> x[i];
-//
-//	double a = 0, b = 0, c = 0;
-//
-//	for (int i = 0; i < N; i++) {
-//		a += abs(x[i]);
-//		b += x[i] * x[i];
-//		chmax(c, (double)abs(x[i]));
+//	lint val = 10;
+//	for (int i = 0; i < N; i++, val*= 10) {
+//		val /= 5;
+//	}
+//	while (val % 10 == 0) {
+//		val /= 10;
 //	}
 //
-//	b = sqrt(b);
+//	string s_val = to_string(val);
 //
-//	cout << a << "\n";
-//	cout << b << "\n";
-//	cout << c << "\n";
+//	string ans = "0.";
+//	ans += string(N - s_val.size(), '0');
+//	ans += s_val;
+//
+//	cout << ans << "\n";
 //
 //	return 0;
 //}

@@ -29,9 +29,27 @@
 //	}
 //} init_;
 //
+//template<class T>
+//vector<T> divisor(const T n) {
+//	vector<T> res;
+//	for (T i = 1; i * i <= n; i++) {
+//		if (n % i == 0) {
+//			res.emplace_back(i);
+//			if (i * i != n) res.emplace_back(n / i);
+//		}
+//	}
+//	sort(res.begin(), res.end());
+//	return res;
+//}
+//
 //int main() {
 //
+//	lint N;
+//	cin >> N;
 //
+//	auto d = divisor(N);
+//
+//	for (const auto& e : d) cout << e << "\n";
 //
 //	return 0;
 //}

@@ -31,7 +31,23 @@
 //
 //int main() {
 //
+//	lint X, Y, A, B;
+//	cin >> X >> Y >> A >> B;
 //
+//	lint ans = 0;
+//	while (X < Y) {
+//		if (X < B / (A - 1)) {
+//			X *= A;
+//			ans++;
+//			if (X >= Y) ans--;
+//		}
+//		else {
+//			ans += (Y - X - 1) / B;
+//			break;
+//		}
+//	}
+//
+//	cout << ans << "\n";
 //
 //	return 0;
 //}
