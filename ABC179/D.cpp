@@ -122,8 +122,19 @@
 //
 //	vector<int> L(K), R(K);
 //	for (int i = 0; i < K; i++) cin >> L[i] >> R[i];
+//	for (int i = 0; i < K; i++) R[i]++;
 //
-//	FenwickTree
+//	FenwickTree<mint> dp(2 * N);
+//	dp.add(0, 1);
+//	for (int n = 0; n < N; n++) {
+//		mint now = dp.sum(n + 1);
+//		for (int k = 0; k < K; k++) {
+//			dp.add(n + L[k], now);
+//			dp.add(n + R[k], -now);
+//		}
+//	}
+//
+//	cout << dp.sum(N - 1, N) << "\n";
 //
 //	return 0;
 //}
