@@ -31,11 +31,7 @@
 //
 //int main() {
 //
-//	int N;
-//	cin >> N;
 //
-//	if (N & 1) cout << "Black" << "\n";
-//	else cout << "White" << "\n";
 //
 //	return 0;
 //}

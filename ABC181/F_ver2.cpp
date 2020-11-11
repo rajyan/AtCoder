@@ -13,21 +13,16 @@
 //#include <vector>
 //#include <set>
 //#include <map>
+//#include <unordered_map>
 //#include <queue>
 //#include <numeric>
 //#include <algorithm>
+//#include <bitset>
 //
 //using namespace std;
 //using lint = long long;
 //constexpr int MOD = 1000000007, INF = 1010101010;
 //constexpr lint LINF = 1LL << 60;
-//
-//struct init {
-//	init() {
-//		cin.tie(nullptr); ios::sync_with_stdio(false);
-//		cout << fixed << setprecision(10);
-//	}
-//} init_;
 //
 //template<class T>
 //struct Point2D {
@@ -59,48 +54,82 @@
 //
 //using pnt = Point2D<long double>;
 //
-//template<class T>
-//inline bool chmax(T& a, const T b) { return a < b && (a = b, true); }
-//template<class T>
-//inline bool chmin(T& a, const T b) { return a > b && (a = b, true); }
+//class UnionFind {
+//private:
+//	vector<int> data;
+//public:
+//	UnionFind(int size) : data(size, -1) { }
+//	int root(int x) { return data[x] < 0 ? x : data[x] = root(data[x]); }
+//	bool is_same(int x, int y) { return root(x) == root(y); }
+//	int size(int x) { return -data[root(x)]; }
+//
+//	bool unify(int x, int y) {
+//		x = root(x); y = root(y);
+//		if (x != y) {
+//			if (data[y] < data[x]) swap(x, y);
+//			data[x] += data[y]; data[y] = x;
+//			return true;
+//		}
+//		return false;
+//	}
+//};
+//
+//struct init {
+//	init() {
+//		cin.tie(nullptr); ios::sync_with_stdio(false);
+//		cout << fixed << setprecision(10);
+//	}
+//} init_;
+//
+//constexpr long double eps = 1e-10;
 //
 //int main() {
 //
+//	
 //	int N;
 //	cin >> N;
 //
 //	vector<pnt> xy(N);
 //	for (int i = 0; i < N; i++) cin >> xy[i];
-//	sort(xy.begin(), xy.end());
-//	DMP(xy);
 //
-//	long double ans = 1e5;
-//	for (int i = 0; i < N - 1; i++) {
-//		pnt p = xy[i], q = xy[i + 1];
-//		if (p.y > q.y) swap(p, q);
-//		long double max_d = max(50 - q.y / 2, p.y / 2 + 50);
+//	auto judge = [&](auto r) {
 //
-//		pnt m = (p + q) / 2;
-//		pnt k = (q - p).nor();
-//		if (k.y < 0) k *= -1;
-//		long double r = k.hypot();
-//		DMP(m, k, r);
-//
-//		// abs((m +- k * _r).y) <= 100
-//		if (k.y == 0) {
-//			chmin(ans, max(max_d, r / 2));
-//			continue;
+//		UnionFind uf(N + 2);
+//		for (int i = 0; i < N; i++) {
+//			for (int j = i + 1; j < N; j++) {
+//				if ((xy[i] - xy[j]).hypot() <= r + eps) {
+//					uf.unify(i, j);
+//				}
+//			}
+//		}
+//		for (int i = 0; i < N; i++) {
+//			if (100 - xy[i].y <= r + eps) {
+//				uf.unify(i, N);
+//			}	
+//			if (100 + xy[i].y <= r + eps) {
+//				uf.unify(i, N + 1);
+//			}
 //		}
 //
-//		long double r1 = (100 - m.y) / k.y * r;
-//		long double r2 = (100 + m.y) / k.y * r;
-//		DMP(k.hypot() / 2, r1, r2);
-//		chmax(max_d, min({ k.hypot() / 2, r1, r2 }));
+//		return !uf.is_same(N, N + 1);
+//	};
 //
-//		chmin(ans, max_d);
-//	}
+//	auto bisearch = [&](auto f) {
 //
-//	cout << ans << "\n";
+//		auto ok = 0.0L;
+//		auto ng = 1e5;
+//
+//		while (abs(ok - ng) > eps) {
+//			auto mid = (ok + ng) / 2;
+//
+//			if (f(mid)) ok = mid;
+//			else ng = mid;
+//		}
+//
+//		return ok / 2;
+//	};
+//
+//	cout << bisearch(judge) << "\n";
 //
 //	return 0;
 //}
