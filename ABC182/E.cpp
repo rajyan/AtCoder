@@ -55,6 +55,8 @@
 //	constexpr Point2D& operator-=(const Point2D& rhs) noexcept { return ((*this) = (*this) - rhs); }
 //	constexpr Point2D& operator*=(const T& k) noexcept { return ((*this) = (*this) * k); }
 //	constexpr Point2D& operator/=(const T& k) noexcept { return ((*this) = (*this) / k); }
+//	constexpr Point2D& operator--(int) noexcept { return ((*this) -= Point2D(1, 1)); };
+//	constexpr Point2D& operator++(int) noexcept { return ((*this) += Point2D(1, 1)); };
 //	constexpr Point2D  operator- () const noexcept { return { -x, -y }; }
 //	constexpr T operator* (const Point2D& rhs) const noexcept { return x * rhs.x + y * rhs.y; }
 //	constexpr Point2D nor() const noexcept { return { y, -x }; }
@@ -73,9 +75,9 @@
 //
 //	vector<pnt> AB(N), CD(M);
 //	for (int i = 0; i < N; i++) cin >> AB[i];
-//	for (int i = 0; i < N; i++) AB[i] -= pnt(1, 1);
+//	for (int i = 0; i < N; i++) AB[i]--;
 //	for (int i = 0; i < M; i++) cin >> CD[i];
-//	for (int i = 0; i < M; i++) CD[i] -= pnt(1, 1);
+//	for (int i = 0; i < M; i++) CD[i]--;
 //
 //	auto grid_r = make_vec(H, W, '.');
 //	for (int i = 0; i < M; i++) CD[i][grid_r] = '#';
