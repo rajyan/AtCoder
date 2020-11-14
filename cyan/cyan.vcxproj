@@ -128,6 +128,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ACLB.cpp" />
     <ClCompile Include="AGC002.cpp" />
     <ClCompile Include="AGC003-C.cpp" />
     <ClCompile Include="AGC006.cpp" />
