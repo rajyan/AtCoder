@@ -36,6 +36,7 @@
 //
 //	vector<int> cnt(N + 1);
 //	vector<int> A(N), B(N);
+//	reverse(B.begin(), B.end());
 //
 //	for (int i = 0; i < N; i++) {
 //		cin >> A[i];
@@ -51,8 +52,39 @@
 //		return 0;
 //	}
 //
+//	int l = 0, r = N - 1;
+//	for (int i = 0; i < N; i++) {
+//		if (A[i] == B[i]) {
+//			if (A[l] != B[i] && B[l] != B[i]) {
+//				swap(B[l], B[i]);
+//				l++;
+//			}
+//			else {
+//				swap(B[r], B[i]);
+//				r--;
+//			}
+//		}
+//	}
+//
+//	l = 0, r = N - 1;
+//	for (int i = 0; i < N; i++) {
+//		if (A[i] == B[i]) {
+//			if (A[l] != B[i] && B[l] != B[i]) {
+//				swap(B[l], B[i]);
+//				l++;
+//			}
+//			else {
+//				swap(B[r], B[i]);
+//				r--;
+//			}
+//		}
+//	}
+//
+//	bool ok = true;
+//
+//
 //	cout << "Yes" << "\n";
-//	for (const auto& e : ans) cout << e << " ";
+//	for (const auto& e : B) cout << e << " ";
 //
 //	return 0;
 //}
