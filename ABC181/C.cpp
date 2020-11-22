@@ -29,9 +29,59 @@ struct init {
 	}
 } init_;
 
+template<class T>
+struct Point2D {
+	T x, y;
+	constexpr Point2D(T x = 0, T y = 0) noexcept : x(x), y(y) {};
+	constexpr Point2D(pair<T, T>& p) noexcept : x(p.first), y(p.second) {};
+	constexpr bool operator==(const Point2D& rhs) const noexcept { return x == rhs.x && y == rhs.y; }
+	constexpr bool operator!=(const Point2D& rhs) const noexcept { return !((*this) == rhs); }
+	constexpr bool operator< (const Point2D& rhs) const noexcept { return x < rhs.x || (x == rhs.x && y < rhs.y); }
+	constexpr bool operator> (const Point2D& rhs) const noexcept { return rhs < (*this); }
+	constexpr bool operator<=(const Point2D& rhs) const noexcept { return !((*this) > rhs); }
+	constexpr bool operator>=(const Point2D& rhs) const noexcept { return !((*this) < rhs); }
+	constexpr Point2D  operator+ (const Point2D& rhs) const noexcept { return { x + rhs.x, y + rhs.y }; }
+	constexpr Point2D  operator- (const Point2D& rhs) const noexcept { return { x - rhs.x, y - rhs.y }; }
+	constexpr Point2D  operator* (const T& k) const noexcept { return { k * x, k * y }; }
+	constexpr Point2D  operator/ (const T& k) const noexcept { return { x / k, y / k }; }
+	constexpr Point2D& operator+=(const Point2D& rhs) noexcept { return ((*this) = (*this) + rhs); }
+	constexpr Point2D& operator-=(const Point2D& rhs) noexcept { return ((*this) = (*this) - rhs); }
+	constexpr Point2D& operator*=(const T& k) noexcept { return ((*this) = (*this) * k); }
+	constexpr Point2D& operator/=(const T& k) noexcept { return ((*this) = (*this) / k); }
+	constexpr Point2D& operator--(int) noexcept { return ((*this) -= Point2D(1, 1)); };
+	constexpr Point2D& operator++(int) noexcept { return ((*this) += Point2D(1, 1)); };
+	constexpr Point2D  operator- () const noexcept { return { -x, -y }; }
+	constexpr T operator* (const Point2D& rhs) const noexcept { return x * rhs.x + y * rhs.y; }
+	constexpr Point2D nor() const noexcept { return { y, -x }; }
+	constexpr T pow() const noexcept { return x * x + y * y; }
+	friend istream& operator>>(istream& is, Point2D& p) { return is >> p.x >> p.y; }
+	friend ostream& operator<<(ostream& os, const Point2D& p) { return os << p.x << " " << p.y; }
+	template<class U> U& operator[](vector<vector<U>>& v) { return v[x][y]; }
+};
+
+using pnt = Point2D<lint>;
+
 int main() {
 
+	int N;
+	cin >> N;
 
+	vector<pnt> xy(N);
+	for (int i = 0; i < N; i++) cin >> xy[i];
+
+	bool exist = false;
+	for (int i = 0; i < N; i++) {
+		for (int j = i + 1; j < N; j++) {
+			for (int k = j + 1; k < N; k++) {
+				pnt p = xy[i] - xy[j];
+				pnt q = xy[i] - xy[k];
+				if (1LL * (p * q) * (p * q) == 1LL * p.pow() * q.pow()) exist = true;
+			}
+		}
+	}
+
+	if (exist) cout << "Yes" << "\n";
+	else cout << "No" << "\n";
 
 	return 0;
 }
