@@ -150,6 +150,7 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="ARC108-C.cpp" />
     <ClCompile Include="code-formula2014-C.cpp" />
     <ClCompile Include="codefes2016-C.cpp" />
     <ClCompile Include="codefes2016-D.cpp" />
