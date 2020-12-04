@@ -31,7 +31,17 @@
 //
 //int main() {
 //
+//	lint N, K;
+//	cin >> N >> K;
 //
+//	lint ans = 0;
+//	for (int ab = 2; ab <= 2 * N; ab++) {
+//		if (K + 2 > ab || K + 2 * N < ab) continue;
+//		int cd = ab - K;
+//		ans += 1LL * (N - abs(N + 1 - ab)) * (N - abs(N + 1 - cd));
+//	}
+//
+//	cout << ans << "\n";
 //
 //	return 0;
 //}

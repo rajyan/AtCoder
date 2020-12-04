@@ -29,9 +29,34 @@
 //	}
 //} init_;
 //
+//template<class T>
+//vector<T> make_vec(size_t s, T val) { return vector<T>(s, val); }
+//template<class... Size>
+//auto make_vec(size_t s, Size... tail) {
+//	return vector<decltype(make_vec(tail...))>(s, make_vec(tail...));
+//}
+//
 //int main() {
 //
+//	int A, B, C;
+//	cin >> A >> B >> C;
 //
+//	auto dp = make_vec(100, 100, 100, 0.0L);
+//
+//	auto dfs = [&](auto&& f, int a, int b, int c) {
+//		if (a == 100 || b == 100 || c == 100) return 0.0L;
+//		if (dp[a][b][c] != 0.0) return dp[a][b][c];
+//		int s = a + b + c;
+//
+//		long double res = 0.0;
+//		res += (f(f, a + 1, b, c) + 1) * a / s;
+//		res += (f(f, a, b + 1, c) + 1) * b / s;
+//		res += (f(f, a, b, c + 1) + 1) * c / s;
+//
+//		return dp[a][b][c] = res;
+//	};
+//
+//	cout << dfs(dfs, A, B, C) << "\n";
 //
 //	return 0;
 //}

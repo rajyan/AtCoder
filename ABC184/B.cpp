@@ -31,7 +31,13 @@
 //
 //int main() {
 //
+//	int N, X;
+//	cin >> N >> X;
+//	string S;
+//	cin >> S;
 //
+//	for (const auto& c : S) X = max(0, X + (c == 'o') * 2 - 1);
+//	cout << X << "\n";
 //
 //	return 0;
 //}
