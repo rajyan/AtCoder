@@ -1,23 +1,28 @@
-cmake_minimum_required(VERSION 3.17)
+cmake_minimum_required(VERSION 3.16)
 project(study/Recommendations)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-add_link_options(
-        -fsanitize=address,undefined
-)
-
-add_compile_options(
-        -Wall
-        -Wextra
-        -Wunreachable-code
-        -fsanitize=address,undefined
-        -D_GLIBCXX_DEBUG
-        -D_DEBUG
-        -O2
-)
+if (CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
+    add_compile_options(
+            -W4
+    )
+else ()
+    add_link_options(
+            -fsanitize=address,undefined
+    )
+    add_compile_options(
+            -Wall
+            -Wextra
+            -Wunreachable-code
+            -fsanitize=address,undefined
+            -D_GLIBCXX_DEBUG
+            -D_DEBUG
+            -O2
+    )
+endif ()
 
 add_executable(Recommendations_ABC020-C.cpp ABC020-C.cpp)
 add_executable(Recommendations_AGC024-C.cpp AGC024-C.cpp)

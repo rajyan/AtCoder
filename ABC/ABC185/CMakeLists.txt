@@ -17,16 +17,16 @@ else ()
             -Wall
             -Wextra
             -Wunreachable-code
-            -fsanitize=address
+            -fsanitize=address,undefined
             -D_GLIBCXX_DEBUG
             -D_DEBUG
             -O2
     )
 endif ()
 
-add_executable(ABC185_A A.cpp)
-add_executable(ABC185_B B.cpp)
-add_executable(ABC185_C C.cpp)
-add_executable(ABC185_D D.cpp)
-add_executable(ABC185_E E.cpp)
-add_executable(ABC185_F F.cpp)
+add_executable(ABC185_A.cpp A.cpp)
+add_executable(ABC185_B.cpp B.cpp)
+add_executable(ABC185_C.cpp C.cpp)
+add_executable(ABC185_D.cpp D.cpp)
+add_executable(ABC185_E.cpp E.cpp)
+add_executable(ABC185_F.cpp F.cpp)
