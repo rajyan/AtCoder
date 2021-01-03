@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(ABC/ABC116)
+project(./ABC/ABC116)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -24,7 +24,7 @@ else ()
     )
 endif ()
 
-add_executable(ABC116_A.cpp A.cpp)
-add_executable(ABC116_B.cpp B.cpp)
-add_executable(ABC116_C.cpp C.cpp)
-add_executable(ABC116_D.cpp D.cpp)
+add_executable(ABC116_A A.cpp)
+add_executable(ABC116_B B.cpp)
+add_executable(ABC116_C C.cpp)
+add_executable(ABC116_D D.cpp)
