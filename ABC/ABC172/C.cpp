@@ -17,7 +17,7 @@
 //constexpr lint LINF = 1LL << 60;
 //
 //#ifdef _DEBUG
-//#include "../../library/library/debug_template.cpp"
+//#include "../../../library/src/debug_template.cpp"
 //#define DMP(...) dump(#__VA_ARGS__, __VA_ARGS__)
 //#else 
 //#define DMP(...) ((void)0)
@@ -67,7 +67,7 @@
 //	vector<lint> A(N), B(M);
 //	for (int i = 0; i < N; i++) cin >> A[i];
 //	for (int i = 0; i < M; i++) cin >> B[i];
-//	B.emplace_back(INF); // ”Ô•º
+//	B.emplace_back(INF); // ï¿½Ô•ï¿½
 //
 //	CuSum sumA(A), sumB(B);
 //	int idx_b = 0, ans = 0;

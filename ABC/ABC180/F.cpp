@@ -1,5 +1,5 @@
 #ifdef _DEBUG
-#include "../../library/library/debug_template.cpp"
+#include "../../../library/src/debug_template.cpp"
 #define DMP(...) dump(#__VA_ARGS__, __VA_ARGS__)
 #else
 #define DMP(...) ((void)0)
@@ -158,8 +158,8 @@ int main() {
 		if (b == 0) sum += tmp;
 		if (b >= a) continue;
 
-		// •ªŠ„”
-		// §–ñ: •ªŠ„ <= N/2Asum(•ªŠ„ƒTƒCƒY+1)<N => M + •ªŠ„@<= N
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		// ï¿½ï¿½ï¿½ï¿½: ï¿½ï¿½ï¿½ï¿½ <= N/2ï¿½Asum(ï¿½ï¿½ï¿½ï¿½ï¿½Tï¿½Cï¿½Y+1)<N => M + ï¿½ï¿½ï¿½ï¿½ï¿½@<= N
 
 		DMP(sum);
 	}

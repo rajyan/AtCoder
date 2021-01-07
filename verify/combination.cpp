@@ -1,8 +1,8 @@
 //
 //#define PROBLEM "https://yukicoder.me/problems/184"
 //
-//#include "../../library/library/debug_template.cpp"
-//#include "../../library/library/Factorial.cpp"
+//#include "../../../library/src/debug_template.cpp"
+//#include "../../../library/src/Factorial.cpp"
 //
 //#include <cstdio>
 //#include <iostream>

@@ -2,10 +2,10 @@
 //#define PROBLEM "https://yukicoder.me/problems/no/1081"
 //
 //#ifdef FOR_TEST
-//#include "../../library/library/Modint.cpp"
+//#include "../../../library/src/Modint.cpp"
 //#endif
 //
-//#include "../../library/library/Combination.cpp"
+//#include "../../../library/src/Combination.cpp"
 //
 //#include <iostream>
 //#include <iomanip>

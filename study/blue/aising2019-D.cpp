@@ -17,7 +17,7 @@
 //constexpr lint LINF = 1LL << 60;
 //
 //#ifdef _DEBUG
-//#include "../../library/library/debug_template.cpp"
+//#include "../../../library/src/debug_template.cpp"
 //#define DMP(...) dump(#__VA_ARGS__, __VA_ARGS__)
 //#else 
 //#define DMP(...) ((void)0)
@@ -67,15 +67,15 @@
 //	vector<lint> X(Q);
 //	for (int i = 0; i < Q; i++) cin >> X[i];
 //
-//	// x‚ª¬‚³‚¢‚Æ‚«Â–ØŒN‚Í‰º‚©‚çA‚‹´ŒN‚Íã‚©‚çŽæ‚Á‚Ä‚¢‚­
-//	// Â–ØŒN‚ªæ‚ÉN/2–Ú‚ð‚Æ‚ê‚é‚æ‚¤‚É‚È‚é‚Æ‚±‚ë‚©‚ç‡”Ô‚Ì“ü‚ê‘Ö‚í‚è‚ª”­¶‚·‚é
-//	// “ü‚ê‘Ö‚í‚èŒã‚ÍŒðŒÝ‚É‚Æ‚é‚±‚Æ‚É‚È‚é
+//	// xï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½Â–ØŒNï¿½Í‰ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½Íã‚©ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½
+//	// ï¿½Â–ØŒNï¿½ï¿½ï¿½ï¿½ï¿½N/2ï¿½Ú‚ï¿½ï¿½Æ‚ï¿½ï¿½æ‚¤ï¿½É‚È‚ï¿½Æ‚ï¿½ï¿½ë‚©ï¿½ç‡ï¿½Ô‚Ì“ï¿½ï¿½ï¿½Ö‚ï¿½è‚ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//	// ï¿½ï¿½ï¿½ï¿½Ö‚ï¿½ï¿½ï¿½ÍŒï¿½ï¿½Ý‚É‚Æ‚é‚±ï¿½Æ‚É‚È‚ï¿½
 //
-//	// ‹«ŠE‚ð‚³‚ª‚µ‚Ä‚¢‚­
-//	// l‚ÍÅ¬Ar‚ÍN/2‚ð‚³‚µ‚Ä‚¨‚­
-//	// (Al + Ar) / 2 < x ‚È‚ç Ar‚ðæ‚É‚Æ‚ê‚é‰Â”\«‚ª‚ ‚é
-//	// r - l ”Ô–Ú‚ÉAr‚ð‚Æ‚é‚±‚Æ‚É‚È‚é‚Ì‚ÅA‚‹´ŒN‚æ‚è‘‚­Žæ‚ê‚é‚©”»’è
-//	// ‘‚­Žæ‚ê‚é‚È‚çl++, r++A‚»‚¤‚Å‚È‚¢‚È‚çŽŸ‚Ì‹«ŠE‚ðŽŽ‚µ‚½‚¢‚Ì‚Ål++
+//	// ï¿½ï¿½ï¿½Eï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½
+//	// lï¿½ÍÅï¿½ï¿½Arï¿½ï¿½N/2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½
+//	// (Al + Ar) / 2 < x ï¿½È‚ï¿½ Arï¿½ï¿½ï¿½É‚Æ‚ï¿½ï¿½Â”\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//	// r - l ï¿½Ô–Ú‚ï¿½Arï¿½ï¿½ï¿½Æ‚é‚±ï¿½Æ‚É‚È‚ï¿½Ì‚ÅAï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½è‘ï¿½ï¿½ï¿½ï¿½ï¿½é‚©ï¿½ï¿½ï¿½ï¿½
+//	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½l++, r++ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½Å‚È‚ï¿½ï¿½È‚çŽŸï¿½Ì‹ï¿½ï¿½Eï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½l++
 //
 //	int l = 0, r = N / 2;
 //	vector<lint> border;
@@ -89,7 +89,7 @@
 //	}
 //	DMP(border);
 //
-//	// ‹«ŠE‚ª‚í‚©‚ê‚ÎŽæ‚è•û‚ÍŠÈ’P‚ ‚Æ‚Í—ÝÏ˜a‚ÆAŠï”‹ô””Ô–Ú‚Ì—ÝÏ˜a‚ðŒvŽZ‚µ‚Ä‚¨‚¯‚Î˜a‚Í‹‚Ü‚é
+//	// ï¿½ï¿½ï¿½Eï¿½ï¿½ï¿½í‚©ï¿½ï¿½ÎŽï¿½ï¿½ï¿½ï¿½ÍŠÈ’Pï¿½ï¿½ï¿½Æ‚Í—ÝÏ˜aï¿½ÆAï¿½ï”ï¿½ï¿½ï¿½ï¿½ï¿½Ô–Ú‚Ì—ÝÏ˜aï¿½ï¿½ï¿½vï¿½Zï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½Î˜aï¿½Í‹ï¿½ï¿½Ü‚ï¿½
 //	vector<lint> odd((N + 1) / 2), even((N + 1) / 2);
 //	for (int i = 0; i < N; i+=2) {
 //		odd[i / 2] = A[i];
@@ -98,7 +98,7 @@
 //	DMP(odd, even);
 //	CuSum sumA(A), sumO(odd), sumE(even);
 //
-//	// N/2ˆÈ~‚Ì‚à‚Ì‚ª‰½ŒÂ‚Æ‚ê‚é‚©‚Í2•ª’Tõ‚Å‚«‚é
+//	// N/2ï¿½È~ï¿½Ì‚ï¿½ï¿½Ì‚ï¿½ï¿½ï¿½ï¿½Â‚Æ‚ï¿½é‚©ï¿½ï¿½2ï¿½ï¿½ï¿½Tï¿½ï¿½ï¿½Å‚ï¿½ï¿½ï¿½
 //	for (int i = 0; i < Q; i++) {
 //		int cnt = upper_bound(border.begin(), border.end(), X[i]) - border.begin();
 //		DMP(cnt);

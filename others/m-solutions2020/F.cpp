@@ -18,7 +18,7 @@
 //constexpr lint LINF = 1LL << 60;
 //
 //#ifdef _DEBUG
-//#include "../../library/library/debug_template.cpp"
+//#include "../../../library/src/debug_template.cpp"
 //#define DMP(...) dump(#__VA_ARGS__, __VA_ARGS__)
 //#else 
 //#define DMP(...) ((void)0)
@@ -88,10 +88,10 @@
 //		for (const auto& xy : r) rmap[xy * grad].emplace_back(xy.x);
 //
 //		for (const auto& [key, vecl] : lmap) {
-//			// “¯‚¶Ø•Ð‚Ì“_‚ª‘¶Ý‚·‚é‚©‚ðŠm”F‚·‚é
+//			// ï¿½ï¿½ï¿½ï¿½ï¿½Ø•Ð‚Ì“_ï¿½ï¿½ï¿½ï¿½ï¿½Ý‚ï¿½ï¿½é‚©ï¿½ï¿½ï¿½mï¿½Fï¿½ï¿½ï¿½ï¿½
 //			auto it_rmap = rmap.find(key);
 //			if (it_rmap != rmap.end()) {
-//				// l,r‚Ål<r‚Æ‚È‚é‚æ‚¤‚ÉŽÚŽæ‚è‚µ‚Ä‚¢‚­
+//				// l,rï¿½ï¿½l<rï¿½Æ‚È‚ï¿½æ‚¤ï¿½ÉŽÚŽï¿½è‚µï¿½Ä‚ï¿½ï¿½ï¿½
 //				const auto it_end = it_rmap->second.end();
 //				auto it = it_rmap->second.begin();
 //				for (const auto& xl : vecl) {

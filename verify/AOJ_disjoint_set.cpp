@@ -4,7 +4,7 @@
 //#include <iostream>
 //#include <vector>
 //
-//#include "../../library/library/UnionFind.cpp"
+//#include "../../../library/src/UnionFind.cpp"
 //
 //using namespace std;
 //using lint = long long;

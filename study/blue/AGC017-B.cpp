@@ -17,7 +17,7 @@
 //constexpr lint LINF = 1LL << 60;
 //
 //#ifdef _DEBUG
-//#include "../../library/library/debug_template.cpp"
+//#include "../../../library/src/debug_template.cpp"
 //#define DMP(...) dump(#__VA_ARGS__, __VA_ARGS__)
 //#else 
 //#define DMP(...) ((void)0)
@@ -35,7 +35,7 @@
 //	lint N, A, B, C, D;
 //	cin >> N >> A >> B >> C >> D;
 //
-//	// A > B ‚È‚çswap‚·‚ê‚Î‚¢‚¢‚Ì‚Å³‚Ì•ûŒü‚¾‚¯‚Ål‚¦‚ç‚ê‚é
+//	// A > B ï¿½È‚ï¿½swapï¿½ï¿½ï¿½ï¿½Î‚ï¿½ï¿½ï¿½ï¿½Ì‚Åï¿½ï¿½Ì•ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ålï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 //	const lint goal = abs(A - B);
 //
 //	for (int i = 0; i * 2 <= N; i++) {

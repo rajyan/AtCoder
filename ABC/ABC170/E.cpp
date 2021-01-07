@@ -18,7 +18,7 @@
 //constexpr lint LINF = 1LL << 60;
 //
 //#ifdef _DEBUG
-//#include "../../library/library/debug_template.cpp"
+//#include "../../../library/src/debug_template.cpp"
 //#define DMP(...) dump(#__VA_ARGS__, __VA_ARGS__)
 //#else 
 //#define DMP(...) ((void)0)
@@ -36,13 +36,13 @@
 //	int N, Q;
 //	cin >> N >> Q;
 //
-//	// —c’t‰€‚²‚Æ‚Ì‰€Ž™  —c’t‰€id, (ƒŒ[ƒg, ‰€Ž™id) *rbegin‚ªÅ‘å
+//	// ï¿½cï¿½tï¿½ï¿½ï¿½ï¿½ï¿½Æ‚Ì‰ï¿½ï¿½ï¿½  ï¿½cï¿½tï¿½ï¿½id, (ï¿½ï¿½ï¿½[ï¿½g, ï¿½ï¿½ï¿½ï¿½id) *rbeginï¿½ï¿½ï¿½Å‘ï¿½
 //	unordered_map<int, set<pair<int, int>>> mp;
-//	// —c’t‰€‚²‚Æ‚ÌÅ‘å‚ÌƒŒ[ƒg (maxƒŒ[ƒgA‰€Ž™id) *begin‚ªans
+//	// ï¿½cï¿½tï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ÌÅ‘ï¿½Ìƒï¿½ï¿½[ï¿½g (maxï¿½ï¿½ï¿½[ï¿½gï¿½Aï¿½ï¿½ï¿½ï¿½id) *beginï¿½ï¿½ans
 //	set<pair<int, int>> maxst;
-//	// ‰€Ž™id‚É‘Î‚·‚éŠ‘®
+//	// ï¿½ï¿½ï¿½ï¿½idï¿½É‘Î‚ï¿½ï¿½éŠï¿½ï¿½
 //	vector<int> v(N);
-//	// ‰€Ž™id‚É‘Î‚·‚éƒŒ[ƒg
+//	// ï¿½ï¿½ï¿½ï¿½idï¿½É‘Î‚ï¿½ï¿½éƒŒï¿½[ï¿½g
 //	vector<int> rate(N);
 //
 //	for (int i = 0; i < N; i++) {
@@ -60,20 +60,20 @@
 //		cin >> c >> d;
 //		c--;
 //
-//		// Œ»Ý‚ÌŠ‘®‚ÆˆÚ“®æ‚ÌÅ‘å‚ðmaxst‚©‚çíœ‚µ‚Ä‚¨‚­
+//		// ï¿½ï¿½ï¿½Ý‚Ìï¿½ï¿½ï¿½ï¿½ÆˆÚ“ï¿½ï¿½ï¿½ÌÅ‘ï¿½ï¿½maxstï¿½ï¿½ï¿½ï¿½íœï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½
 //		maxst.erase(*mp[v[c]].rbegin());
 //		if (!mp[d].empty()) maxst.erase(*mp[d].rbegin());
 //
-//		// ‰€Ž™‚ðˆÚ“®‚³‚¹‚é
+//		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú“ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 //		auto p = make_pair(rate[c], c);
 //		mp[v[c]].erase(p);
 //		mp[d].emplace(p);
 //
-//		// íœ‚µ‚½‚Æ‚±‚ë‚ÌÅ‘åÅ¬‚ð“ü‚ê‚È‚¨‚·
+//		// ï¿½íœï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ï¿½ÌÅ‘ï¿½Åï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½ï¿½
 //		if (!mp[v[c]].empty()) maxst.emplace(*mp[v[c]].rbegin());
 //		maxst.emplace(*mp[d].rbegin());
 //
-//		// Š‘®î•ñ‚ðˆÚ‚·
+//		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú‚ï¿½
 //		v[c] = d;
 //
 //		cout << maxst.begin()->first << "\n";
