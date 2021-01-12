@@ -16,7 +16,6 @@ else ()
     add_compile_options(
             -Wall
             -Wextra
-            -Wunreachable-code
             -fsanitize=address,undefined
             -D_GLIBCXX_DEBUG
             -D_DEBUG

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(./others/aising2020)
+project(others/aising2020)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -16,7 +16,6 @@ else ()
     add_compile_options(
             -Wall
             -Wextra
-            -Wunreachable-code
             -fsanitize=address,undefined
             -D_GLIBCXX_DEBUG
             -D_DEBUG
