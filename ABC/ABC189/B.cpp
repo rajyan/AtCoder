@@ -37,6 +37,23 @@ struct init {
 
 int main() {
 
+    int N, X;
+    cin >> N >> X;
+    X *= 100;
+
+    vector<int> V(N), P(N);
+    for (int i = 0; i < N; i++) cin >> P[i] >> V[i];
+
+    int sum = 0;
+    for (int i = 0; i < N; i++) {
+        sum += V[i] * P[i];
+        if (sum > X) {
+            cout << i + 1 << '\n';
+            return 0;
+        }
+    }
+
+    cout << -1 << '\n';
 
     return 0;
 }

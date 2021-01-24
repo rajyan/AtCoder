@@ -35,8 +35,38 @@ struct init {
     }
 } init_;
 
+template<class T>
+vector<T> make_vec(size_t s, T val) { return vector<T>(s, val); }
+template<class... Size>
+auto make_vec(size_t s, Size... tail) {
+    return vector<decltype(make_vec(tail...))>(s, make_vec(tail...));
+}
+
 int main() {
 
+    int N;
+    cin >> N;
+
+    vector<string> S(N);
+    for (int i = 0; i < N; i++) cin >> S[i];
+
+    auto dp = make_vec(N + 1, 2, 0LL);
+    dp[0][0] = 1;
+    dp[0][1] = 1;
+
+    for (int i = 0; i < N; i++) {
+        if (S[i] == "AND") {
+            dp[i + 1][1] = dp[i][1];
+            dp[i + 1][0] = 2 * dp[i][0] + dp[i][1];
+        }
+        else {
+            dp[i + 1][1] = dp[i][0] + 2 * dp[i][1];
+            dp[i + 1][0] = dp[i][0];
+        }
+    }
+    DMP(dp);
+    
+    cout << dp[N][1] << '\n';
 
     return 0;
 }

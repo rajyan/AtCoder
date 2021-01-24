@@ -35,8 +35,32 @@ struct init {
     }
 } init_;
 
+template<class T>
+inline bool chmax(T &a, const T b) { return a < b && (a = b, true); }
+
 int main() {
 
+    int N;
+    cin >> N;
+
+    vector<lint> A(N);
+    for (int i = 0; i < N; i++) cin >> A[i];
+
+    lint ans = 0;
+    for (int i = 0; i < N; i++) {
+        lint now = 0;
+        for (int j = i; j < N; j++) {
+            if (A[i] > A[j]) break;
+            now += A[i];
+        }
+        for (int j = i - 1; j >= 0; j--) {
+            if (A[i] > A[j]) break;
+            now += A[i];
+        }
+        chmax(ans, now);
+    }
+
+    cout << ans << '\n';
 
     return 0;
 }

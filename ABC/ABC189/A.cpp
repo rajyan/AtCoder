@@ -37,6 +37,11 @@ struct init {
 
 int main() {
 
+    vector<char> C(3);
+    for (int i = 0; i < 3; i++) cin >> C[i];
+
+    if (all_of(C.begin(), C.end(), [&C](char & c){return c == C[0];})) cout << "Won\n";
+    else cout << "Lost\n";
 
     return 0;
 }
