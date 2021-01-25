@@ -37,6 +37,30 @@ struct init {
 
 int main() {
 
+    lint n;
+    cin >> n;
+
+    auto judge = [&](auto key) {
+        return (key + 1) <= 2 * (n + 1) / key;
+    };
+
+    auto bisearch = [&](auto f) {
+
+        auto ng = n + 1;
+        auto ok = 1LL;
+
+        while (abs(ok - ng) > 1) {
+            auto mid = (ok + ng) / 2;
+
+            if (f(mid)) ok = mid;
+            else ng = mid;
+        }
+
+        return ok;
+    };
+
+    cout << n + 1 - bisearch(judge) << '\n';
+
 
     return 0;
 }
