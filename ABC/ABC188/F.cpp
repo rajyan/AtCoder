@@ -53,37 +53,28 @@ int main() {
     lint X, Y;
     cin >> X >> Y;
 
-    if (X >= Y) {
-        cout << X - Y << '\n';
-        return 0;
-    }
-    int ans = INF;
-    int s = clz(X) - clz(Y);
+    map<lint, lint> mp;
+    mp[X] = 0;
+    auto dfs = [&](auto &&f, lint now) -> lint {
 
-    auto asc = [&] (int S) -> int {
-        lint x = X << S;
-        lint y = Y;
-        DMP(x, y, S);
-        if (x > y) swap(x, y);
-        int bit = 0, res = 0;
-        while (y != x && bit <= S) {
-            if (((y >> bit) ^ (x >> bit)) & 1) {
-                x += (1LL << bit);
-                res++;
-            }
-            bit++;
+        if (now == 0) return LINF;
+        if (mp.find(now) != mp.end()) return mp[now];
+
+        mp[now] = abs(now - X);
+        if (now % 2 == 0) {
+            chmin(mp[now], f(f, now / 2) + 1);
         }
-        DMP(res);
-        return res + y - x;
+        else {
+            chmin(mp[now], f(f, now + 1) + 1);
+            chmin(mp[now], f(f, now - 1) + 1);
+        }
+
+        return mp[now];
     };
 
-    DMP(s);
+    cout << dfs(dfs, Y) << '\n';
 
-    for (int i = 0; i <= s + 1; i++) {
-        chmin(ans, i + asc(i));
-    }
-
-    cout << ans << '\n';
+    DMP(mp);
 
     return 0;
 }
