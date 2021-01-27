@@ -35,8 +35,62 @@ struct init {
     }
 } init_;
 
+inline int popcount(lint n) {
+    n = (n & 0x5555555555555555) + (n >> 1 & 0x5555555555555555);
+    n = (n & 0x3333333333333333) + (n >> 2 & 0x3333333333333333);
+    n = (n & 0x0f0f0f0f0f0f0f0f) + (n >> 4 & 0x0f0f0f0f0f0f0f0f);
+    n = (n & 0x00ff00ff00ff00ff) + (n >> 8 & 0x00ff00ff00ff00ff);
+    n = (n & 0x0000ffff0000ffff) + (n >> 16 & 0x0000ffff0000ffff);
+    n = (n & 0x00000000ffffffff) + (n >> 32 & 0x00000000ffffffff);
+    return n;
+}
+
+inline int ctz(lint n) {
+    return popcount(~n & (n - 1));
+}
+
 int main() {
 
+    int N;
+    cin >> N;
+
+    vector<char> a(N);
+    for (int i = 0; i < N; i++) cin >> a[i];
+
+    vector<int> b(N - 1);
+    for (int i = 0; i < N - 1; i++) {
+        b[i] = abs(a[i + 1] - a[i]);
+    }
+    DMP(b);
+
+    // fact[n] = n!が2で割れる回数
+    vector<int> fact(N);
+    for (int i = 1; i < N; i++) {
+        fact[i] = ctz(i) + fact[i - 1];
+    }
+    DMP(fact);
+
+    int sum = 0;
+    for (int i = 0; i < N - 1; i++) {
+        // sigma N-2Ci * bi の偶奇が知りたいので、奇数のときだけ足せばよい
+        sum += (fact[N - 2] - fact[i] - fact[N - 2 - i] == 0) * b[i];
+    }
+
+    if (sum & 1) {
+        cout << 1 << '\n';
+        return 0;
+    }
+
+    for (int i = 0; i < N - 1; i++) {
+        sum += (fact[N - 2] - fact[i] - fact[N - 2 - i] == 0) * (b[i] / 2);
+    }
+
+    if (sum & 1 && none_of(b.begin(), b.end(), [](const int &e) { return e == 1; })) {
+        cout << 2 << '\n';
+        return 0;
+    }
+
+    cout << 0 << '\n';
 
     return 0;
 }
