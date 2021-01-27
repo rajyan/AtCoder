@@ -15,7 +15,7 @@
 //using lint = long long;
 //
 //#ifdef _DEBUG
-//#include "../../../library/src/debug_template.cpp"
+//#include "../../../library/src/debug_template.hpp"
 //#define DMP(...) dump(#__VA_ARGS__, __VA_ARGS__)
 //#else 
 //#define DMP(...) ((void)0)

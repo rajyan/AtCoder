@@ -1,7 +1,7 @@
 //
 //#define PROBLEM "https://yukicoder.me/problems/184"
 //
-//#include "../../../library/src/debug_template.cpp"
+//#include "../../../library/src/debug_template.hpp"
 //#include "../../../library/src/Factorial.cpp"
 //
 //#include <cstdio>
