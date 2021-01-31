@@ -35,8 +35,99 @@ struct init {
     }
 } init_;
 
+template<const int &Modulo>
+struct Mint {
+
+    lint val;
+    constexpr Mint(lint v = 0) noexcept: val(v % Modulo) { if (val < 0) val += Modulo; }
+
+    constexpr Mint &operator+=(const Mint &r) noexcept {
+        val += r.val;
+        if (val >= Modulo) val -= Modulo;
+        return *this;
+    }
+    constexpr Mint &operator-=(const Mint &r) noexcept {
+        val -= r.val;
+        if (val < 0) val += Modulo;
+        return *this;
+    }
+    constexpr Mint &operator*=(const Mint &r) noexcept {
+        val = val * r.val % Modulo;
+        return *this;
+    }
+    constexpr Mint &operator/=(const Mint &r) noexcept {
+        lint a{r.val}, b{Modulo}, u{1}, v{0};
+        assert(gcd(a, b) == 1 && "a and b must be co-prime");
+        while (b) {
+            lint t = a / b;
+            a -= t * b;
+            a ^= b, b ^= a, a ^= b;
+            u -= t * v;
+            u ^= v, v ^= u, u ^= v;
+        }
+        val = val * u % Modulo;
+        if (val < 0) val += Modulo;
+        return *this;
+    }
+
+    constexpr Mint operator+(const Mint &r) const noexcept { return Mint(*this) += r; }
+    constexpr Mint operator-(const Mint &r) const noexcept { return Mint(*this) -= r; }
+    constexpr Mint operator*(const Mint &r) const noexcept { return Mint(*this) *= r; }
+    constexpr Mint operator/(const Mint &r) const noexcept { return Mint(*this) /= r; }
+
+    constexpr Mint operator-() const noexcept { return Mint(-val); }
+
+    constexpr bool operator==(const Mint &r) const noexcept { return val == r.val; }
+    constexpr bool operator!=(const Mint &r) const noexcept { return !((*this) == r); }
+    constexpr bool operator<(const Mint &r) const noexcept { return val < r.val; }
+
+    constexpr friend ostream &operator<<(ostream &os, const Mint<Modulo> &x) noexcept { return os << x.val; }
+    constexpr friend istream &operator>>(istream &is, Mint<Modulo> &x) noexcept {
+        lint tmp{};
+        is >> tmp;
+        x = Mint(tmp);
+        return is;
+    }
+
+    [[nodiscard]] constexpr Mint pow(lint n) const noexcept {
+        Mint res{1}, tmp{*this};
+        while (n > 0) {
+            if (n & 1) res *= tmp;
+            tmp *= tmp;
+            n >>= 1;
+        }
+        return res;
+    }
+};
+
+using mint = Mint<MOD>;
+
+int RMOD;
+using rmint = Mint<RMOD>;
+
 int main() {
 
+    int n, k;
+    string s;
+    cin >> n >> k >> s;
+    RMOD = n;
+
+    auto rps = [](char l, char r) {
+        if (l == r) return l;
+        if (l > r) swap(l, r);
+        if (l == 'P' && r == 'R') return 'P';
+        else if (l == 'R' && r == 'S') return 'R';
+        else return 'S';
+    };
+
+    map<pair<rmint, int>, char> memo;
+    auto dfs = [&](auto &&f, rmint offset, int p) -> char {
+        if (p == 0) return s[offset.val];
+        if (memo.find({offset, p}) != memo.end()) return memo[{offset, p}];
+        return memo[{offset, p}] = rps(f(f, offset, p - 1), f(f, offset + rmint(2).pow(p - 1), p - 1));
+    };
+
+    cout << dfs(dfs, 0, k) << "\n";
 
     return 0;
 }
