@@ -34,8 +34,63 @@ struct init {
     }
 } init_;
 
+template<class T>
+inline bool chmin(T &a, const T b) { return a > b && (a = b, true); }
+
+template<class T>
+struct Edge {
+    int from{}, to{};
+    T cost;
+    Edge() = default;
+    Edge(int to, T cost) : to(to), cost(cost) {}
+    Edge(int from, int to, T cost) : from(from), to(to), cost(cost) {}
+    bool operator>(const Edge &r) const { return this->cost > r.cost; }
+};
+
+template<class T>
+vector<T> Dijkstra(const vector<vector<Edge<T>>> &edges, const int st) {
+
+    const int V = (int)edges.size();
+    const T inf = numeric_limits<T>::max() / 2;
+    vector<T> cost(V, inf);
+
+    priority_queue <Edge<T>, vector<Edge<T>>, greater<>> pq;
+    pq.emplace(st, 0);
+
+    while (!pq.empty()) {
+
+        Edge<T> now(pq.top().to, pq.top().cost);
+        pq.pop();
+
+        if (cost[now.to] < now.cost) continue;
+        for (const Edge<T> &e : edges[now.to]) {
+            T tmp_cost = now.cost + e.cost;
+            if (chmin(cost[e.to], tmp_cost)) {
+                pq.emplace(e.to, cost[e.to]);
+            }
+        }
+    }
+
+    return cost; // min cost to vertex idx from st
+}
+
 int main() {
 
+    int N, M;
+    cin >> N >> M;
+
+    vector<vector<Edge<lint>>> edges(N);
+    for (int i = 0; i < M; i++) {
+        lint u, v, c;
+        cin >> u >> v >> c;
+        u--, v--;
+       edges[u].emplace_back(v, c);
+    }
+
+    for (int i = 0; i < N; i++){
+        auto d = Dijkstra(edges, i);
+        cout <<  (d[i] > LINF ? -1 : d[i])  << '\n';
+    }
 
     return 0;
 }

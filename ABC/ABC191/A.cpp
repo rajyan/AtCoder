@@ -36,6 +36,11 @@ struct init {
 
 int main() {
 
+    int V, T, S, D;
+    cin >> V >> T >> S >> D;
+
+    if (V * T > D || V * S < D) cout << "Yes\n";
+    else cout << "No\n";
 
     return 0;
 }

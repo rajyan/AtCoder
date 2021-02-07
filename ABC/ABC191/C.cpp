@@ -36,6 +36,27 @@ struct init {
 
 int main() {
 
+    int H, W;
+    cin >> H >> W;
+
+    vector<vector<char>> grid(H + 2, vector<char>(W + 2));
+    for (int i = 1; i <= H; i++) for (int j = 1; j <= W; j++) cin >> grid[i][j];
+    DMP(grid);
+
+    int ans{};
+    for (int i = 0; i <= H + 1; i++) {
+        for (int j = 0; j <= W + 1; j++) {
+            if (0 > i - 1 || 0 > j - 1) continue;
+            int cnt{};
+            cnt += grid[i - 1][j - 1] == '#';
+            cnt += grid[i - 1][j] == '#';
+            cnt += grid[i][j - 1] == '#';
+            cnt += grid[i][j] == '#';
+            if (cnt == 3 || cnt == 1) ans++;
+        }
+    }
+    
+    cout << ans << '\n';
 
     return 0;
 }

@@ -12,14 +12,9 @@
 #include <iomanip>
 #include <string>
 #include <vector>
-#include <set>
-#include <map>
-#include <unordered_map>
-#include <queue>
-#include <numeric>
-#include <algorithm>
-#include <bitset>
-#include <functional>
+
+#include <boost/multiprecision/cpp_dec_float.hpp>
+using boost::multiprecision::cpp_dec_float_50;
 
 using namespace std;
 using lint = long long;
@@ -36,6 +31,18 @@ struct init {
 
 int main() {
 
+    cpp_dec_float_50 X, Y, R;
+    cin >> X >> Y >> R;
+
+    int l = (int)ceil(X - R), r = (int)floor(X + R);
+
+    lint ans = 0;
+    for (int i = l; i <= r; i++) {
+        cpp_dec_float_50 p = sqrt(R * R - abs(X - i) * abs(X - i));
+        ans += (int)floor(Y + p) - (int)ceil(Y - p) + 1;
+    }
+
+    cout << ans << '\n';
 
     return 0;
 }
