@@ -14,13 +14,12 @@
 #include <vector>
 
 #include <boost/multiprecision/cpp_dec_float.hpp>
-using boost::multiprecision::cpp_dec_float_50;
+using dec_float = boost::multiprecision::number<boost::multiprecision::cpp_dec_float<10>>;
 
 using namespace std;
 using lint = long long;
 constexpr int INF = 1010101010;
 constexpr lint LINF = 1LL << 60;
-
 struct init {
     init() {
         cin.tie(nullptr);
@@ -31,14 +30,14 @@ struct init {
 
 int main() {
 
-    cpp_dec_float_50 X, Y, R;
+    dec_float X, Y, R;
     cin >> X >> Y >> R;
 
     int l = (int)ceil(X - R), r = (int)floor(X + R);
 
     lint ans = 0;
     for (int i = l; i <= r; i++) {
-        cpp_dec_float_50 p = sqrt(R * R - abs(X - i) * abs(X - i));
+        dec_float p = sqrt(R * R - abs(X - i) * abs(X - i));
         ans += (int)floor(Y + p) - (int)ceil(Y - p) + 1;
     }
 
