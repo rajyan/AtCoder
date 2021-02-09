@@ -6,10 +6,12 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 if (CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
+    set(BOOST_ROOT "C:/boost_1_75_0/")
     add_compile_options(
             -W4
     )
 else ()
+    set(BOOST_ROOT "/mnt/c/boost_1_75_0/")
     add_link_options(
             -fsanitize=address,undefined
     )
@@ -23,6 +25,10 @@ else ()
     )
 endif ()
 
+find_package(Boost 1.75.0)
+include_directories()
+
+add_executable(cyan_ACL1_a ACL1_a.cpp)
 add_executable(cyan_ACLB ACLB.cpp)
 add_executable(cyan_AGC002 AGC002.cpp)
 add_executable(cyan_AGC003-C AGC003-C.cpp)
