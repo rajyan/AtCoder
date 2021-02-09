@@ -36,6 +36,18 @@ struct init {
 
 int main() {
 
+    int N, S, D;
+    cin >> N >> S >> D;
+
+    bool ok = false;
+    for (int i = 0; i < N; i++) {
+        int x, y;
+        cin >> x >> y;
+        if (x < S && y > D) ok = true;
+    }
+
+    if (ok) cout << "Yes\n";
+    else cout << "No\n";
 
     return 0;
 }
