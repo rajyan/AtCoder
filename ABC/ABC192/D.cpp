@@ -21,6 +21,10 @@
 #include <bitset>
 #include <functional>
 
+#include <boost/multiprecision/cpp_int.hpp>
+
+namespace mp = boost::multiprecision;
+
 using namespace std;
 using lint = long long;
 constexpr int INF = 1010101010;
@@ -34,8 +38,46 @@ struct init {
     }
 } init_;
 
+template<class T, class F>
+T bisearch(T OK, T NG, F f) {
+    T ok = OK;
+    T ng = NG;
+
+    while (abs(ok - ng) > 1) {
+        auto mid = (ok + ng) / 2;
+
+        if (f(mid)) ok = mid;
+        else ng = mid;
+    }
+
+    return ok;
+}
+
 int main() {
 
+    string X;
+    lint M;
+    cin >> X >> M;
+
+    if (X.size() == 1) {
+        cout << (X[0] - '0' <= M) << '\n';
+        return 0;
+    }
+
+    reverse(X.begin(), X.end());
+
+    auto check = [&](const lint &k) {
+        mp::cpp_int now = 0;
+        mp::cpp_int x = 1;
+        for (const auto &c : X) {
+            now += (c - '0') * x;
+            x *= k;
+        }
+        return now <= M;
+    };
+
+    lint d = *max_element(X.begin(), X.end()) - '0';
+    cout << bisearch(d, M + 1, check) - d << '\n';
 
     return 0;
 }

@@ -36,6 +36,19 @@ struct init {
 
 int main() {
 
+    int N, K;
+    cin >> N >> K;
+
+    for (int i = 0; i < K; i++) {
+        string sN = to_string(N);
+        sort(sN.begin(), sN.end(), greater<>());
+        int M = stoi(sN);
+        sort(sN.begin(), sN.end());
+        int m = stoi(sN);
+        N = M - m;
+    }
+    
+    cout << N << '\n';
 
     return 0;
 }
