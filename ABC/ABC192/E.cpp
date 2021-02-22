@@ -36,11 +36,10 @@ struct init {
 
 template<class T>
 struct Edge {
-    int from{}, to{};
-    T cost;
+    int to{};
+    T cost, dep;
     Edge() = default;
-    Edge(int to, T cost) : to(to), cost(cost) {}
-    Edge(int from, int to, T cost) : from(from), to(to), cost(cost) {}
+    Edge(int to, T cost, T dep = 0) : to(to), cost(move(cost)), dep(move(dep)) {}
     bool operator>(const Edge &r) const { return this->cost > r.cost; }
 };
 
@@ -65,7 +64,7 @@ vector<T> Dijkstra(const vector<vector<Edge<T>>> &edges, const int st) {
 
         if (cost[now.to] < now.cost) continue;
         for (const Edge<T> &e : edges[now.to]) {
-            T tmp_cost = now.cost + e.cost;
+            T tmp_cost = now.cost + e.cost + (e.dep - now.cost % e.dep) % e.dep;
             if (chmin(cost[e.to], tmp_cost)) {
                 pq.emplace(e.to, cost[e.to]);
             }
@@ -78,17 +77,21 @@ vector<T> Dijkstra(const vector<vector<Edge<T>>> &edges, const int st) {
 
 int main() {
 
-    int N, M;
-    cin >> N >> M;
+    int N, M, X, Y;
+    cin >> N >> M >> X >> Y;
+    X--, Y--;
 
     vector<vector<Edge<lint>>> edges(N);
     for (int i = 0; i < M; i++) {
         lint u, v, t, k;
         cin >> u >> v >> t >> k;
         u--, v--;
-        edges[u].emplace_back(k, v, t);
-        edges[v].emplace_back(k, u, t);
+        edges[u].emplace_back(v, t, k);
+        edges[v].emplace_back(u, t, k);
     }
+
+    lint ans = Dijkstra(edges, X)[Y];
+    cout << (ans < LINF ? ans : -1) << '\n';
 
     return 0;
 }
