@@ -26,7 +26,7 @@ else ()
 endif ()
 
 find_package(Boost 1.75.0)
-include_directories()
+include_directories(${Boost_INCLUDE_DIR})
 
 add_executable(cyan_ACL1_a ACL1_a.cpp)
 add_executable(cyan_ACLB ACLB.cpp)
