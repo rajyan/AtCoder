@@ -36,6 +36,23 @@ struct init {
 
 int main() {
 
+    lint N;
+    cin >> N;
+
+    const int sz = 100000;
+    vector<int> used(sz + 1);
+    lint ans = N;
+    for (lint i = 2; i * i <= N; i++) {
+        if (used[i]) continue;
+        lint tmp = i * i;
+        while (tmp <= N) {
+            if (tmp <= sz) used[tmp] = 1;
+            tmp *= i;
+            ans--;
+        }
+    }
+
+    cout << ans << '\n';
 
     return 0;
 }

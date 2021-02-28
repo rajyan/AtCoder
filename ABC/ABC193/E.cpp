@@ -34,8 +34,38 @@ struct init {
     }
 } init_;
 
+
+void solve() {
+
+    mp::cpp_int X, Y, P, Q;
+    cin >> X >> Y >> P >> Q;
+
+    const mp::cpp_int r = 2 * (X + Y);
+
+    mp::cpp_int st = P - X;
+    while (st <= 0) st += P + Q;
+    mp::cpp_int now = st;
+    for (int i = 0; i < 1000000; i++, now += P + Q) {
+        if (now % r < Y) {
+            cout << now + X << '\n';
+            return;
+        }
+        if ((now + Q - 1) % r < Y) {
+            cout << (now + Q - 1) / r * r + X << '\n';
+            return;
+        }
+    }
+    cout << "infinity" << '\n';
+}
+
 int main() {
 
+    int T;
+    cin >> T;
+
+    for (int t = 0; t < T; t++) {
+        solve();
+    }
 
     return 0;
 }

@@ -14,7 +14,7 @@
 #include <vector>
 #include <set>
 #include <map>
-#include <unordered_map>
+#include <unordered_set>
 #include <queue>
 #include <numeric>
 #include <algorithm>
@@ -34,22 +34,21 @@ struct init {
     }
 } init_;
 
-template<class T>
-inline bool chmin(T &a, const T b) { return a > b && (a = b, true); }
-
 int main() {
 
-    int N;
+    lint N;
     cin >> N;
 
-    int ans = INF;
-    for (int i = 0; i < N; i++) {
-        int a, p, x;
-        cin >> a >> p >> x;
-        if (x - a > 0) chmin(ans, p);
+    unordered_set<lint> st;
+    for (lint i = 2; i <= 100000; i++) {
+        lint tmp = i * i;
+        while (tmp <= N) {
+            st.emplace(tmp);
+            tmp *= i;
+        }
     }
-
-    cout << ((ans == INF) ? -1 : ans) << '\n';
+    
+    cout << N - st.size() << '\n';
 
     return 0;
 }
