@@ -34,28 +34,100 @@ struct init {
     }
 } init_;
 
+template<const int &Modulo>
+struct Mint {
+
+    lint val;
+    constexpr Mint(lint v = 0) noexcept: val(v % Modulo) { if (val < 0) val += Modulo; }
+
+    constexpr Mint &operator+=(const Mint &r) noexcept {
+        val += r.val;
+        if (val >= Modulo) val -= Modulo;
+        return *this;
+    }
+    constexpr Mint &operator-=(const Mint &r) noexcept {
+        val -= r.val;
+        if (val < 0) val += Modulo;
+        return *this;
+    }
+    constexpr Mint &operator*=(const Mint &r) noexcept {
+        val = val * r.val % Modulo;
+        return *this;
+    }
+    constexpr Mint &operator/=(const Mint &r) {
+        lint a{r.val}, b{Modulo}, u{1}, v{0};
+        while (b) {
+            lint t = a / b;
+            a -= t * b;
+            a ^= b, b ^= a, a ^= b;
+            u -= t * v;
+            u ^= v, v ^= u, u ^= v;
+        }
+        val = val * u % Modulo;
+        if (val < 0) val += Modulo;
+        return *this;
+    }
+
+    constexpr Mint operator+(const Mint &r) const noexcept { return Mint(*this) += r; }
+    constexpr Mint operator-(const Mint &r) const noexcept { return Mint(*this) -= r; }
+    constexpr Mint operator*(const Mint &r) const noexcept { return Mint(*this) *= r; }
+    constexpr Mint operator/(const Mint &r) const noexcept { return Mint(*this) /= r; }
+
+    constexpr Mint operator-() const noexcept { return Mint(-val); }
+
+    constexpr bool operator==(const Mint &r) const noexcept { return val == r.val; }
+    constexpr bool operator!=(const Mint &r) const noexcept { return !((*this) == r); }
+    constexpr bool operator<(const Mint &r) const noexcept { return val < r.val; }
+
+    constexpr friend ostream &operator<<(ostream &os, const Mint<Modulo> &x) noexcept { return os << x.val; }
+    constexpr friend istream &operator>>(istream &is, Mint<Modulo> &x) noexcept {
+        lint tmp{};
+        is >> tmp;
+        x = Mint(tmp);
+        return is;
+    }
+
+    [[nodiscard]] constexpr Mint pow(lint n) const noexcept {
+        Mint res{1}, tmp{*this};
+        while (n > 0) {
+            if (n & 1) res *= tmp;
+            tmp *= tmp;
+            n >>= 1;
+        }
+        return res;
+    }
+};
+
+int RMOD;
+using rmint = Mint<RMOD>;
+
+template<class T>
+inline bool chmin(T &a, const T b) { return a > b && (a = b, true); }
 
 void solve() {
 
-    mp::cpp_int X, Y, P, Q;
+    lint X, Y, P, Q;
     cin >> X >> Y >> P >> Q;
 
-    const mp::cpp_int r = 2 * (X + Y);
+    RMOD = P + Q;
+    const lint Z = 2LL * (X + Y);
+    const lint g = gcd(RMOD, Z);
 
-    mp::cpp_int st = P - X;
-    while (st <= 0) st += P + Q;
-    mp::cpp_int now = st;
-    for (int i = 0; i < 1000000; i++, now += P + Q) {
-        if (now % r < Y) {
-            cout << now + X << '\n';
-            return;
-        }
-        if ((now + Q - 1) % r < Y) {
-            cout << (now + Q - 1) / r * r + X << '\n';
-            return;
+    lint ans = LINF;
+    for (int q = 0; q < Q; q++) {
+        for (int y = 0; y < Y; y++) {
+
+            lint n = (rmint(P + q - (X + y)) / Z).val;
+
+            if (g != 1) {
+                if (((X + y) % g != (P + q) % g)) continue;
+                else n /= g;
+            }
+            chmin(ans, X + Z * n + y);
         }
     }
-    cout << "infinity" << '\n';
+    if (ans == LINF) cout << "infinity" << '\n';
+    else cout << ans << '\n';
 }
 
 int main() {
@@ -63,9 +135,7 @@ int main() {
     int T;
     cin >> T;
 
-    for (int t = 0; t < T; t++) {
-        solve();
-    }
+    for (int t = 0; t < T; t++) solve();
 
     return 0;
 }
