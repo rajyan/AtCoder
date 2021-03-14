@@ -36,6 +36,27 @@ struct init {
 
 int main() {
 
+    int N;
+    cin >> N;
+    string S, X;
+    cin >> S >> X;
+
+    vector<int> A(7), T(7);
+    A[0] = 1;
+    T[0] = 1;
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < A.size(); j++) {
+            A[(i * 10) % 7] |= A[i];
+            if (X[i] == 'A') A[(i * 10 + S[i] - '0') % 7] |= A[i];
+        }
+    }
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < T.size(); j++) {
+            T[(i * 10) % 7] |= T[i];
+            if (X[i] == 'T') T[(i * 10 + S[i] - '0') % 7] |= T[i];
+        }
+    }
+    DMP(A, T);
 
     return 0;
 }

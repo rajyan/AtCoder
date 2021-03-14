@@ -36,6 +36,18 @@ struct init {
 
 int main() {
 
+    lint N;
+    cin >> N;
+
+    lint now = 1000;
+    lint ans = 0;
+    while (true) {
+        if (N < now) break;
+        ans += N - now + 1;
+        now *= 1000;
+    }
+    
+    cout << ans << '\n';
 
     return 0;
 }

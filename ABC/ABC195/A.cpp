@@ -36,6 +36,11 @@ struct init {
 
 int main() {
 
+    int M, H;
+    cin >> M >> H;
+
+    if (!(H % M)) cout << "Yes\n";
+    else cout << "No\n";
 
     return 0;
 }

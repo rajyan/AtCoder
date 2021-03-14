@@ -36,6 +36,26 @@ struct init {
 
 int main() {
 
+    int A, B, W;
+    cin >> A >> B >> W;
+    W *= 1000;
+
+    int m = -1, M = -1;
+    for (int i = 0; i <= 2000000; i++) {
+        if (A * i <= W && W <= B * i) {
+            if (m == -1) {
+                m = i;
+            }
+            M = i;
+        }
+    }
+
+    if (m == -1) {
+        cout << "UNSATISFIABLE" << '\n';
+        return 0;
+    }
+
+    cout << m << ' ' << M << '\n';
 
     return 0;
 }
