@@ -34,8 +34,91 @@ struct init {
     }
 } init_;
 
+template<const int &Modulo>
+struct Mint {
+
+    lint val;
+    constexpr Mint(lint v = 0) noexcept: val(v % Modulo) { if (val < 0) val += Modulo; }
+
+    constexpr Mint &operator+=(const Mint &r) noexcept {
+        val += r.val;
+        if (val >= Modulo) val -= Modulo;
+        return *this;
+    }
+    constexpr Mint &operator-=(const Mint &r) noexcept {
+        val -= r.val;
+        if (val < 0) val += Modulo;
+        return *this;
+    }
+    constexpr Mint &operator*=(const Mint &r) noexcept {
+        val = val * r.val % Modulo;
+        return *this;
+    }
+    constexpr Mint &operator/=(const Mint &r) noexcept {
+        lint a{r.val}, b{Modulo}, u{1}, v{0};
+        while (b) {
+            lint t = a / b;
+            a -= t * b;
+            a ^= b, b ^= a, a ^= b;
+            u -= t * v;
+            u ^= v, v ^= u, u ^= v;
+        }
+        assert(a == 1);
+        val = val * u % Modulo;
+        if (val < 0) val += Modulo;
+        return *this;
+    }
+
+    constexpr Mint operator+(const Mint &r) const noexcept { return Mint(*this) += r; }
+    constexpr Mint operator-(const Mint &r) const noexcept { return Mint(*this) -= r; }
+    constexpr Mint operator*(const Mint &r) const noexcept { return Mint(*this) *= r; }
+    constexpr Mint operator/(const Mint &r) const noexcept { return Mint(*this) /= r; }
+
+    constexpr Mint operator-() const noexcept { return Mint(-val); }
+
+    constexpr bool operator==(const Mint &r) const noexcept { return val == r.val; }
+    constexpr bool operator!=(const Mint &r) const noexcept { return !((*this) == r); }
+    constexpr bool operator<(const Mint &r) const noexcept { return val < r.val; }
+
+    constexpr friend ostream &operator<<(ostream &os, const Mint<Modulo> &x) noexcept { return os << x.val; }
+    constexpr friend istream &operator>>(istream &is, Mint<Modulo> &x) noexcept {
+        lint tmp{};
+        is >> tmp;
+        x = Mint(tmp);
+        return is;
+    }
+
+    [[nodiscard]] constexpr Mint pow(lint n) const noexcept {
+        Mint res{1}, tmp{*this};
+        while (n > 0) {
+            if (n & 1) res *= tmp;
+            tmp *= tmp;
+            n >>= 1;
+        }
+        return res;
+    }
+};
+
+constexpr int MOD = 998244353;
+using mint = Mint<MOD>;
+
 int main() {
 
+    int N, M;
+    cin >> N >> M;
+
+    mint ans = mint(N) * mint(M).pow(N);
+    vector<mint> powM(N, 1);
+    for (int i = 0; i < N - 1; i++) powM[i + 1] = powM[i] * M;
+
+    for (int m = 1; m <= M; m++) {
+        mint powM_m = 1;
+        for (int k = 0; k <= N - 2; k++, powM_m *= (M - m)) {
+            ans -= powM_m * (N - (2 + k) + 1) * powM[N - (2 + k)];
+        }
+    }
+
+    cout << ans << '\n';
 
     return 0;
 }
