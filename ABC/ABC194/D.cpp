@@ -36,6 +36,15 @@ struct init {
 
 int main() {
 
+    int N;
+    cin >> N;
+
+    long double ans = 0;
+    for (int i = 1; i < N; i++) {
+        ans += 1.0L * N / (N - i);
+    }
+    
+    cout << ans << '\n';
 
     return 0;
 }
