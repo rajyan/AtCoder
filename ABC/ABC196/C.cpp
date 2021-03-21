@@ -36,6 +36,17 @@ struct init {
 
 int main() {
 
+    lint N;
+    cin >> N;
+
+    int ans = 0;
+
+    for (int i = 1; i < 10000000; i++) {
+        if (stol(to_string(i) + to_string(i)) <= N) ans++;
+        else break;
+    }
+    
+    cout << ans << '\n';
 
     return 0;
 }

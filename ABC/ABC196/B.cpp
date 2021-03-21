@@ -36,6 +36,15 @@ struct init {
 
 int main() {
 
+    string s;
+    cin >> s;
+
+    for (const auto &c : s) {
+        if (c == '.') break;
+        cout << c;
+    }
+
+    cout << '\n';
 
     return 0;
 }
