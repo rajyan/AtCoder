@@ -53,9 +53,9 @@ int main() {
         }
 
         int ans = 0;
-        for (int i = 0; i < (int)ss.size() - 1; i++) {
-            if (ss[i] == 'C' && ss[i + 1] == 'J') ans += x;
-            if (ss[i] == 'J' && ss[i + 1] == 'C') ans += y;
+        for (int i = 0; i < (int)s.size() - 1; i++) {
+            if (s[i] == 'C' && s[i + 1] == 'J') ans += x;
+            if (s[i] == 'J' && s[i + 1] == 'C') ans += y;
         }
 
         cout << "Case #" << (t + 1) << ": " << ans << '\n';
