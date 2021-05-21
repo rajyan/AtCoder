@@ -36,6 +36,21 @@ struct init {
 
 int main() {
 
+    int N;
+    cin >> N;
+
+    vector<int> A(N);
+    for (int i = 0; i < N; i++) cin >> A[i];
+
+    vector<int> cnt(200);
+    for (int i = 0; i < N; i++) cnt[A[i] % 200]++;
+
+    lint ans = 0;
+    for (const auto &i : cnt) {
+        ans += 1LL * i * (i - 1) / 2;
+    }
+    
+    cout << ans << '\n';
 
     return 0;
 }

@@ -36,6 +36,10 @@ struct init {
 
 int main() {
 
+    int N;
+    cin >> N;
+
+    cout << (N - 1) / 100 + 1 << '\n';
 
     return 0;
 }
