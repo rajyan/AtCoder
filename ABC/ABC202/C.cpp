@@ -1,5 +1,7 @@
 #ifdef _DEBUG
+
 #include "../../../library/src/debug_template.hpp"
+
 #define DMP(...) dump(#__VA_ARGS__, __VA_ARGS__)
 #else
 #define DMP(...) ((void)0)
@@ -36,6 +38,30 @@ struct init {
 
 int main() {
 
+    int N;
+    cin >> N;
+
+    vector<int> A(100000), B(N), C(100000);
+    for (int i = 0; i < N; ++i) {
+        int a;
+        cin >> a;
+        A[a]++;
+    }
+    for (int i = 0; i < N; ++i) {
+        cin >> B[i];
+    }
+    for (int i = 0; i < N; ++i) {
+        int c;
+        cin >> c;
+        C[c - 1]++;
+    }
+
+    lint ans = 0;
+    for (int i = 0; i < N; ++i) {
+        ans += 1LL * A[B[i]] * C[i];
+    }
+
+    cout << ans << '\n';
 
     return 0;
 }

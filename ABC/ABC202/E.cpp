@@ -36,6 +36,18 @@ struct init {
 
 int main() {
 
+    int N;
+    cin >> N;
+
+    vector<vector<int>> edges(N);
+    vector<int> memo(N);
+    for (int i = 0; i < N - 1; i++) {
+        int p;
+        cin >> p;
+        p--;
+        edges[i].emplace_back(p);
+        edges[p].emplace_back(i);
+    }
 
     return 0;
 }

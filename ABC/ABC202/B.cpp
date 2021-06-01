@@ -1,5 +1,7 @@
 #ifdef _DEBUG
+
 #include "../../../library/src/debug_template.hpp"
+
 #define DMP(...) dump(#__VA_ARGS__, __VA_ARGS__)
 #else
 #define DMP(...) ((void)0)
@@ -36,6 +38,19 @@ struct init {
 
 int main() {
 
+    string S;
+    cin >> S;
+
+    map<int, int> mp{{0, 0},
+                     {1, 1},
+                     {6, 9},
+                     {9, 6},
+                     {8, 8}};
+
+    reverse(S.begin(), S.end());
+    for (const auto &item : S) {
+        cout << mp[item - '0'];
+    }
 
     return 0;
 }
