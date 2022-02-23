@@ -36,6 +36,25 @@ struct init {
 
 int main() {
 
+    string s;
+    cin >> s;
+
+    int ans = 0;
+    for (int i = 0; i < 10000; i++) {
+        string now = to_string(i);
+        now = string(4 - now.size(), '0') + now;
+   
+        bool ok = true;
+        for (int j = 0; j < 10; j++) {
+            if (s[j] == 'x') ok &= none_of(now.begin(), now.end(), [&j](const char c){ return c == '0' + j; });
+            else if (s[j] == 'o') ok &= any_of(now.begin(), now.end(), [&j](const char c){ return c == '0' + j; });
+        }
+        DMP(now, ok);
+   
+        if (ok) ans++;
+    }
+    
+    cout << ans << '\n';
 
     return 0;
 }

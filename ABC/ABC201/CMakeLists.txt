@@ -25,8 +25,8 @@ else ()
     )
 endif ()
 
-find_package(Boost 1.75.0)
-include_directories(${Boost_INCLUDE_DIR})
+#find_package(Boost 1.75.0)
+#include_directories(${Boost_INCLUDE_DIR})
 
 add_executable(ABC201_A A.cpp)
 add_executable(ABC201_B B.cpp)

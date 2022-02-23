@@ -36,6 +36,15 @@ struct init {
 
 int main() {
 
+    int N;
+    cin >> N;
+
+    vector<pair<int, string>> ST(N);
+    for (int i = 0; i < N; i++) cin >> ST[i].second >> ST[i].first;
+    sort(ST.begin(), ST.end(), greater<>());
+
+    DMP(ST);
+    cout << ST[1].second << '\n';
 
     return 0;
 }
