@@ -1,8 +1,8 @@
 #! /bin/bash -eux
 
-PROJECT_DIR=${PROJECT_DIR:-'/home/rajyan/CLion/AtCoder'}
-LIBRARY_DIR=${LIBRARY_DIR:-'/home/rajyan/CLion/library/src'}
-CMAKE_TEMPLATE=${CMAKE_TEMPLATE:-'/home/rajyan/CLion/AtCoder/CMakeLists_template.txt'}
+PROJECT_DIR=${PROJECT_DIR:-'/home/rajyan/Workspace/AtCoder'}
+LIBRARY_DIR=${LIBRARY_DIR:-'/home/rajyan/Workspace/library/src'}
+CMAKE_TEMPLATE=${CMAKE_TEMPLATE:-'/home/rajyan/Workspace/AtCoder/CMakeLists_template.txt'}
 
 # make directory
 contest_dir=${1?'Set directory name!'}

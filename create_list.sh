@@ -1,7 +1,7 @@
 #!/bin/bash -eux
 
-PROJECT_DIR=${PROJECT_DIR:-'/home/rajyan/CLion/AtCoder'}
-CMAKE_TEMPLATE=${CMAKE_TEMPLATE:-'/home/rajyan/CLion/AtCoder/CMakeLists_template.txt'}
+PROJECT_DIR=${PROJECT_DIR:-'/home/rajyan/Workspace/AtCoder'}
+CMAKE_TEMPLATE=${CMAKE_TEMPLATE:-'/home/rajyan/Workspace/AtCoder/CMakeLists_template.txt'}
 
 # create CMakeLists
 CONTEST_DIR=${1?'Set directory name!'}
